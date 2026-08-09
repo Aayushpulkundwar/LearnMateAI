@@ -4,15 +4,15 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "AI Textbook Tutor"
+    PROJECT_NAME: str = "LearnMateAI"
     API_V1_STR: str = "/api/v1"
 
     # Database
     POSTGRES_USER: str = "tutor"
     POSTGRES_PASSWORD: str = "tutorpass"
-    POSTGRES_DB: str = "textbook_db"
-    DATABASE_URL: str = "postgresql+asyncpg://tutor:tutorpass@postgres:5432/textbook_db"
-    SYNC_DATABASE_URL: str = "postgresql+psycopg2://tutor:tutorpass@postgres:5432/textbook_db"
+    POSTGRES_DB: str = "learnmate_db"
+    DATABASE_URL: str = "postgresql+asyncpg://tutor:tutorpass@postgres:5432/learnmate_db"
+    SYNC_DATABASE_URL: str = "postgresql+psycopg2://tutor:tutorpass@postgres:5432/learnmate_db"
 
     # Redis (Celery)
     REDIS_URL: str = "redis://redis:6379/0"

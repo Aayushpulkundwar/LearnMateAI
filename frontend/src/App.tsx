@@ -147,7 +147,7 @@ export const App: React.FC = () => {
       <header className="app-header">
         <div className="header-brand">
           <BookOpen size={24} className="brand-icon" />
-          <h1 className="brand-title">AI Textbook Tutor</h1>
+          <h1 className="brand-title">LearnMateAI</h1>
           <span className="brand-badge">NCERT & State Board RAG</span>
         </div>
       </header>

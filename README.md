@@ -1,4 +1,4 @@
-# AI Textbook Tutor 📚🤖
+# LearnMateAI 📚🤖
 
 Curriculum-based RAG assistant that answers student questions strictly from prescribed class textbooks (NCERT / State Board).
 

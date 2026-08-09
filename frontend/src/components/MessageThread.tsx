@@ -14,7 +14,7 @@ export const MessageThread: React.FC<MessageThreadProps> = ({ messages, isLoadin
       {messages.length === 0 ? (
         <div className="empty-chat">
           <Bot size={48} className="empty-icon" />
-          <h3>Ask your AI Textbook Tutor</h3>
+          <h3>Ask LearnMateAI</h3>
           <p>
             Answers are sourced strictly from your prescribed NCERT / State Board textbooks with page-level citations.
           </p>
