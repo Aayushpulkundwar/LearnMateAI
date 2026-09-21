@@ -7,6 +7,7 @@ class RetainedChunk(TypedDict):
     document_title: str
     chapter: Optional[str]
     page_number: Optional[int]
+    chunk_index: int
     content: str
     similarity_score: float
 
@@ -15,6 +16,8 @@ class QueryState(TypedDict):
     question: str
     filters: Dict[str, Any]
     retrieved_chunks: List[RetainedChunk]
+    selected_chunks: List[RetainedChunk]
+    context_chunks: List[RetainedChunk]
     is_relevant: bool
     max_relevance_score: float
     answer: str

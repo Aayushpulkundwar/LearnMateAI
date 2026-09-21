@@ -408,9 +408,15 @@ body {
 .citation-header {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.35rem;
   color: var(--text-muted);
   margin-bottom: 0.25rem;
+}
+
+.citation-relevance {
+  color: var(--text-main);
+  font-weight: 600;
 }
 
 .citation-snippet {

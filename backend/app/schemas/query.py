@@ -4,10 +4,13 @@ from pydantic import BaseModel, Field
 
 
 class Citation(BaseModel):
+    chunk_id: Optional[UUID] = None
     document_id: UUID
     document_title: str
     chapter: Optional[str] = None
     page_number: Optional[int] = None
+    chunk_index: Optional[int] = None
+    similarity_score: Optional[float] = None
     snippet: str
 
 

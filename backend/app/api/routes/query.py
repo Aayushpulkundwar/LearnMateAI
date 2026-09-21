@@ -49,10 +49,13 @@ async def execute_query(payload: QueryRequest):
 
         citations = [
             Citation(
+                chunk_id=c.get("chunk_id"),
                 document_id=c.get("document_id"),
                 document_title=c.get("document_title", "Textbook"),
                 chapter=c.get("chapter"),
                 page_number=c.get("page_number"),
+                chunk_index=c.get("chunk_index"),
+                similarity_score=c.get("similarity_score"),
                 snippet=c.get("snippet", ""),
             )
             for c in final_state.get("citations", [])
@@ -156,12 +159,15 @@ async def summarize_chapter(payload: SummarizeRequest):
         )
 
     citations = [
-        Citation(
-            document_id=c.get("document_id"),
-            document_title=c.get("document_title", "Textbook"),
-            chapter=c.get("chapter"),
-            page_number=c.get("page_number"),
-            snippet=c.get("snippet", ""),
+            Citation(
+                chunk_id=c.get("chunk_id"),
+                document_id=c.get("document_id"),
+                document_title=c.get("document_title", "Textbook"),
+                chapter=c.get("chapter"),
+                page_number=c.get("page_number"),
+                chunk_index=c.get("chunk_index"),
+                similarity_score=c.get("similarity_score"),
+                snippet=c.get("snippet", ""),
         )
         for c in final_state.get("citations", [])
     ]

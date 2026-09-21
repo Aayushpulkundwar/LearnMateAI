@@ -13,6 +13,13 @@ from app.tasks.ingestion import ingest_document_task
 router = APIRouter()
 
 
+async def _read_and_rewind_upload(file: UploadFile) -> tuple[int, object]:
+    """Inspect an upload's bytes and rewind its seekable stream for storage."""
+    contents = await file.read()
+    await file.seek(0)
+    return len(contents), file.file
+
+
 @router.post("/upload", response_model=DocumentResponse, status_code=status.HTTP_201_CREATED)
 async def upload_document(
     title: str = Form(...),
@@ -35,12 +42,13 @@ async def upload_document(
     object_name = f"{doc_id}_{file.filename}"
 
     try:
-        # Read file contents & upload to MinIO
-        contents = await file.read()
+        # Reading for length inspection advances UploadFile to EOF; rewind it
+        # before passing the same stream to MinIO.
+        content_length, upload_stream = await _read_and_rewind_upload(file)
         minio_path = minio_service.upload_file(
             object_name=object_name,
-            file_data=file.file,
-            length=len(contents),
+            file_data=upload_stream,
+            length=content_length,
             content_type=file.content_type or "application/pdf"
         )
 

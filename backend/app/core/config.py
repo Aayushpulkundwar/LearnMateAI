@@ -30,9 +30,20 @@ class Settings(BaseSettings):
     EMBEDDING_MODEL: str = "bge-m3"
     EMBEDDING_DIM: int = 1024
     LLM_MODEL: str = "llama3.1"
+    OLLAMA_GENERATION_TIMEOUT_SECONDS: float = 300.0
+
+    # Page-aware text chunking
+    CHUNK_SIZE: int = 1000
+    CHUNK_OVERLAP: int = 150
+
+    RETRIEVAL_TOP_K: int = 5
+    CONTEXT_MIN_SIMILARITY: float = 0.50
+    CONTEXT_MAX_SIMILARITY_DROP: float = 0.06
+    RAG_MAX_CONTEXT_CHARS: int = 6000
+    LLM_TEMPERATURE: float = 0.2
 
     # Strict RAG Relevance Threshold
-    RELEVANCE_THRESHOLD: float = 0.6
+    RELEVANCE_THRESHOLD: float = 0.55
 
     # CORS
     CORS_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:5173"]

@@ -24,17 +24,32 @@ export const CitationBadge: React.FC<CitationBadgeProps> = ({ citations }) => {
 
       {expanded && (
         <div className="citation-list">
-          {citations.map((cite, idx) => (
-            <div key={idx} className="citation-card">
-              <div className="citation-header">
-                <FileText size={14} className="icon" />
-                <span className="citation-book">{cite.document_title}</span>
-                {cite.chapter && <span className="citation-chapter">• Chapter: {cite.chapter}</span>}
-                {cite.page_number && <span className="citation-page">• Page {cite.page_number}</span>}
+          {citations.map((cite, idx) => {
+            const relevanceText = typeof cite.similarity_score === 'number'
+              && Number.isFinite(cite.similarity_score)
+              ? `Relevance: ${(cite.similarity_score * 100).toFixed(1)}%`
+              : null;
+
+            return (
+              <div key={idx} className="citation-card">
+                <div className="citation-header">
+                  <FileText size={14} className="icon" />
+                  <span className="citation-book">{cite.document_title}</span>
+                  {cite.chapter && <span className="citation-chapter">• Chapter: {cite.chapter}</span>}
+                  {cite.page_number && <span className="citation-page">• Page {cite.page_number}</span>}
+                  {relevanceText && (
+                    <span
+                      className="citation-relevance"
+                      title="Semantic similarity between your question and this textbook passage."
+                    >
+                      • {relevanceText}
+                    </span>
+                  )}
+                </div>
+                <p className="citation-snippet">"{cite.snippet}"</p>
               </div>
-              <p className="citation-snippet">"{cite.snippet}"</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>

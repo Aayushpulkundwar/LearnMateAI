@@ -1,8 +1,11 @@
 export interface Citation {
+  chunk_id?: string;
   document_id: string;
   document_title: string;
   chapter?: string;
   page_number?: number;
+  chunk_index?: number;
+  similarity_score?: number;
   snippet: string;
 }
 
