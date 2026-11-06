@@ -1,0 +1,37 @@
+# Pull-only HTTP demonstration; supporting data/AI services are intentionally absent.
+services:
+  api:
+    image: ghcr.io/aayushpulkundwar/learnmateai-api:latest
+    container_name: learnmate_api
+    restart: unless-stopped
+    mem_limit: 384m
+    env_file:
+      - .env
+    # Existing production/staging validation requires HTTPS cookies. This HTTP-only
+    # demo must not enable those modes or be used for real student accounts.
+    environment:
+      ENVIRONMENT: development
+      AUTH_COOKIE_SECURE: "false"
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]
+    expose:
+      - "8000"
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
+
+  frontend:
+    image: ghcr.io/aayushpulkundwar/learnmateai-frontend:latest
+    container_name: learnmate_frontend
+    restart: unless-stopped
+    mem_limit: 128m
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
