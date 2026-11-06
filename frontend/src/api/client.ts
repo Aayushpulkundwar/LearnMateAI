@@ -8,7 +8,6 @@ import {
   QuizRequest,
   QuizResponse,
   QuizReview,
-  AuthResponse,
   StudentProfile,
   Grade,
   AnalyticsOverview,
@@ -33,17 +32,6 @@ const api = axios.create({
     'Content-Type': 'application/json',
   },
 });
-
-export const registerStudent = async (payload: {
-  email: string; password: string; display_name?: string; grade_id: string;
-}): Promise<AuthResponse> => (await api.post<AuthResponse>('/auth/register', payload)).data;
-
-export const loginStudent = async (payload: { email: string; password: string }): Promise<AuthResponse> =>
-  (await api.post<AuthResponse>('/auth/login', payload)).data;
-
-export const logoutStudent = async (): Promise<void> => {
-  await api.post('/auth/logout');
-};
 
 export const getMyProfile = async (): Promise<StudentProfile> =>
   (await api.get<StudentProfile>('/students/me')).data;

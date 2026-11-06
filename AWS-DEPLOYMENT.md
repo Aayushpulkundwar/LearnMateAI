@@ -4,8 +4,14 @@ GitHub Actions builds both linux/amd64 images and publishes `latest` and commit
 SHA tags to GHCR on pushes to main (or manual execution on main). EC2 only pulls
 images. No EC2 credentials or deployment secrets are needed in Actions.
 
-This deployment serves the UI and API schema. Authentication, assessments, AI
-tutoring and RAG require supporting services and are not functional in this demo.
+This deployment opens a public dashboard without login or registration. Legacy
+`/login` and `/register` URLs redirect to `/`. The sidebar, tutor controls,
+assessment workspace and concept mastery views remain available to explore.
+The public frontend does not restore student sessions, read saved conversations,
+or request private student or administrator resources. Those features show an
+unavailable state; backend JWT authentication and authorization remain intact.
+Authentication, assessments, AI tutoring and RAG require supporting services and
+are not functional in this demo.
 The deep `/api/v1/health/` check also requires those services; do not use it as a
 container readiness check for this deployment.
 

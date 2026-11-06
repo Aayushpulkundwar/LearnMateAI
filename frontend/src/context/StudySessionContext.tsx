@@ -35,7 +35,7 @@ export const StudySessionProvider: React.FC<React.PropsWithChildren> = ({ childr
       const saved = readSaved();
       if (saved && !result.some(subject => subject.id === saved.subjectId)) { commit(null); setChapters([]); }
       return result;
-    } catch (err: any) { setError(err.response?.status === 401 ? 'Your session has expired. Please log in again.' : 'Unable to load your curriculum.'); throw err; }
+    } catch (err: any) { setError(err.response?.status === 401 ? 'Private curriculum is unavailable in this deployment.' : 'Unable to load your curriculum.'); throw err; }
     finally { setLoading(false); }
   }, [commit]);
   const loadChapters = useCallback(async (subjectId: string) => {
@@ -45,7 +45,7 @@ export const StudySessionProvider: React.FC<React.PropsWithChildren> = ({ childr
       const saved = readSaved();
       if (saved?.subjectId === subjectId && saved.chapterId && !result.some(chapter => chapter.id === saved.chapterId)) commit({ subjectId: saved.subjectId, subjectName: saved.subjectName });
       return result;
-    } catch (err: any) { setError(err.response?.status === 401 ? 'Your session has expired. Please log in again.' : 'Unable to load chapters.'); throw err; }
+    } catch (err: any) { setError(err.response?.status === 401 ? 'Private chapters are unavailable in this deployment.' : 'Unable to load chapters.'); throw err; }
     finally { setLoading(false); }
   }, [commit]);
   const chooseSubject = useCallback((subject: CurriculumSubject) => { setChapters([]); commit({ subjectId: subject.id, subjectName: subject.name }); }, [commit]);
