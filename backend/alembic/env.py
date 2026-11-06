@@ -12,6 +12,11 @@ from app.core.config import settings
 from app.core.db import Base
 from app.models.document import Document  # noqa: F401
 from app.models.chunk import Chunk  # noqa: F401
+from app.models.learning import (  # noqa: F401
+    Assessment, AssessmentAttempt, AssessmentEvaluation, AttemptQuestion, AuthSession, Chapter, Grade,
+    LearningRecommendation, MasteryHistory, Question, QuestionGenerationJob, QuestionOption,
+    Student, StudentAnswer, Subject, Topic, TopicMastery, User,
+)
 
 config = context.config
 

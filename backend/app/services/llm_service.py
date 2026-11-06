@@ -52,7 +52,7 @@ class OllamaLLMService:
             )
             raise RuntimeError(f"Configured Ollama model '{self.model}' is unavailable.")
 
-    async def generate(self, prompt: str, system_prompt: str = "") -> str:
+    async def generate(self, prompt: str, system_prompt: str = "", *, json_mode: bool = False, json_schema: dict | None = None, num_ctx: int | None = None, num_predict: int | None = None, timeout_seconds: float | None = None) -> str:
         """Generate one non-streaming answer from Ollama's /api/generate endpoint."""
         url = f"{self.base_url}/api/generate"
         payload = {
@@ -62,8 +62,15 @@ class OllamaLLMService:
             "system": system_prompt,
             "options": {"temperature": settings.LLM_TEMPERATURE},
         }
+        if json_mode:
+            payload['format'] = json_schema or 'json'
+            payload['options'].update({'num_ctx': 4096, 'num_predict': 2400})
+        if num_ctx is not None:
+            payload['options']['num_ctx'] = num_ctx
+        if num_predict is not None:
+            payload['options']['num_predict'] = num_predict
         try:
-            async with httpx.AsyncClient(timeout=self.generation_timeout) as client:
+            async with httpx.AsyncClient(timeout=timeout_seconds or self.generation_timeout) as client:
                 response = await client.post(url, json=payload)
                 response.raise_for_status()
         except httpx.ConnectError as exc:

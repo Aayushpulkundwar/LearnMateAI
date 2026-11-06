@@ -1,0 +1,84 @@
+{
+  "captured_utc": "2026-10-30T06:22:45.960681+00:00",
+  "git_commit": "2788f3ef56f5bc261d4081dbc859c831c6ff4646",
+  "frozen_run_id": "nine_science_03",
+  "corpus_sha256": "d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8",
+  "dataset_sha256": "11fa3329a2c3fd8a0b366a0e16c74462333bbc6afa48c2a5a7d6f142ea4e8298",
+  "retrieval_trace_validation": {
+    "frozen_run_id": "nine_science_03",
+    "corpus_sha256": "d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8",
+    "dataset_sha256": "11fa3329a2c3fd8a0b366a0e16c74462333bbc6afa48c2a5a7d6f142ea4e8298",
+    "questions": 40,
+    "modes": {
+      "dense": {
+        "queries": 40,
+        "successful": 40,
+        "failed": 0
+      },
+      "fts": {
+        "queries": 40,
+        "successful": 40,
+        "failed": 0
+      },
+      "hybrid": {
+        "queries": 40,
+        "successful": 40,
+        "failed": 0
+      }
+    }
+  },
+  "human_relevance_review": {
+    "rows": {
+      "reviewer_1": {
+        "candidate_rows": 402,
+        "explicit_relevance_labels": 0,
+        "reviewer_ids": []
+      },
+      "reviewer_2": {
+        "candidate_rows": 402,
+        "explicit_relevance_labels": 0,
+        "reviewer_ids": []
+      }
+    },
+    "gold_json_present": false,
+    "metrics_status": "blocked pending complete independent reviews and explicit adjudication"
+  },
+  "generation": {
+    "no_retrieval": {
+      "successes": 10,
+      "questions": 10,
+      "model": "llama3:8b",
+      "model_digest": "365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1",
+      "latency_seconds": {
+        "mean": 8.16272701001726,
+        "median": 7.946182949992362,
+        "p95_linear_interpolation": 13.724417254998116
+      }
+    },
+    "rag_json_present": false,
+    "answer_review_status": "not available until RAG generation and human review"
+  },
+  "software_tests": {
+    "runner": "python research/experiments/rag_comparison/run_focused_tests.py",
+    "log": "results/part2_unit_tests_11.log",
+    "passed": 21,
+    "failed": 0,
+    "py_compile": "passed"
+  },
+  "artifact_sha256": {
+    "runs/dense.json": "e243dcb706d380001a6e09eae5d275358d728c2a32604d3c3e8793b82e41f4b2",
+    "runs/fts.json": "182321ef37b91abc1a7362ca4db76f6475feb2b7b7ca0964a712013ee9d23e5e",
+    "runs/hybrid.json": "cac09558928663c1cd32cb1f9e415212b08685f96cd92f2a11d95daa5eed373a",
+    "annotations/reviewer_1.csv": "84e273844595cb3c036ae9879180cb6e387d97db918819ce4c0d9a9669e919be",
+    "annotations/reviewer_2.csv": "84e273844595cb3c036ae9879180cb6e387d97db918819ce4c0d9a9669e919be",
+    "annotations/pool_origin_mapping.json": "d51a1b4dd53ae989f3a424aa4369810e5f9a9e8a804f0ded37c71615c579e326",
+    "generation/no_retrieval.json": "316f30d151f2229659535d43283d740ba46ca8d54d3553d6dd1a78cc1db552d5",
+    "generation/run_manifest.json": "9a5f9c566940c1628f6e35eec5a31f0640840d1c2a01a05dd7fe587266ce49fb",
+    "results/ieee_research_results.md": "f4067f2cb690d7dea2052b29e0341de50cb37b9dfe3fc2598c865132f52f4692"
+  },
+  "ieee_measurements": {
+    "retrieval_metrics": "not produced",
+    "generation_quality_metrics": "not produced",
+    "figures": "withheld until validated measurements"
+  }
+}

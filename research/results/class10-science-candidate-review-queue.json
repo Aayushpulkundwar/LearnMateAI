@@ -1,0 +1,5 @@
+{
+    "status":  "pending_human_review",
+    "source":  "C:\\Users\\Aayush Pulkundwar\\OneDrive\\Desktop\\LearnMateAI\\research\\results\\sciencecs10_provenance.csv",
+    "instruction":  "Create split-separated questions with gold chunk IDs and evidence spans; do not treat generated or smoke data as ground truth."
+}

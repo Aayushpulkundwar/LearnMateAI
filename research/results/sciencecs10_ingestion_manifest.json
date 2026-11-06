@@ -1,0 +1,93 @@
+[
+    {
+        "chapter":  1,
+        "title":  "Chemical Reactions and Equations",
+        "sha256":  "9D58FA614B2D1064F4EF13423EAF85155B0EFC5E74BDF3E8C5E6F15F1B742D36",
+        "document_id":  "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+        "status":  "skipped_existing"
+    },
+    {
+        "chapter":  2,
+        "title":  "Acids, Bases and Salts",
+        "sha256":  "8CE001E9CD1AB5F842064D1F332D4A64E010C37D5E5E29664BACD9DA526F7340",
+        "document_id":  "93116cc1-6a00-4968-9268-59db13424b09",
+        "status":  "completed"
+    },
+    {
+        "chapter":  3,
+        "title":  "Metals and Non-metals",
+        "sha256":  "CDA8AC2D0DFD62366BC8949B901DF3F28128137B7E0971968F7568DCCB715117",
+        "document_id":  "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+        "status":  "completed"
+    },
+    {
+        "chapter":  4,
+        "title":  "Carbon and its Compounds",
+        "sha256":  "EFBB053EA8CEDF29BC6891834613FDBCC17772E369F6B35405F3BB4701C41ABE",
+        "document_id":  "c8432cec-6b58-41ff-a228-a2dbce40b648",
+        "status":  "failed"
+    },
+    {
+        "chapter":  5,
+        "title":  "Life Processes",
+        "sha256":  "685EC7228AFEB79D7BC9B989648E381E5EB4B5A6D290D6A13374489C9284054F",
+        "document_id":  "01a8f57c-144b-4a07-accf-5cf180a164b0",
+        "status":  "failed"
+    },
+    {
+        "chapter":  6,
+        "title":  "Control and Coordination",
+        "sha256":  "BF4DDFA158E117A71A32B2F19C8FCD87140EF325E8672FAAD5D4A599D36EA913",
+        "document_id":  "a4fc3f78-1df2-43e6-ab25-9bc7ccce6dc9",
+        "status":  "failed"
+    },
+    {
+        "chapter":  7,
+        "title":  "How do Organisms Reproduce?",
+        "sha256":  "575CB5A50B488A46715E500D4CBEAF3B687BF01F9DA7989C928D35F1A3A88EC0",
+        "document_id":  "1360321a-7a0d-417a-a1d4-560a635693e1",
+        "status":  "completed"
+    },
+    {
+        "chapter":  8,
+        "title":  "Heredity and Evolution",
+        "sha256":  "B0357C0BCC860190C9D3DCCC7C91EE31A65012442E795BE5BC00CD9F621BFF5B",
+        "document_id":  "342c7865-7f32-43cf-ad44-23870b66625a",
+        "status":  "failed"
+    },
+    {
+        "chapter":  9,
+        "title":  "Light - Reflection and Refraction",
+        "sha256":  "A647D66CD9DD9E767C1FEA57BAAC3A7AEAF9CB7461F87DC3F619E6FEE8947497",
+        "document_id":  "a92321fa-f136-4203-95e3-550530be58f7",
+        "status":  "completed"
+    },
+    {
+        "chapter":  10,
+        "title":  "The Human Eye and the Colourful World",
+        "sha256":  "C8ED49FA55EEDEB9EE5D5FBFA6D02061ADB94075E94A32CA9BD16F4CAF67C423",
+        "document_id":  "925e4a60-1e33-4394-a333-485a7682e584",
+        "status":  "completed"
+    },
+    {
+        "chapter":  11,
+        "title":  "Electricity",
+        "sha256":  "640A680A24070D4ADD6D580D03D5377768EE5A6B4F89F9BFB66B350D457AB52F",
+        "document_id":  "c9981302-fda6-45bc-ab4e-c142379f0035",
+        "status":  "completed"
+    },
+    {
+        "chapter":  12,
+        "title":  "Magnetic Effects of Electric Current",
+        "sha256":  "AB82BAE095324B3854EED3DB8513D201E01477154DF902B9DFC166BE3DFD0A42",
+        "document_id":  "c71bbe0c-0206-4a2c-bb13-d6fa2802f9b4",
+        "status":  "completed"
+    },
+    {
+        "chapter":  13,
+        "title":  "Our Environment",
+        "sha256":  "3F61F0574E60BB8FC41FEB3CC13F818621D9C17A5D5F51634154A5DE35918B2D",
+        "document_id":  "672dfbdf-af01-4c86-9321-f034f6d25aa9",
+        "status":  "completed"
+    }
+]

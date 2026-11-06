@@ -1,4 +1,8 @@
-from fastapi import FastAPI
+import logging
+import time
+from uuid import uuid4
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.router import api_router
@@ -10,6 +14,7 @@ app = FastAPI(
     description="Curriculum-based RAG assistant answering student questions strictly from prescribed class textbooks.",
     version="0.1.0"
 )
+logger = logging.getLogger("learnmate.request")
 
 # Configure CORS Middleware
 app.add_middleware(
@@ -22,6 +27,21 @@ app.add_middleware(
 
 # Mount API V1 Router
 app.include_router(api_router, prefix=settings.API_V1_STR)
+
+
+@app.middleware("http")
+async def request_trace(request: Request, call_next):
+    """Emit correlation-safe request telemetry without bodies, cookies, or PII."""
+    request_id = request.headers.get("X-Request-ID") or str(uuid4())
+    started = time.perf_counter()
+    try:
+        response = await call_next(request)
+    except Exception:
+        logger.error("request_failed request_id=%s method=%s path=%s", request_id, request.method, request.url.path)
+        return JSONResponse(status_code=500, content={"detail": "An unexpected server error occurred."}, headers={"X-Request-ID": request_id})
+    response.headers["X-Request-ID"] = request_id
+    logger.info("request_completed request_id=%s method=%s path=%s status=%s duration_ms=%.1f", request_id, request.method, request.url.path, response.status_code, (time.perf_counter() - started) * 1000)
+    return response
 
 
 @app.get("/")

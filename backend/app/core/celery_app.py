@@ -5,7 +5,7 @@ celery_app = Celery(
     "learnmate_ai_worker",
     broker=settings.REDIS_URL,
     backend=settings.REDIS_URL,
-    include=["app.tasks.ingestion"]
+    include=["app.tasks.ingestion", "app.tasks.question_generation"]
 )
 
 celery_app.conf.update(

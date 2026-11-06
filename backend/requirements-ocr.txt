@@ -1,0 +1,5 @@
+# Optional local-only OCR dependencies. Install only on workers that ingest
+# scanned PDFs, alongside the native Tesseract executable on PATH.
+PyMuPDF>=1.24.0
+pytesseract>=0.3.10
+Pillow>=10.0.0

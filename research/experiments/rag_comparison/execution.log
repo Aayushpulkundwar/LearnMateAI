@@ -1,0 +1,81 @@
+﻿[stderr]  tutor_api Copying C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\results\nine_science_03\corpus.json to tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/corpus.json
+ tutor_api Copied C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\results\nine_science_03\corpus.json to tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/corpus.json
+
+[stderr]  tutor_api Copying C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\experiments\rag_comparison\datasets\questions.jsonl to tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/questions.jsonl
+ tutor_api Copied C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\experiments\rag_comparison\datasets\questions.jsonl to tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/questions.jsonl
+
+[stderr] Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/app/scripts/rag_comparison.py", line 709, in <module>
+    main()
+  File "/app/scripts/rag_comparison.py", line 696, in main
+    elif args.command == "retrieve": print(json.dumps(asyncio.run(execute_retrieval(args.run_dir, args.dataset, args.output_dir)), indent=2))
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/app/scripts/rag_comparison.py", line 327, in execute_retrieval
+    "mode": mode, "top_k": 10, "candidate_depth": 40, "retrieval_settings": build_system_configuration(run_dir)["settings"],
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/scripts/rag_comparison.py", line 101, in build_system_configuration
+    env = read_json(Path(run_dir) / "environment.json")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/scripts/rag_comparison.py", line 32, in read_json
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/environment.json'
+
+[stderr]  tutor_api Copying C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\results\nine_science_03\corpus.json to tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/corpus.json
+ tutor_api Copied C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\results\nine_science_03\corpus.json to tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/corpus.json
+
+[stderr]  tutor_api Copying C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\results\nine_science_03\environment.json to tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/environment.json
+ tutor_api Copied C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\results\nine_science_03\environment.json to tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/environment.json
+
+[stderr]  tutor_api Copying C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\results\nine_science_03\ollama_models.json to tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/ollama_models.json
+ tutor_api Copied C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\results\nine_science_03\ollama_models.json to tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/ollama_models.json
+
+[stderr]  tutor_api Copying C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\experiments\rag_comparison\datasets\questions.jsonl to tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/questions.jsonl
+ tutor_api Copied C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\experiments\rag_comparison\datasets\questions.jsonl to tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/frozen/questions.jsonl
+
+[stdout] {
+  "dense": {
+    "queries": 40,
+    "successes": 40,
+    "failures": 0
+  },
+  "fts": {
+    "queries": 40,
+    "successes": 40,
+    "failures": 0
+  },
+  "hybrid": {
+    "queries": 40,
+    "successes": 40,
+    "failures": 0
+  }
+}
+
+[stderr]  tutor_api Copying tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/output/runs/dense.json to C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\experiments\rag_comparison\runs\dense.json
+ tutor_api Copied tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/output/runs/dense.json to C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\experiments\rag_comparison\runs\dense.json
+
+[stderr]  tutor_api Copying tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/output/runs/fts.json to C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\experiments\rag_comparison\runs\fts.json
+ tutor_api Copied tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/output/runs/fts.json to C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\experiments\rag_comparison\runs\fts.json
+
+[stderr]  tutor_api Copying tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/output/runs/hybrid.json to C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\experiments\rag_comparison\runs\hybrid.json
+ tutor_api Copied tutor_api:/tmp/learnmate-rag-rag_cmp_20261030_a/output/runs/hybrid.json to C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\experiments\rag_comparison\runs\hybrid.json
+
+[stderr] C:\Program Files\Python314\python.exe: Error while finding module specification for 'scripts.rag_comparison' (ModuleNotFoundError: No module named 'scripts')
+

@@ -28,6 +28,7 @@ class CitationTests(unittest.TestCase):
         self.assertEqual([c["chunk_id"] for c in result["citations"]], ["chunk-a", "chunk-b"])
         self.assertEqual(result["citations"][0]["page_number"], 2)
         self.assertEqual(result["citations"][0]["chunk_index"], 3)
+        self.assertEqual(result["citations"][0]["source_index"], 1)
         self.assertEqual(result["citations"][0]["similarity_score"], 0.91)
         self.assertIsNone(result["citations"][1]["chapter"])
 

@@ -1,0 +1,307 @@
+{
+  "experiment": "RAG dense vs FTS vs hybrid; Part 1",
+  "preregistered": false,
+  "timestamp_utc": "2026-10-30T06:03:13.438369+00:00",
+  "frozen_run_id": "nine_science_03",
+  "corpus_sha256": "d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8",
+  "git_commit": "2788f3ef56f5bc261d4081dbc859c831c6ff4646",
+  "working_tree_status": " M ../.env\n M ../.env.example\n M ../README.md\n M alembic/__pycache__/env.cpython-311.pyc\n M alembic/env.py\n M app/__pycache__/main.cpython-311.pyc\n M app/api/__pycache__/router.cpython-311.pyc\n M app/api/__pycache__/router.cpython-314.pyc\n M app/api/router.py\n M app/api/routes/__pycache__/documents.cpython-311.pyc\n M app/api/routes/__pycache__/documents.cpython-314.pyc\n M app/api/routes/__pycache__/health.cpython-311.pyc\n M app/api/routes/__pycache__/health.cpython-314.pyc\n M app/api/routes/__pycache__/query.cpython-311.pyc\n M app/api/routes/__pycache__/query.cpython-314.pyc\n M app/api/routes/documents.py\n M app/api/routes/health.py\n M app/api/routes/query.py\n M app/core/__pycache__/celery_app.cpython-311.pyc\n M app/core/__pycache__/celery_app.cpython-314.pyc\n M app/core/__pycache__/config.cpython-311.pyc\n M app/core/__pycache__/config.cpython-314.pyc\n M app/core/celery_app.py\n M app/core/config.py\n M app/evaluation/metrics.py\n M app/graph/__pycache__/nodes.cpython-311.pyc\n M app/graph/__pycache__/nodes.cpython-314.pyc\n M app/graph/__pycache__/state.cpython-311.pyc\n M app/graph/__pycache__/state.cpython-314.pyc\n M app/graph/nodes.py\n M app/graph/state.py\n M app/main.py\n M app/models/__init__.py\n M app/models/__pycache__/__init__.cpython-311.pyc\n M app/models/__pycache__/__init__.cpython-314.pyc\n M app/models/__pycache__/chunk.cpython-311.pyc\n M app/models/__pycache__/chunk.cpython-314.pyc\n M app/models/__pycache__/document.cpython-311.pyc\n M app/models/__pycache__/document.cpython-314.pyc\n M app/models/chunk.py\n M app/models/document.py\n M app/schemas/__pycache__/document.cpython-311.pyc\n M app/schemas/__pycache__/document.cpython-314.pyc\n M app/schemas/__pycache__/query.cpython-311.pyc\n M app/schemas/__pycache__/query.cpython-314.pyc\n M app/schemas/document.py\n M app/schemas/query.py\n M app/services/__pycache__/embedding_service.cpython-311.pyc\n M app/services/__pycache__/embedding_service.cpython-314.pyc\n M app/services/__pycache__/llm_service.cpython-311.pyc\n M app/services/__pycache__/llm_service.cpython-314.pyc\n M app/services/__pycache__/minio_service.cpython-311.pyc\n M app/services/__pycache__/minio_service.cpython-314.pyc\n M app/services/context_selection.py\n M app/services/minio_service.py\n M app/services/pdf_extraction.py\n M app/services/retrieval_service.py\n M app/tasks/__pycache__/ingestion.cpython-311.pyc\n M app/tasks/__pycache__/ingestion.cpython-314.pyc\n M app/tasks/ingestion.py\n M requirements.txt\n M tests/test_citations.py\n M tests/test_grounded_generation.py\n M tests/test_ingestion_embeddings.py\n M tests/test_llm_service.py\n M tests/test_pdf_extraction.py\n M tests/test_retrieve_node.py\n M ../docker-compose.yml\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/axios.js\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/axios.js.map\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/chunk-DRWLMN53.js\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/chunk-DRWLMN53.js.map\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/chunk-G3PMV62Z.js\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/chunk-G3PMV62Z.js.map\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/chunk-PJEEZAML.js\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/chunk-PJEEZAML.js.map\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/lucide-react.js\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/lucide-react.js.map\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/package.json\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/react-dom.js\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/react-dom.js.map\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/react-dom_client.js\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/react-dom_client.js.map\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/react.js\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/react.js.map\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/react_jsx-dev-runtime.js\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/react_jsx-dev-runtime.js.map\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/react_jsx-runtime.js\n D ../frontend/node_modules/.vite/deps_temp_951d0b83/react_jsx-runtime.js.map\n M ../frontend/package.json\n M ../frontend/src/App.tsx\n M ../frontend/src/api/client.ts\n M ../frontend/src/components/DocumentUpload.tsx\n M ../frontend/src/components/MessageThread.tsx\n M ../frontend/src/index.css\n M ../frontend/src/types/index.ts\n M ../frontend/vite.config.ts\n?? ../BENCHMARK_DATASET_GUIDE.md\n?? ../RESEARCH_EXPERIMENT_01.md\n?? ../RESEARCH_IMPLEMENTATION_TRACKER.md\n?? ../STAGING_SETUP.md\n?? ../STAGING_VALIDATION_REPORT.md\n?? ../ScienceCS10.zip\n?? alembic/__pycache__/env.cpython-314.pyc\n?? alembic/versions/0002_learning_assessments.py\n?? alembic/versions/0003_auth_and_student_profiles.py\n?? alembic/versions/0004_question_bank_engine.py\n?? alembic/versions/0005_diagnostic_assessments.py\n?? alembic/versions/0006_assessment_evaluations.py\n?? alembic/versions/0007_concept_mastery_scores.py\n?? alembic/versions/0008_add_student_gender.py\n?? alembic/versions/0009_document_curriculum_links.py\n?? alembic/versions/0010_hybrid_retrieval_fts.py\n?? alembic/versions/__pycache__/0001_initial_schema.cpython-314.pyc\n?? alembic/versions/__pycache__/0002_learning_assessments.cpython-311.pyc\n?? alembic/versions/__pycache__/0002_learning_assessments.cpython-314.pyc\n?? alembic/versions/__pycache__/0003_auth_and_student_profiles.cpython-311.pyc\n?? alembic/versions/__pycache__/0003_auth_and_student_profiles.cpython-314.pyc\n?? alembic/versions/__pycache__/0004_question_bank_engine.cpython-311.pyc\n?? alembic/versions/__pycache__/0004_question_bank_engine.cpython-314.pyc\n?? alembic/versions/__pycache__/0005_diagnostic_assessments.cpython-311.pyc\n?? alembic/versions/__pycache__/0005_diagnostic_assessments.cpython-314.pyc\n?? alembic/versions/__pycache__/0006_assessment_evaluations.cpython-311.pyc\n?? alembic/versions/__pycache__/0006_assessment_evaluations.cpython-314.pyc\n?? alembic/versions/__pycache__/0007_concept_mastery_scores.cpython-311.pyc\n?? alembic/versions/__pycache__/0007_concept_mastery_scores.cpython-314.pyc\n?? alembic/versions/__pycache__/0008_add_student_gender.cpython-311.pyc\n?? alembic/versions/__pycache__/0008_add_student_gender.cpython-314.pyc\n?? alembic/versions/__pycache__/0009_document_curriculum_links.cpython-311.pyc\n?? alembic/versions/__pycache__/0009_document_curriculum_links.cpython-314.pyc\n?? alembic/versions/__pycache__/0010_hybrid_retrieval_fts.cpython-311.pyc\n?? alembic/versions/__pycache__/0010_hybrid_retrieval_fts.cpython-314.pyc\n?? app/api/__pycache__/dependencies.cpython-311.pyc\n?? app/api/__pycache__/dependencies.cpython-314.pyc\n?? app/api/dependencies.py\n?? app/api/routes/__pycache__/analytics.cpython-311.pyc\n?? app/api/routes/__pycache__/analytics.cpython-314.pyc\n?? app/api/routes/__pycache__/assessments.cpython-311.pyc\n?? app/api/routes/__pycache__/assessments.cpython-314.pyc\n?? app/api/routes/__pycache__/auth.cpython-311.pyc\n?? app/api/routes/__pycache__/auth.cpython-314.pyc\n?? app/api/routes/__pycache__/curriculum.cpython-311.pyc\n?? app/api/routes/__pycache__/curriculum.cpython-314.pyc\n?? app/api/routes/__pycache__/learning.cpython-311.pyc\n?? app/api/routes/__pycache__/learning.cpython-314.pyc\n?? app/api/routes/__pycache__/mastery.cpython-311.pyc\n?? app/api/routes/__pycache__/mastery.cpython-314.pyc\n?? app/api/routes/__pycache__/questions.cpython-311.pyc\n?? app/api/routes/__pycache__/questions.cpython-314.pyc\n?? app/api/routes/__pycache__/students.cpython-311.pyc\n?? app/api/routes/__pycache__/students.cpython-314.pyc\n?? app/api/routes/analytics.py\n?? app/api/routes/assessments.py\n?? app/api/routes/auth.py\n?? app/api/routes/curriculum.py\n?? app/api/routes/learning.py\n?? app/api/routes/mastery.py\n?? app/api/routes/questions.py\n?? app/api/routes/students.py\n?? app/core/__pycache__/security.cpython-311.pyc\n?? app/core/__pycache__/security.cpython-314.pyc\n?? app/core/security.py\n?? app/evaluation/__pycache__/\n?? app/evaluation/assessment_quality.py\n?? app/evaluation/faithfulness.py\n?? app/evaluation/nine_chapter_corpus.py\n?? app/evaluation/retrieval_benchmark.py\n?? app/evaluation/review_dataset.py\n?? app/models/__pycache__/learning.cpython-311.pyc\n?? app/models/__pycache__/learning.cpython-314.pyc\n?? app/models/learning.py\n?? app/schemas/__pycache__/analytics.cpython-311.pyc\n?? app/schemas/__pycache__/analytics.cpython-314.pyc\n?? app/schemas/__pycache__/assessment.cpython-311.pyc\n?? app/schemas/__pycache__/assessment.cpython-314.pyc\n?? app/schemas/__pycache__/auth.cpython-311.pyc\n?? app/schemas/__pycache__/auth.cpython-314.pyc\n?? app/schemas/__pycache__/learning.cpython-311.pyc\n?? app/schemas/__pycache__/learning.cpython-314.pyc\n?? app/schemas/__pycache__/mastery.cpython-311.pyc\n?? app/schemas/__pycache__/mastery.cpython-314.pyc\n?? app/schemas/__pycache__/question_bank.cpython-311.pyc\n?? app/schemas/__pycache__/question_bank.cpython-314.pyc\n?? app/schemas/analytics.py\n?? app/schemas/assessment.py\n?? app/schemas/auth.py\n?? app/schemas/learning.py\n?? app/schemas/mastery.py\n?? app/schemas/question_bank.py\n?? app/services/__pycache__/analytics_service.cpython-311.pyc\n?? app/services/__pycache__/analytics_service.cpython-314.pyc\n?? app/services/__pycache__/assessment_evaluation_service.cpython-311.pyc\n?? app/services/__pycache__/assessment_evaluation_service.cpython-314.pyc\n?? app/services/__pycache__/context_selection.cpython-311.pyc\n?? app/services/__pycache__/context_selection.cpython-314.pyc\n?? app/services/__pycache__/curriculum_authorization.cpython-311.pyc\n?? app/services/__pycache__/curriculum_authorization.cpython-314.pyc\n?? app/services/__pycache__/diagnostic_assessment_service.cpython-311.pyc\n?? app/services/__pycache__/diagnostic_assessment_service.cpython-314.pyc\n?? app/services/__pycache__/document_curriculum_service.cpython-311.pyc\n?? app/services/__pycache__/document_curriculum_service.cpython-314.pyc\n?? app/services/__pycache__/grounded_context.cpython-311.pyc\n?? app/services/__pycache__/grounded_context.cpython-314.pyc\n?? app/services/__pycache__/mastery_service.cpython-311.pyc\n?? app/services/__pycache__/mastery_service.cpython-314.pyc\n?? app/services/__pycache__/pdf_extraction.cpython-311.pyc\n?? app/services/__pycache__/pdf_extraction.cpython-314.pyc\n?? app/services/__pycache__/pdf_extraction_worker.cpython-311.pyc\n?? app/services/__pycache__/question_bank_service.cpython-311.pyc\n?? app/services/__pycache__/question_bank_service.cpython-314.pyc\n?? app/services/__pycache__/recommendation_service.cpython-311.pyc\n?? app/services/__pycache__/recommendation_service.cpython-314.pyc\n?? app/services/__pycache__/retrieval_service.cpython-311.pyc\n?? app/services/__pycache__/retrieval_service.cpython-314.pyc\n?? app/services/__pycache__/text_chunking.cpython-311.pyc\n?? app/services/__pycache__/text_chunking.cpython-314.pyc\n?? app/services/__pycache__/tutoring_context_service.cpython-311.pyc\n?? app/services/__pycache__/tutoring_context_service.cpython-314.pyc\n?? app/services/analytics_service.py\n?? app/services/assessment_evaluation_service.py\n?? app/services/curriculum_authorization.py\n?? app/services/diagnostic_assessment_service.py\n?? app/services/document_curriculum_service.py\n?? app/services/mastery_service.py\n?? app/services/pdf_extraction_worker.py\n?? app/services/question_bank_service.py\n?? app/services/recommendation_service.py\n?? app/services/tutoring_context_service.py\n?? app/tasks/__pycache__/question_generation.cpython-311.pyc\n?? app/tasks/__pycache__/question_generation.cpython-314.pyc\n?? app/tasks/question_generation.py\n?? requirements-ocr.txt\n?? scripts/\n?? tests/__pycache__/\n?? tests/test_analytics_service.py\n?? tests/test_assessment_evaluation_service.py\n?? tests/test_assessment_quality.py\n?? tests/test_auth_security.py\n?? tests/test_bootstrap_initial_admin.py\n?? tests/test_curriculum_authorization.py\n?? tests/test_diagnostic_assessment_service.py\n?? tests/test_document_curriculum_service.py\n?? tests/test_faithfulness.py\n?? tests/test_hybrid_retrieval.py\n?? tests/test_mastery_service.py\n?? tests/test_nine_chapter_corpus.py\n?? tests/test_question_bank_service.py\n?? tests/test_rag_comparison.py\n?? tests/test_retrieval_benchmark.py\n?? tests/test_retry_failed_documents.py\n?? tests/test_review_dataset.py\n?? tests/test_science_curriculum_seed.py\n?? tests/test_security_hardening.py\n?? ../frontend/dist/\n?? ../frontend/node_modules/.vite/deps_temp_31969ffb/\n?? ../frontend/src/assets/\n?? ../frontend/src/components/AdminTextbookManager.tsx\n?? ../frontend/src/components/AppShell.tsx\n?? ../frontend/src/components/AuthPanel.tsx\n?? ../frontend/src/components/ChapterSelectionPage.tsx\n?? ../frontend/src/components/DiagnosticAssessment.tsx\n?? ../frontend/src/components/RecommendedLearning.tsx\n?? ../frontend/src/components/StudentDashboard.tsx\n?? ../frontend/src/components/StudentProfilePanel.tsx\n?? ../frontend/src/components/SubjectSelectionPage.tsx\n?? ../frontend/src/config/\n?? ../frontend/src/context/\n?? ../frontend/src/vite-env.d.ts\n?? ../frontend/tests/\n?? ../research/\n",
+  "selected_question_ids": [
+    "nine-01",
+    "nine-02",
+    "nine-07",
+    "nine-08",
+    "nine-13",
+    "nine-14",
+    "nine-19",
+    "nine-20",
+    "nine-25",
+    "nine-26",
+    "nine-31",
+    "nine-32",
+    "nine-36",
+    "nine-37",
+    "nine-41",
+    "nine-42",
+    "nine-46",
+    "nine-47",
+    "nine-03",
+    "nine-09",
+    "nine-15",
+    "nine-21",
+    "nine-27",
+    "nine-33",
+    "nine-38",
+    "nine-43",
+    "nine-48",
+    "nine-04",
+    "nine-10",
+    "nine-16",
+    "nine-22",
+    "nine-28",
+    "nine-34",
+    "nine-39",
+    "nine-44",
+    "nine-49",
+    "nine-05",
+    "nine-11",
+    "nine-17",
+    "nine-23"
+  ],
+  "source_dataset_sha256": "2789a51e44cc527e685cffbcb437fc7cd3510a55d26aecd0df2579ca5442c544",
+  "selected_dataset_sha256": "11fa3329a2c3fd8a0b366a0e16c74462333bbc6afa48c2a5a7d6f142ea4e8298",
+  "research_code_sha256": {
+    "app/services/retrieval_service.py": "aa1932fa12a1c2f9a548deeb877879d28340e5865b4c7f89adf515b2ba27ca50",
+    "app/core/config.py": "1b143f4047816604cb19703f854c76426192bab0d19eec6fd451b6ad8d2bb3bf",
+    "app/services/text_chunking.py": "38eb73d6f9619de405d819c1fd354e3a9b6cea5a0908b8130cd3080d6b993a01",
+    "app/evaluation/metrics.py": "f29488c9a6e349b17107d39a1972898e5a48567718259dfe92886dd518d48250",
+    "scripts/rag_comparison.py": "80fa7552a659c4cd552b17e6531dcaa2124082f0e28d35d5f177ac55472bf7e7"
+  },
+  "retrieval_settings": {
+    "dense_similarity": {
+      "value": "cosine similarity",
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "Chunk.embedding.cosine_distance(query_embedding); score=1-distance"
+    },
+    "embedding_model": {
+      "value": "bge-m3",
+      "source": "backend/app/core/config.py",
+      "evidence": "EMBEDDING_MODEL default; frozen run environment uses model tag"
+    },
+    "embedding_digest": {
+      "value": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+      "source": "research/results/nine_science_03/ollama_models.json",
+      "evidence": "Ollama /api/tags captured in frozen run"
+    },
+    "embedding_model_details": {
+      "value": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "bert",
+        "families": [
+          "bert"
+        ],
+        "parameter_size": "566.70M",
+        "quantization_level": "F16",
+        "context_length": 8192,
+        "embedding_length": 1024
+      },
+      "source": "research/results/nine_science_03/ollama_models.json",
+      "evidence": "Ollama tag details captured in frozen run"
+    },
+    "embedding_dimensions": {
+      "value": 1024,
+      "source": "research/results/nine_science_03/corpus.json",
+      "evidence": "frozen vectors verified at 1024 dimensions"
+    },
+    "fts_dictionary": {
+      "value": "simple",
+      "source": "backend/app/services/retrieval_service.py; backend/alembic/versions/0010_hybrid_retrieval_fts.py",
+      "evidence": "to_tsvector and websearch_to_tsquery use literal simple config"
+    },
+    "fts_query_construction": {
+      "value": "websearch_to_tsquery",
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "websearch_to_tsquery('simple', query_text)"
+    },
+    "fts_ranking": {
+      "value": "ts_rank_cd normalization=32",
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "ts_rank_cd(search_vector, search_query, 32), descending score then chunk ID"
+    },
+    "hybrid_fusion": {
+      "value": "RRF",
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "reciprocal_rank_fusion; sum 1/(rrf_k+rank); deterministic tie breaks"
+    },
+    "rrf_k": {
+      "value": 60,
+      "source": "backend/app/core/config.py",
+      "evidence": "RETRIEVAL_RRF_K"
+    },
+    "candidate_multiplier": {
+      "value": 4,
+      "source": "backend/app/core/config.py",
+      "evidence": "RETRIEVAL_CANDIDATE_MULTIPLIER; candidate_limit=max(top_k,top_k*multiplier)"
+    },
+    "candidate_depth_for_top10": {
+      "value": 40,
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "top_k=10 and recorded multiplier=4"
+    },
+    "final_top_k": {
+      "value": 10,
+      "source": "research/experiments/rag_comparison protocol",
+      "evidence": "research run requests top_k=10"
+    },
+    "generation_top_k": {
+      "value": 5,
+      "source": "backend/app/core/config.py",
+      "evidence": "RETRIEVAL_TOP_K"
+    },
+    "dense_relevance_threshold": {
+      "value": 0.55,
+      "source": "backend/app/core/config.py",
+      "evidence": "RELEVANCE_THRESHOLD"
+    },
+    "lexical_relevance_threshold": {
+      "value": 0.08,
+      "source": "backend/app/core/config.py",
+      "evidence": "LEXICAL_RELEVANCE_THRESHOLD"
+    },
+    "context_min_similarity": {
+      "value": 0.5,
+      "source": "backend/app/core/config.py",
+      "evidence": "CONTEXT_MIN_SIMILARITY"
+    },
+    "context_max_similarity_drop": {
+      "value": 0.06,
+      "source": "backend/app/core/config.py",
+      "evidence": "CONTEXT_MAX_SIMILARITY_DROP"
+    },
+    "context_budget_chars": {
+      "value": 6000,
+      "source": "backend/app/core/config.py",
+      "evidence": "RAG_MAX_CONTEXT_CHARS"
+    },
+    "vector_index": {
+      "value": "No HNSW/IVFFlat vector index appears in the frozen pg_indexes evidence; runtime query plan not captured, so exact execution plan is unverified.",
+      "source": "research/results/nine_science_03/corpus.json:indexes"
+    },
+    "generation_model": {
+      "value": "llama3:8b",
+      "source": "backend/app/core/config.py",
+      "evidence": "LLM_MODEL; frozen run Ollama tags"
+    },
+    "generation_digest": {
+      "value": "365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1",
+      "source": "research/results/nine_science_03/ollama_models.json",
+      "evidence": "Ollama /api/tags captured in frozen run"
+    },
+    "generation_model_details": {
+      "value": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_0",
+        "context_length": 8192,
+        "embedding_length": 4096
+      },
+      "source": "research/results/nine_science_03/ollama_models.json",
+      "evidence": "Ollama tag details captured in frozen run"
+    },
+    "generation_request": {
+      "value": {
+        "stream": false,
+        "temperature": 0.2,
+        "other_generation_options": "not set in source"
+      },
+      "source": "backend/app/services/llm_service.py",
+      "evidence": "non-streaming Ollama /api/generate; only temperature is sent in options"
+    },
+    "generation_temperature": {
+      "value": 0.2,
+      "source": "backend/app/core/config.py",
+      "evidence": "LLM_TEMPERATURE"
+    },
+    "generation_timeout_seconds": {
+      "value": 300.0,
+      "source": "backend/app/core/config.py",
+      "evidence": "OLLAMA_GENERATION_TIMEOUT_SECONDS"
+    },
+    "database_migration_revision": {
+      "value": [
+        "0010_hybrid_retrieval_fts"
+      ],
+      "source": "research/results/nine_science_03/corpus.json",
+      "evidence": "Alembic revision observed at freeze"
+    },
+    "postgres_runtime_parameters": {
+      "value": null,
+      "source": "not captured by frozen run; query runtime configuration from authorized host if required"
+    },
+    "chunking": {
+      "chunk_size_chars": {
+        "value": 1000,
+        "source": "backend/app/core/config.py",
+        "evidence": "CHUNK_SIZE; source default, deployed override not captured"
+      },
+      "chunk_overlap_chars": {
+        "value": 150,
+        "source": "backend/app/core/config.py",
+        "evidence": "CHUNK_OVERLAP; source default, deployed override not captured"
+      },
+      "method": {
+        "value": "deterministic character-based page-aware chunking",
+        "source": "backend/app/services/text_chunking.py",
+        "evidence": "page-local natural boundary chunking; page number retained"
+      }
+    },
+    "frozen_passage_length_chars": {
+      "value": {
+        "min": 243,
+        "max": 999,
+        "mean": 820.3592534992224,
+        "median": 912,
+        "p90": 986.0
+      },
+      "source": "research/results/nine_science_03/corpus.json:chunks[].content"
+    },
+    "database": {
+      "identity": [
+        "learnmate_db",
+        "tutor"
+      ],
+      "pgvector_version": "0.8.6",
+      "indexes": [
+        "CREATE INDEX idx_chunks_document_id ON public.chunks USING btree (document_id)",
+        "CREATE INDEX ix_chunks_content_fts ON public.chunks USING gin (to_tsvector('simple'::regconfig, COALESCE(content, ''::text)))",
+        "CREATE UNIQUE INDEX chunks_pkey ON public.chunks USING btree (id)"
+      ]
+    },
+    "runtime_caveat": "Values from environment.json and Ollama tags are recorded in the frozen run. The current runtime and database have not been queried by this process."
+  },
+  "random_seed": 20261030,
+  "software": {
+    "python": "3.14.4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_count": 8
+  },
+  "hardware": "host GPU/CPU and database settings require authorized host runtime inspection; not inferred",
+  "execution_status": {
+    "dense": {
+      "status": "not executed; authorized running host stack required"
+    },
+    "fts": {
+      "status": "not executed; authorized running host stack required"
+    },
+    "hybrid": {
+      "status": "not executed; authorized running host stack required"
+    },
+    "reviewer_worksheets": "not generated; retrieval pool unavailable",
+    "adjudication": "not completed"
+  },
+  "artifact_paths": [
+    "README.md",
+    "datasets\\dataset_report.json",
+    "datasets\\questions.jsonl",
+    "frozen_corpus_report.json",
+    "powershell-validation.log",
+    "system_configuration.json",
+    "tests.log"
+  ],
+  "artifact_sha256": {
+    "datasets\\dataset_report.json": "aba5b31d4997f38cc9c6171927b8efc1b44774d85b0aa9ab99af033944a2c774",
+    "datasets\\questions.jsonl": "11fa3329a2c3fd8a0b366a0e16c74462333bbc6afa48c2a5a7d6f142ea4e8298",
+    "frozen_corpus_report.json": "1ee055e8c30b95ebfcce1a83711d979b849a96b756323e06df1a140c95fbfd2e",
+    "powershell-validation.log": "1fe51b54005db9b2757249a8b31ef33209b0b0d0244ae120feeffcfba60c83b3",
+    "README.md": "261c6f0343e4048bfeb032a46f0951da028ff0f9bf4198d1c586059a800c3715",
+    "system_configuration.json": "af707dc420e0c5e0283b6f17c364d30e365ee13b4a40d8f6e041a5979514e0d7",
+    "tests.log": "544165d7aa37c9b89a3997c417fb6e7c74c4256c6f20e76040efaadd46adbd3a"
+  },
+  "note": "No preregistration claim; manifest records execution evidence as it becomes available."
+}

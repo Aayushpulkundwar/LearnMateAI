@@ -1,0 +1,883 @@
+{
+  "model": "bge-m3",
+  "grade_id": "76d03ef1-940e-49e6-985e-bbb031793c16",
+  "subject_id": "00992e41-d4fd-40a8-9d74-1cd85e3c1b9a",
+  "top_k": 5,
+  "dense_threshold": 0.55,
+  "lexical_threshold": 0.08,
+  "questions": [
+    {
+      "question": "What is a chemical reaction?",
+      "lexical_query": "chemical reaction",
+      "before": {
+        "selected_ids": [
+          "360588d6-b74f-40ae-bf34-7c20ddcecb08",
+          "5bedd79e-0fab-4af1-ab24-a78f4f813583",
+          "2fe171a3-73cd-4cea-b59e-2ad63f0796bd",
+          "0bd6749c-caba-4b89-a547-c5a738e9579d",
+          "7d50e893-0b82-42a0-94c9-5bad959e18b1"
+        ],
+        "results": [
+          {
+            "id": "360588d6-b74f-40ae-bf34-7c20ddcecb08",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "Chemical Reactions\nand Equations\n1CHAPTER\nC\nonsider the following situations of daily life and think what happens\nwhen –\n/square6milk is left at room temperature during summers.\n/square6an iron tawa/pan/nail is left exposed to humid atmosphere.\n/square6grapes get fermented.\n/square6food is cooked.\n/square6food gets digested in our body.\n/square6we respire.\nIn all the above situations, the nature and the identity of the initial\nsubstance have somewhat changed. We have already learnt about physical\nand chemical changes of matter in our previous classes. Whenever a chemical\nchange occurs, we can say that a chemical reaction has taken place.\nYou may perhaps be wondering as to what is actually meant by a\nchemical reaction. How do we come to know that a chemical reaction\nhas taken place? Let us perform some activities to find the answer to\nthese questions.\nFigure 1.1\nBurning of a magnesium ribbon in air and collection of magnesium\noxide in a watch-glass",
+            "page_number": 1,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 0,
+            "similarity_score": 0.6716973990762771,
+            "lexical_score": 0.04902290552854538,
+            "vector_rank": 1,
+            "lexical_rank": 1,
+            "rrf_score": 0.03278688524590164,
+            "evidence_tier": 2
+          },
+          {
+            "id": "5bedd79e-0fab-4af1-ab24-a78f4f813583",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "Science14\nWhat you have learnt\n/square6A complete chemical equation represents the reactants, products and their physical\nstates symbolically.\n/square6A chemical equation is balanced so that the numbers of atoms of each type involved\nin a chemical reaction are the same on the reactant and product sides of the\nequation. Equations must always be balanced.\n/square6In a combination reaction two or more substances combine to form a new single\nsubstance.\n/square6Decomposition reactions are opposite to combination reactions. In a decomposition\nreaction, a single substance decomposes to give two or more substances.\n/square6Reactions in which heat is given out along with the products are called exothermic\nreactions.\n/square6Reactions in which energy is absorbed are known as endothermic reactions.\n/square6When an element displaces another element from its compound, a displacement\nreaction occurs.\n/square6Two different atoms or groups of atoms (ions) are exchanged in double displacement",
+            "page_number": 14,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 37,
+            "similarity_score": 0.6428428398776539,
+            "lexical_score": 0.0033222592901438475,
+            "vector_rank": 3,
+            "lexical_rank": 7,
+            "rrf_score": 0.030798389007344232,
+            "evidence_tier": 2
+          },
+          {
+            "id": "2fe171a3-73cd-4cea-b59e-2ad63f0796bd",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "Chemical Reactions and Equations 15\n(c) decomposition reaction.\n(d) displacement reaction.\n3. What happens when dilute hydr ochloric acid is added to iron fillings? T ick the\ncorrect answer.\n(a) Hydrogen gas and iron chloride are produced.\n(b) Chlorine gas and iron hydroxide are produced.\n(c) No reaction takes place.\n(d) Iron salt and water are produced.\n4. What is a balanced chemical equation? Why should chemical equations be\nbalanced?\n5. Translate the following statements into chemical equations and then balance them.\n(a) Hydrogen gas combines with nitrogen to form ammonia.\n(b) Hydrogen sulphide gas burns in air to give water and sulpur dioxide.\n(c) Barium chloride reacts with aluminium sulphate to give aluminium chloride\nand a precipitate of barium sulphate.\n(d) Potassium metal reacts with water to give potassium hydroxide and hydrogen\ngas.\n6. Balance the following chemical equations.\n(a) HNO3 + Ca(OH)2 →  Ca(NO3)2 + H2O\n(b) NaOH + H2SO4 →  Na2SO4 + H2O",
+            "page_number": 15,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 39,
+            "similarity_score": 0.5689883329630739,
+            "lexical_score": 0.01218307577073574,
+            "vector_rank": 13,
+            "lexical_rank": 4,
+            "rrf_score": 0.0293236301369863,
+            "evidence_tier": 2
+          },
+          {
+            "id": "0bd6749c-caba-4b89-a547-c5a738e9579d",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "oxidised.\nIf a substance loses oxygen during a reaction, it is said to be reduced.\nDuring this reaction (1.29), the copper(II) oxide is losing oxygen and\nis being reduced. The hydrogen is gaining oxygen and is being oxidised.\nIn other words, one reactant gets oxidised while the other gets reduced\nduring a reaction. Such reactions are called oxidation-reduction reactions\nor redox reactions.\n(1.30)\nSome other examples of redox reactions are:\nZnO + C → + Zn CO (1.31)\nMnO HCl MnCl H O Cl2 2 2 24 2+ → + + (1.32)\nRecall Activity 1.2Recall Activity 1.2Recall Activity 1.2Recall Activity 1.2Recall Activity 1.2 , where you have mixed the solutions of lead(II) nitrate\nand potassium iodide.\n(i) What was the colour of the precipitate formed? Can you name the compound\nprecipitated?\n(ii) Write the balanced chemical equation for this reaction.\n(iii) Is this also a double displacement reaction?\nWhat causes this? The  white precipitate of BaSO4 is formed by the\nreaction of 2–",
+            "page_number": 12,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 31,
+            "similarity_score": 0.5516465285983849,
+            "lexical_score": 0.017171485349535942,
+            "vector_rank": 19,
+            "lexical_rank": 3,
+            "rrf_score": 0.028531243721117136,
+            "evidence_tier": 2
+          },
+          {
+            "id": "7d50e893-0b82-42a0-94c9-5bad959e18b1",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "Chemical Reactions and Equations 3\n1.1.1 Writing a Chemical Equation\nIs there any other shorter way for representing chemical equations?\nChemical equations can be made more concise and useful if we use\nchemical formulae instead of words. A chemical equation represents a\nchemical reaction. If you recall formulae of magnesium, oxygen and\nmagnesium oxide, the above word-equation can be written as –\nMg + O2  →   MgO (1.2)\nCount and compare the number of atoms of each element on the\nLHS and RHS of the arrow. Is the number of atoms of each element the\nsame on both the sides? If yes, then the equation is balanced. If not,\nthen the equation is unbalanced because the mass is not the same on\nboth sides of the equation. Such a chemical equation is a skeletal\nchemical equation for a reaction. Equation (1.2) is a skeletal chemical\nequation for the burning of magnesium in air.\n1.1.2 Balanced Chemical Equations\nRecall the law of conservation of mass that you studied in Class IX; mass",
+            "page_number": 3,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 5,
+            "similarity_score": 0.6450528175956542,
+            "lexical_score": 0.0,
+            "vector_rank": 2,
+            "lexical_rank": null,
+            "rrf_score": 0.016129032258064516,
+            "evidence_tier": 2
+          }
+        ]
+      },
+      "after": {
+        "selected_ids": [
+          "360588d6-b74f-40ae-bf34-7c20ddcecb08",
+          "7d50e893-0b82-42a0-94c9-5bad959e18b1",
+          "c170d379-63f1-4954-b5d4-2705edbcbf6d",
+          "a715f955-a569-480d-be79-760904999532",
+          "a31840e6-148d-40d8-ac92-c50fd19015b1"
+        ],
+        "results": [
+          {
+            "id": "360588d6-b74f-40ae-bf34-7c20ddcecb08",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "Chemical Reactions\nand Equations\n1CHAPTER\nC\nonsider the following situations of daily life and think what happens\nwhen –\n/square6milk is left at room temperature during summers.\n/square6an iron tawa/pan/nail is left exposed to humid atmosphere.\n/square6grapes get fermented.\n/square6food is cooked.\n/square6food gets digested in our body.\n/square6we respire.\nIn all the above situations, the nature and the identity of the initial\nsubstance have somewhat changed. We have already learnt about physical\nand chemical changes of matter in our previous classes. Whenever a chemical\nchange occurs, we can say that a chemical reaction has taken place.\nYou may perhaps be wondering as to what is actually meant by a\nchemical reaction. How do we come to know that a chemical reaction\nhas taken place? Let us perform some activities to find the answer to\nthese questions.\nFigure 1.1\nBurning of a magnesium ribbon in air and collection of magnesium\noxide in a watch-glass",
+            "page_number": 1,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 0,
+            "similarity_score": 0.6716973990762771,
+            "lexical_score": 0.2406947910785675,
+            "vector_rank": 1,
+            "lexical_rank": 2,
+            "rrf_score": 0.03252247488101534,
+            "evidence_tier": 2
+          },
+          {
+            "id": "7d50e893-0b82-42a0-94c9-5bad959e18b1",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "Chemical Reactions and Equations 3\n1.1.1 Writing a Chemical Equation\nIs there any other shorter way for representing chemical equations?\nChemical equations can be made more concise and useful if we use\nchemical formulae instead of words. A chemical equation represents a\nchemical reaction. If you recall formulae of magnesium, oxygen and\nmagnesium oxide, the above word-equation can be written as –\nMg + O2  →   MgO (1.2)\nCount and compare the number of atoms of each element on the\nLHS and RHS of the arrow. Is the number of atoms of each element the\nsame on both the sides? If yes, then the equation is balanced. If not,\nthen the equation is unbalanced because the mass is not the same on\nboth sides of the equation. Such a chemical equation is a skeletal\nchemical equation for a reaction. Equation (1.2) is a skeletal chemical\nequation for the burning of magnesium in air.\n1.1.2 Balanced Chemical Equations\nRecall the law of conservation of mass that you studied in Class IX; mass",
+            "page_number": 3,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 5,
+            "similarity_score": 0.6450528175956542,
+            "lexical_score": 0.12498927861452103,
+            "vector_rank": 2,
+            "lexical_rank": 4,
+            "rrf_score": 0.031754032258064516,
+            "evidence_tier": 2
+          },
+          {
+            "id": "c170d379-63f1-4954-b5d4-2705edbcbf6d",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "Science6\n1.2 TYPES OF CHEMIC1.2 TYPES OF CHEMIC1.2 TYPES OF CHEMIC1.2 TYPES OF CHEMIC1.2 TYPES OF CHEMIC AL REA AL REAAL REA AL REAAL REA CTIONS CTIONSCTIONSCTIONSCTIONS\nWe have learnt in Class IX that during a chemical reaction atoms of one\nelement do not change into those of another element. Nor do atoms\ndisappear from the mixture or appear from elsewhere. Actually, chemical\nreactions involve the breaking and making of bonds between atoms to\nproduce new substances. You will study about types of bonds formed\nbetween atoms in Chapters 3 and 4.\n1.2.1 Combination Reaction\nActivity 1.4Activity 1.4Activity 1.4Activity 1.4Activity 1.4\n/square6Take a small amount of calcium oxide\nor quick lime in a beaker .\n/square6Slowly add water to this.\n/square6Touch the beaker as shown in Fig. 1.3.\n/square6Do you feel any change in temperature?\nFigure 1.3Figure 1.3Figure 1.3Figure 1.3Figure 1.3\nFormation of slaked\nlime by the reaction of\ncalcium oxide with\nwater",
+            "page_number": 6,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 13,
+            "similarity_score": 0.6337346841772132,
+            "lexical_score": 0.0967596247792244,
+            "vector_rank": 4,
+            "lexical_rank": 6,
+            "rrf_score": 0.030776515151515152,
+            "evidence_tier": 2
+          },
+          {
+            "id": "a715f955-a569-480d-be79-760904999532",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "equation for the burning of magnesium in air.\n1.1.2 Balanced Chemical Equations\nRecall the law of conservation of mass that you studied in Class IX; mass\ncan neither be created nor destroyed in a chemical reaction. That is, the\ntotal mass of the elements present in the products of a chemical reaction\nhas to be equal to the total mass of the elements present in the reactants.\nIn other words, the number of atoms of each element remains the\nsame, before and after a chemical reaction. Hence, we need to balance a\nskeletal chemical equation. Is the chemical Eq. (1.2) balanced? Let us\nlearn about balancing a chemical equation step by step.\nThe word-equation for Activity 1.3 may be represented as –\nZinc + Sulphuric acid  →  Zinc sulphate + Hydrogen\nThe above word-equation may be represented by the following\nchemical equation –\nZn + H2SO4 →  ZnSO4 + H2 (1.3)\nLet us examine the number of atoms of different elements on both\nsides of the arrow.\nElement Number of atoms in Number of atoms",
+            "page_number": 3,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 6,
+            "similarity_score": 0.5778960864172383,
+            "lexical_score": 0.24368304014205933,
+            "vector_rank": 11,
+            "lexical_rank": 1,
+            "rrf_score": 0.03047794966520434,
+            "evidence_tier": 2
+          },
+          {
+            "id": "a31840e6-148d-40d8-ac92-c50fd19015b1",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "hydrochloric acid or sulphuric acid to this\n(Fig. 1.2).\nCAUTION: Handle the acid with care.\n/square6Do you observe anything happening around the zinc\ngranules?\n/square6Touch the conical flask or test tube. Is there any change in\nits temperature?\n/square6Take lead nitrate\nsolution in a test\ntube.\n/square6Add potassium\niodide solution\nto this.\n/square6What do you\nobserve?\n1.1 CHEMIC1.1 CHEMIC1.1 CHEMIC1.1 CHEMIC1.1 CHEMIC AL EQUA AL EQUAAL EQUA AL EQUAAL EQUA TIONS TIONSTIONSTIONSTIONS\nActivity 1.1 can be described as – when a magnesium ribbon is burnt in\noxygen, it gets converted to magnesium oxide. This description of a\nchemical reaction in a sentence form is quite long. It can be written in a\nshorter form. The simplest way to do this is to write it in the form of a\nword-equation.\nThe word-equation for the above reaction would be –\nMagnesium + Oxygen → Magnesium oxide (1.1)\n            (Reactants) (Product)\nThe substances that undergo chemical change in the reaction (1.1),",
+            "page_number": 2,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 3,
+            "similarity_score": 0.5923792543298357,
+            "lexical_score": 0.11671924591064453,
+            "vector_rank": 8,
+            "lexical_rank": 5,
+            "rrf_score": 0.030090497737556562,
+            "evidence_tier": 2
+          }
+        ]
+      }
+    },
+    {
+      "question": "What is photosynthesis?",
+      "lexical_query": "photosynthesis",
+      "before": {
+        "selected_ids": [
+          "329b9957-a493-4bfd-bad1-c8a4d8c9865c",
+          "0f2b522b-97c5-4791-8f28-acabb2758e61"
+        ],
+        "results": [
+          {
+            "id": "329b9957-a493-4bfd-bad1-c8a4d8c9865c",
+            "document_id": "672dfbdf-af01-4c86-9321-f034f6d25aa9",
+            "document_title": "Class 10 Science - Chapter 13 - Our Environment (ch13.pdf)",
+            "content": "/square6  If we add a few aquatic plants and animals it can become a self-\n       sustaining system. Can you think how this happens? An aquarium\n       is an example of a human-made ecosystem.\n   /square6  Can we leave the aquarium as such after we set it up? Why does\n       it have to be cleaned once in a while? Do we have to clean ponds\n       or lakes in the same manner? Why or why not?\n\n\n    We have seen in earlier classes that organisms can be gr                                                        ouped as\nproducers, consumers and decomposers according to the manner in\nwhich they obtain their sustenance from the environment. Let us recall\nwhat we have learnt through the self sustaining ecosystem created by\nus above. Which organisms can make organic compounds like sugar\nand starch from inorganic substances using the radiant energy of the\nSun in the presence of chlorophyll? All green plants and certain bacteria\nwhich can produce food by photosynthesis come under this category",
+            "page_number": 2,
+            "chapter": "Our Environment",
+            "chunk_index": 4,
+            "similarity_score": 0.49397107850998734,
+            "lexical_score": 0.0007686394965276122,
+            "vector_rank": 3,
+            "lexical_rank": 1,
+            "rrf_score": 0.032266458495966696,
+            "evidence_tier": 2
+          },
+          {
+            "id": "0f2b522b-97c5-4791-8f28-acabb2758e61",
+            "document_id": "672dfbdf-af01-4c86-9321-f034f6d25aa9",
+            "document_title": "Class 10 Science - Chapter 13 - Our Environment (ch13.pdf)",
+            "content": "energy of the\nSun in the presence of chlorophyll? All green plants and certain bacteria\nwhich can produce food by photosynthesis come under this category\nand are called the producers.\n    Organisms depend on the producers either directly or indirectly for\ntheir sustenance? These organisms which consume the food produced,\neither directly from producers or indirectly by feeding on other consumers\nare the consumers. Consumers can be classed variously as herbivores,\ncarnivores, omnivores and parasites. Can you give examples for each of\nthese categories of consumers?\n   /square6    Imagine the situation where you do not clean the  aquarium and\n       some fish and plants have died. Have you ever thought what\n       happens when an organism dies? The microorganisms, comprising\n       bacteria and fungi, break-down the dead remains and waste\n       products of organisms. These microorganisms are the decomposers\n       as they break-down the complex organic substances into simple",
+            "page_number": 2,
+            "chapter": "Our Environment",
+            "chunk_index": 5,
+            "similarity_score": 0.5117536853275954,
+            "lexical_score": 0.0,
+            "vector_rank": 1,
+            "lexical_rank": null,
+            "rrf_score": 0.01639344262295082,
+            "evidence_tier": 2
+          },
+          {
+            "id": "22fc1c52-c8bd-4600-8ffd-8900a96223f9",
+            "document_id": "1360321a-7a0d-417a-a1d4-560a635693e1",
+            "document_title": "Class 10 Science - Chapter 7 - How do Organisms Reproduce? (ch7.pdf)",
+            "content": "QUESTIONS?\n\n 1.     How is the process of pollination different from fertilisation?\n 2.     What is the role of the seminal vesicles and the prostate gland?\n 3.     What are the changes seen in girls at the time of puberty?\n 4.     How does the embryo get nourishment inside the mother’s body?\n 5.    If a woman is using a copper-T, will it help in protecting her from\n         sexually transmitted diseases?\n\n      What you have learnt\n\n\n\n    /square6       Reproduction, unlike other life processes, is not essential to maintain the life of an\n          individual organism.\n\n    /square6      Reproduction involves creation of a DNA copy and additional cellular apparatus\n          by the cell involved in the process.\n\n    /square6     Various organisms use different modes of reproduction depending on their body\n          design.\n\n    /square6      In fission, many bacteria and protozoa simply divide into two or more daughter\n          cells.",
+            "page_number": 14,
+            "chapter": "How do Organisms Reproduce?",
+            "chunk_index": 62,
+            "similarity_score": 0.4946474413803572,
+            "lexical_score": 0.0,
+            "vector_rank": 2,
+            "lexical_rank": null,
+            "rrf_score": 0.016129032258064516,
+            "evidence_tier": 0
+          },
+          {
+            "id": "411b3d6e-3d43-46e2-b6bb-15fbdd45b038",
+            "document_id": "a92321fa-f136-4203-95e3-550530be58f7",
+            "document_title": "Class 10 Science - Chapter 9 - Light - Reflection and Refraction (ch9.pdf)",
+            "content": "9.3.4 Image Formation by Lenses\n\n                             Lenses form images by refracting light. How do lenses form images?\n                             What is their nature? Let us study this for a convex lens first.\n\n                                   Activity 9.12Activity 9.12\n                                   Activity 9.12Activity 9.12Activity 9.12\n\n\n                                 n  Take a convex lens.  Find its approximate focal length in a way\n                                    described in Activity 9.11.\n                                 n   Draw five parallel straight lines, using chalk, on a long Table such\n                                    that the distance between the successive lines is equal to the\n                                    focal length of the lens.\n                                 n  Place the lens on a lens stand.  Place it on the central line such\n                                    that the optical centre of the lens lies just over the line.",
+            "page_number": 19,
+            "chapter": "Light - Reflection and Refraction",
+            "chunk_index": 89,
+            "similarity_score": 0.4877966424267529,
+            "lexical_score": 0.0,
+            "vector_rank": 4,
+            "lexical_rank": null,
+            "rrf_score": 0.015625,
+            "evidence_tier": 1
+          },
+          {
+            "id": "7e6a807e-c5c8-4834-9a5c-53512137d9ac",
+            "document_id": "672dfbdf-af01-4c86-9321-f034f6d25aa9",
+            "document_title": "Class 10 Science - Chapter 13 - Our Environment (ch13.pdf)",
+            "content": "?\n\n      What you have learnt\n\n\n\n   /square6       The various components of an ecosystem are interdependent.\n\n   /square6       The producers make the energy from sunlight available to the rest of the ecosystem.\n\n   /square6       There is a loss of energy as we go from one trophic level to the next, this limits the\n         number of trophic levels in a food-chain.\n\n   /square6       Human activities have an impact on the environment.\n\n   /square6      The use of chemicals like CFCs has endangered the ozone layer. Since the ozone\n         layer protects against the ultraviolet radiation from the Sun, this could damage\n         the environment.\n\n   /square6      The waste we generate may be biodegradable or non-biodegradable.\n\n   /square6       The disposal of the waste we generate is causing serious environmental problems.\n\n       EXERCISES",
+            "page_number": 9,
+            "chapter": "Our Environment",
+            "chunk_index": 35,
+            "similarity_score": 0.4869708615911732,
+            "lexical_score": 0.0,
+            "vector_rank": 5,
+            "lexical_rank": null,
+            "rrf_score": 0.015384615384615385,
+            "evidence_tier": 0
+          }
+        ]
+      },
+      "after": {
+        "selected_ids": [
+          "0f2b522b-97c5-4791-8f28-acabb2758e61",
+          "329b9957-a493-4bfd-bad1-c8a4d8c9865c"
+        ],
+        "results": [
+          {
+            "id": "0f2b522b-97c5-4791-8f28-acabb2758e61",
+            "document_id": "672dfbdf-af01-4c86-9321-f034f6d25aa9",
+            "document_title": "Class 10 Science - Chapter 13 - Our Environment (ch13.pdf)",
+            "content": "energy of the\nSun in the presence of chlorophyll? All green plants and certain bacteria\nwhich can produce food by photosynthesis come under this category\nand are called the producers.\n    Organisms depend on the producers either directly or indirectly for\ntheir sustenance? These organisms which consume the food produced,\neither directly from producers or indirectly by feeding on other consumers\nare the consumers. Consumers can be classed variously as herbivores,\ncarnivores, omnivores and parasites. Can you give examples for each of\nthese categories of consumers?\n   /square6    Imagine the situation where you do not clean the  aquarium and\n       some fish and plants have died. Have you ever thought what\n       happens when an organism dies? The microorganisms, comprising\n       bacteria and fungi, break-down the dead remains and waste\n       products of organisms. These microorganisms are the decomposers\n       as they break-down the complex organic substances into simple",
+            "page_number": 2,
+            "chapter": "Our Environment",
+            "chunk_index": 5,
+            "similarity_score": 0.5117536853275954,
+            "lexical_score": 0.09090909361839294,
+            "vector_rank": 1,
+            "lexical_rank": 1,
+            "rrf_score": 0.03278688524590164,
+            "evidence_tier": 2
+          },
+          {
+            "id": "329b9957-a493-4bfd-bad1-c8a4d8c9865c",
+            "document_id": "672dfbdf-af01-4c86-9321-f034f6d25aa9",
+            "document_title": "Class 10 Science - Chapter 13 - Our Environment (ch13.pdf)",
+            "content": "/square6  If we add a few aquatic plants and animals it can become a self-\n       sustaining system. Can you think how this happens? An aquarium\n       is an example of a human-made ecosystem.\n   /square6  Can we leave the aquarium as such after we set it up? Why does\n       it have to be cleaned once in a while? Do we have to clean ponds\n       or lakes in the same manner? Why or why not?\n\n\n    We have seen in earlier classes that organisms can be gr                                                        ouped as\nproducers, consumers and decomposers according to the manner in\nwhich they obtain their sustenance from the environment. Let us recall\nwhat we have learnt through the self sustaining ecosystem created by\nus above. Which organisms can make organic compounds like sugar\nand starch from inorganic substances using the radiant energy of the\nSun in the presence of chlorophyll? All green plants and certain bacteria\nwhich can produce food by photosynthesis come under this category",
+            "page_number": 2,
+            "chapter": "Our Environment",
+            "chunk_index": 4,
+            "similarity_score": 0.49397107850998734,
+            "lexical_score": 0.09090909361839294,
+            "vector_rank": 3,
+            "lexical_rank": 2,
+            "rrf_score": 0.03200204813108039,
+            "evidence_tier": 2
+          },
+          {
+            "id": "411b3d6e-3d43-46e2-b6bb-15fbdd45b038",
+            "document_id": "a92321fa-f136-4203-95e3-550530be58f7",
+            "document_title": "Class 10 Science - Chapter 9 - Light - Reflection and Refraction (ch9.pdf)",
+            "content": "9.3.4 Image Formation by Lenses\n\n                             Lenses form images by refracting light. How do lenses form images?\n                             What is their nature? Let us study this for a convex lens first.\n\n                                   Activity 9.12Activity 9.12\n                                   Activity 9.12Activity 9.12Activity 9.12\n\n\n                                 n  Take a convex lens.  Find its approximate focal length in a way\n                                    described in Activity 9.11.\n                                 n   Draw five parallel straight lines, using chalk, on a long Table such\n                                    that the distance between the successive lines is equal to the\n                                    focal length of the lens.\n                                 n  Place the lens on a lens stand.  Place it on the central line such\n                                    that the optical centre of the lens lies just over the line.",
+            "page_number": 19,
+            "chapter": "Light - Reflection and Refraction",
+            "chunk_index": 89,
+            "similarity_score": 0.4877966424267529,
+            "lexical_score": 0.0,
+            "vector_rank": 4,
+            "lexical_rank": null,
+            "rrf_score": 0.015625,
+            "evidence_tier": 1
+          },
+          {
+            "id": "c7641f31-c358-42a5-ad5b-afa0103c3f39",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "W e get this energy\nfrom the food we eat. During digestion, food is broken down into simpler\nsubstances. For example, rice, potatoes and bread contain\ncarbohydrates. These carbohydrates are broken down to form glucose.\nThis glucose combines with oxygen in the cells of our body and provides\nenergy. The special name of this reaction is respiration, the process of\nwhich you will study in Chapter 6.\nC6H12O6(aq) + 6O2(aq) →  6CO2(aq) + 6H2O(l) + energy (1.18)\n(Glucose)\n(iii) The decomposition of vegetable matter into compost is also an\nexample of an exothermic reaction.\nIdentify the type of the reaction taking place in Activity 1.1, where\nheat is given out along with the formation of a single product.\nDo You Know?\nA solution of slaked lime produced by the reaction 1.13 is used for whitewashing\nwalls. Calcium hydroxide reacts slowly with the carbon dioxide in air to form a thin\nlayer of calcium carbonate on the walls. Calcium carbonate is  formed after two to",
+            "page_number": 7,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 17,
+            "similarity_score": 0.4845136385577533,
+            "lexical_score": 0.0,
+            "vector_rank": 6,
+            "lexical_rank": null,
+            "rrf_score": 0.015151515151515152,
+            "evidence_tier": 1
+          },
+          {
+            "id": "08ae6ce2-4171-4dba-ba58-7d52b165d4b3",
+            "document_id": "925e4a60-1e33-4394-a333-485a7682e584",
+            "document_title": "Class 10 Science - Chapter 10 - The Human Eye and the Colourful World (ch10.pdf)",
+            "content": "the\noptical phenomena in nature. We shall also discuss about rainbow\nformation, splitting of white light and blue colour of the sky.\n10.1 THE HUMAN EYE\n\nThe human eye is one of the most valuable and sensitive sense organs.\nIt enables us to see the wonderful world and the colours around us. On\nclosing the eyes, we can identify objects to some extent by their smell,\ntaste, sound they make or by touch. It is, however, impossible to identify\ncolours while closing the eyes. Thus, of all the sense organs, the human\neye is the most significant one as it enables us to see the beautiful,\ncolourful world around us.\n    The human eye is like a camera.  Its lens\nsystem forms an image on a light-sensitive\nscreen called the retina. Light enters the eye\nthrough a thin membrane called the cornea.\nIt forms the transparent bulge on the front\nsurface of the eyeball as shown in Fig. 10.1.\nThe eyeball is approximately spherical in shape\nwith a diameter of about 2.3 cm. Most of the",
+            "page_number": 1,
+            "chapter": "The Human Eye and the Colourful World",
+            "chunk_index": 1,
+            "similarity_score": 0.48127170727438695,
+            "lexical_score": 0.0,
+            "vector_rank": 7,
+            "lexical_rank": null,
+            "rrf_score": 0.014925373134328358,
+            "evidence_tier": 1
+          }
+        ]
+      }
+    },
+    {
+      "question": "Explain the difference between acids and bases.",
+      "lexical_query": "acids bases",
+      "before": {
+        "selected_ids": [
+          "5bcc3433-f5a7-4db5-9a4c-9e411fdd1315",
+          "f5266c79-8b42-4df8-8611-e343d53dd4d4",
+          "d7b77cb5-2f47-4cd1-9725-5e77c20cef24",
+          "9eb88600-eeea-4190-b35f-b9ecd1b63d62",
+          "24a50953-2807-4a83-bd1a-986e0644917d"
+        ],
+        "results": [
+          {
+            "id": "5bcc3433-f5a7-4db5-9a4c-9e411fdd1315",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "document_title": "Class 10 Science - Chapter 2 - Acids, Bases and Salts (ch2.pdf)",
+            "content": "you have learnt\n\n\n\n     n      Acid-base indicators are dyes or mixtures of dyes which are used to indicate the\n           presence of acids and bases.\n\n     n     Acidic nature of a substance is due to the formation of H+(aq) ions in solution.\n           Formation of OH–(aq) ions in solution is responsible for the basic nature of a\n           substance.\n\n     n     When an acid reacts with a metal, hydrogen gas is evolved and a corresponding\n           salt is formed.\n\n     n       When a base reacts with a metal, along with the evolution of hydrogen gas a salt is\n           formed which has a negative ion composed of the metal and oxygen.\n\n     n       When an acid reacts with a metal carbonate or metal hydrogencarbonate, it gives\n           the corresponding salt, carbon dioxide gas and water.\n\n     n    Acidic and basic solutions in water conduct electricity because they produce\n           hydrogen and hydroxide ions respectively.",
+            "page_number": 17,
+            "chapter": "Acids, Bases and Salts",
+            "chunk_index": 72,
+            "similarity_score": 0.6561441440324817,
+            "lexical_score": 0.0,
+            "vector_rank": 1,
+            "lexical_rank": null,
+            "rrf_score": 0.01639344262295082,
+            "evidence_tier": 2
+          },
+          {
+            "id": "f5266c79-8b42-4df8-8611-e343d53dd4d4",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "document_title": "Class 10 Science - Chapter 2 - Acids, Bases and Salts (ch2.pdf)",
+            "content": "CHAPTER          2\n                  Acids, Bases\n                  and Salts\n\n\n\n\n     ou have learnt in your previous classes that the sour and bitter\nYtastes of food are due to acids and bases, respectively, present in them.\n    If someone in the family is suffering from a problem of acidity after\novereating, which of the following would you suggest as a remedy– lemon\njuice, vinegar or baking soda solution?\n\n   /square6   Which property did you think of while choosing the remedy?\n      Surely you must have used your knowledge about the ability of\n      acids and bases to nullify each other’s effect.\n   /square6   Recall how we tested sour and bitter substances without tasting\n      them.",
+            "page_number": 1,
+            "chapter": "Acids, Bases and Salts",
+            "chunk_index": 0,
+            "similarity_score": 0.6415612056662819,
+            "lexical_score": 0.0,
+            "vector_rank": 2,
+            "lexical_rank": null,
+            "rrf_score": 0.016129032258064516,
+            "evidence_tier": 2
+          },
+          {
+            "id": "d7b77cb5-2f47-4cd1-9725-5e77c20cef24",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "document_title": "Class 10 Science - Chapter 2 - Acids, Bases and Salts (ch2.pdf)",
+            "content": "ability of\n      acids and bases to nullify each other’s effect.\n   /square6   Recall how we tested sour and bitter substances without tasting\n      them.\n\n    You already know that acids are sour in taste and change the colour\nof blue litmus to red, whereas, bases are bitter and change the colour of\nthe red litmus to blue. Litmus is a natural indicator, turmeric is another\nsuch indicator. Have you noticed that a stain of curry on a white cloth\nbecomes reddish-brown when soap, which is basic in nature, is scrubbed\non it? It turns yellow again when the cloth is washed with plenty of\nwater. You can also use synthetic indicators such as methyl orange and\nphenolphthalein to test for acids and bases.\n    In this Chapter, we will study the reactions of acids and bases, how\nacids and bases cancel out each other’s effects and many more interesting\nthings that we use and see in our day-to-day life.",
+            "page_number": 1,
+            "chapter": "Acids, Bases and Salts",
+            "chunk_index": 1,
+            "similarity_score": 0.6277912037248148,
+            "lexical_score": 0.0,
+            "vector_rank": 3,
+            "lexical_rank": null,
+            "rrf_score": 0.015873015873015872,
+            "evidence_tier": 2
+          },
+          {
+            "id": "9eb88600-eeea-4190-b35f-b9ecd1b63d62",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "document_title": "Class 10 Science - Chapter 2 - Acids, Bases and Salts (ch2.pdf)",
+            "content": "7  Tomato juice\n                                         8  Tap water\n                                         9  1M NaOH\n                                        10  1M HCl\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Figure 2.7 Figure 2.7 Figure 2.7 pH of some common substances shown on a pH paper (colours are only a rough guide)Figure 2.7 Figure 2.7\n\n\n                             The strength of acids and bases depends on the number of H+ ions\n                         and OH– ions produced, respectively. If we take hydrochloric acid and\n                         acetic acid of the same concentration, say one molar, then these produce\n                         different amounts of hydrogen ions. Acids that give rise to more H+ ions\n                         are said to be strong acids, and acids that give less H+ ions are said to be\n                         weak acids. Can you now say what weak and strong bases are?",
+            "page_number": 10,
+            "chapter": "Acids, Bases and Salts",
+            "chunk_index": 41,
+            "similarity_score": 0.6168282577907808,
+            "lexical_score": 0.0,
+            "vector_rank": 4,
+            "lexical_rank": null,
+            "rrf_score": 0.015625,
+            "evidence_tier": 2
+          },
+          {
+            "id": "24a50953-2807-4a83-bd1a-986e0644917d",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "document_title": "Class 10 Science - Chapter 2 - Acids, Bases and Salts (ch2.pdf)",
+            "content": "QUESTION  ?\n\n1.      You have been provided with three test tubes. One of them contains\n       distilled water and the other two contain an acidic solution and a basic\n       solution, respectively. If you are given only red litmus paper, how will\n       you identify the contents of each test tube?\n\n                        2.12.12.12.12.1 UNDERSTUNDERSTUNDERSTUNDERSTANDING THE CHEMICUNDERSTANDING THE CHEMICANDING THE CHEMICANDING THE CHEMICAL PROPERTIES OFANDING THE CHEMICAL PROPERTIES OFAL PROPERTIES OFAL PROPERTIES OFAL PROPERTIES OF\n                              ACIDS AND BASESACIDS AND BASESACIDS AND BASESACIDS AND BASESACIDS AND BASES\n\n                        2.1.1 Acids and Bases in the Laboratory\n                              Activity 2.1Activity 2.1\n                              Activity 2.1Activity 2.1Activity 2.1",
+            "page_number": 2,
+            "chapter": "Acids, Bases and Salts",
+            "chunk_index": 3,
+            "similarity_score": 0.6077734910138776,
+            "lexical_score": 0.0,
+            "vector_rank": 5,
+            "lexical_rank": null,
+            "rrf_score": 0.015384615384615385,
+            "evidence_tier": 1
+          }
+        ]
+      },
+      "after": {
+        "selected_ids": [
+          "d7b77cb5-2f47-4cd1-9725-5e77c20cef24",
+          "f5266c79-8b42-4df8-8611-e343d53dd4d4",
+          "eae6ef47-fad2-426d-80b6-59a5d0f0b73c",
+          "9eb88600-eeea-4190-b35f-b9ecd1b63d62",
+          "49683339-5383-4fc8-bd6a-d33419c2a4d5"
+        ],
+        "results": [
+          {
+            "id": "d7b77cb5-2f47-4cd1-9725-5e77c20cef24",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "document_title": "Class 10 Science - Chapter 2 - Acids, Bases and Salts (ch2.pdf)",
+            "content": "ability of\n      acids and bases to nullify each other’s effect.\n   /square6   Recall how we tested sour and bitter substances without tasting\n      them.\n\n    You already know that acids are sour in taste and change the colour\nof blue litmus to red, whereas, bases are bitter and change the colour of\nthe red litmus to blue. Litmus is a natural indicator, turmeric is another\nsuch indicator. Have you noticed that a stain of curry on a white cloth\nbecomes reddish-brown when soap, which is basic in nature, is scrubbed\non it? It turns yellow again when the cloth is washed with plenty of\nwater. You can also use synthetic indicators such as methyl orange and\nphenolphthalein to test for acids and bases.\n    In this Chapter, we will study the reactions of acids and bases, how\nacids and bases cancel out each other’s effects and many more interesting\nthings that we use and see in our day-to-day life.",
+            "page_number": 1,
+            "chapter": "Acids, Bases and Salts",
+            "chunk_index": 1,
+            "similarity_score": 0.6277912037248148,
+            "lexical_score": 0.21401971578598022,
+            "vector_rank": 3,
+            "lexical_rank": 1,
+            "rrf_score": 0.032266458495966696,
+            "evidence_tier": 2
+          },
+          {
+            "id": "f5266c79-8b42-4df8-8611-e343d53dd4d4",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "document_title": "Class 10 Science - Chapter 2 - Acids, Bases and Salts (ch2.pdf)",
+            "content": "CHAPTER          2\n                  Acids, Bases\n                  and Salts\n\n\n\n\n     ou have learnt in your previous classes that the sour and bitter\nYtastes of food are due to acids and bases, respectively, present in them.\n    If someone in the family is suffering from a problem of acidity after\novereating, which of the following would you suggest as a remedy– lemon\njuice, vinegar or baking soda solution?\n\n   /square6   Which property did you think of while choosing the remedy?\n      Surely you must have used your knowledge about the ability of\n      acids and bases to nullify each other’s effect.\n   /square6   Recall how we tested sour and bitter substances without tasting\n      them.",
+            "page_number": 1,
+            "chapter": "Acids, Bases and Salts",
+            "chunk_index": 0,
+            "similarity_score": 0.6415612056662819,
+            "lexical_score": 0.17114664614200592,
+            "vector_rank": 2,
+            "lexical_rank": 3,
+            "rrf_score": 0.03200204813108039,
+            "evidence_tier": 2
+          },
+          {
+            "id": "eae6ef47-fad2-426d-80b6-59a5d0f0b73c",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "document_title": "Class 10 Science - Chapter 2 - Acids, Bases and Salts (ch2.pdf)",
+            "content": "of acids and bases, how\nacids and bases cancel out each other’s effects and many more interesting\nthings that we use and see in our day-to-day life.\n\n\n\n\n        Litmus solution is a purple dye, which is extracted from lichen, a plant belonging to\n        the division Thallophyta, and is commonly used as an indicator. When the litmus\n        solution is neither acidic nor basic, its colour is purple. There are many other natural\n        materials like red cabbage leaves, turmeric, coloured petals of some flowers such as\n        Hydrangea, Petunia and Geranium, which indicate the presence of acid or base in a\n        solution. These are called acid-base indicators or sometimes simply indicators.",
+            "page_number": 1,
+            "chapter": "Acids, Bases and Salts",
+            "chunk_index": 2,
+            "similarity_score": 0.5929532934655689,
+            "lexical_score": 0.1304347813129425,
+            "vector_rank": 14,
+            "lexical_rank": 4,
+            "rrf_score": 0.029138513513513514,
+            "evidence_tier": 2
+          },
+          {
+            "id": "9eb88600-eeea-4190-b35f-b9ecd1b63d62",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "document_title": "Class 10 Science - Chapter 2 - Acids, Bases and Salts (ch2.pdf)",
+            "content": "7  Tomato juice\n                                         8  Tap water\n                                         9  1M NaOH\n                                        10  1M HCl\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Figure 2.7 Figure 2.7 Figure 2.7 pH of some common substances shown on a pH paper (colours are only a rough guide)Figure 2.7 Figure 2.7\n\n\n                             The strength of acids and bases depends on the number of H+ ions\n                         and OH– ions produced, respectively. If we take hydrochloric acid and\n                         acetic acid of the same concentration, say one molar, then these produce\n                         different amounts of hydrogen ions. Acids that give rise to more H+ ions\n                         are said to be strong acids, and acids that give less H+ ions are said to be\n                         weak acids. Can you now say what weak and strong bases are?",
+            "page_number": 10,
+            "chapter": "Acids, Bases and Salts",
+            "chunk_index": 41,
+            "similarity_score": 0.6168282577907808,
+            "lexical_score": 0.06005221977829933,
+            "vector_rank": 4,
+            "lexical_rank": 20,
+            "rrf_score": 0.028125,
+            "evidence_tier": 2
+          },
+          {
+            "id": "49683339-5383-4fc8-bd6a-d33419c2a4d5",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "document_title": "Class 10 Science - Chapter 2 - Acids, Bases and Salts (ch2.pdf)",
+            "content": "H3O+ or H+(aq) ion in water. Let us see\nwhat happens when a base is dissolved in water.\n    NaOH(s)                      → H  O2Na+ (aq) + OH– (aq)\n\n\n\n\nAcids, Bases and Salts                                                                                                     23",
+            "page_number": 7,
+            "chapter": "Acids, Bases and Salts",
+            "chunk_index": 30,
+            "similarity_score": 0.5671680560760638,
+            "lexical_score": 0.09090909361839294,
+            "vector_rank": 20,
+            "lexical_rank": 10,
+            "rrf_score": 0.026785714285714288,
+            "evidence_tier": 2
+          }
+        ]
+      }
+    },
+    {
+      "question": "What happens when magnesium burns in oxygen?",
+      "lexical_query": "magnesium burns oxygen",
+      "before": {
+        "selected_ids": [
+          "b1367708-5bb4-4447-aa24-de2c09dd1408",
+          "6b40c0ed-c57d-4908-9029-c44568d46e81",
+          "6498b2b8-14f1-44d9-828e-421ba0fb12c9",
+          "a31840e6-148d-40d8-ac92-c50fd19015b1",
+          "8a4cb524-0faf-40b2-8dc4-7ab58fc32639"
+        ],
+        "results": [
+          {
+            "id": "b1367708-5bb4-4447-aa24-de2c09dd1408",
+            "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+            "document_title": "Class 10 Science - Chapter 3 - Metals and Non-metals (ch3.pdf)",
+            "content": "3.2.1 What happens when Metals are burnt in Air?\nYou have seen in Activity 3.8 that magnesium burns in air with a dazzling\nwhite flame. Do all metals react in the same manner? Let us check by\nperforming the following Activity.\n\n      Activity 3.9Activity 3.9Activity 3.9Activity 3.9Activity 3.9\n\n       CAUTION: The following activity needs the teacher’s assistance.\n       It would be better if students wear eye protection.\n   /square6  Hold any of the samples taken above with a pair of tongs and try\n       burning over a flame. Repeat with the other metal samples.\n   /square6  Collect the product if formed.\n   /square6  Let the products and the metal surface cool down.\n   /square6  Which metals burn easily?\n   /square6  What flame colour did you observe when the metal burnt?\n   /square6  How does the metal surface appear after burning?\n   /square6  Arrange the metals in the decreasing order of their reactivity\n       towards oxygen.\n   /square6  Are the products soluble in water?",
+            "page_number": 5,
+            "chapter": "Metals and Non-metals",
+            "chunk_index": 16,
+            "similarity_score": 0.6389420885448651,
+            "lexical_score": 0.0007401924813166261,
+            "vector_rank": 2,
+            "lexical_rank": 1,
+            "rrf_score": 0.03252247488101534,
+            "evidence_tier": 1
+          },
+          {
+            "id": "6b40c0ed-c57d-4908-9029-c44568d46e81",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "would be –\nMagnesium + Oxygen → Magnesium oxide (1.1)\n            (Reactants) (Product)\nThe substances that undergo chemical change in the reaction (1.1),\nmagnesium and oxygen, are the reactants. The new substance is\nmagnesium oxide, formed during the reaction, as a product.\nA word-equation shows change of reactants to products through an\narrow placed between them. The reactants are written on the left-hand\nside (LHS) with a plus sign (+) between them. Similarly, products are\nwritten on the right-hand side (RHS) with a plus sign (+) between them.\nThe arrowhead points towards the products, and shows the direction of\nthe reaction.\nYou must have observed that magnesium ribbon bur ns with a\ndazzling white flame and changes into a white powder. This powder is\nmagnesium oxide. It is formed due to the reaction between magnesium\nand oxygen pr\nesent in the air.\nReprint 2026-27",
+            "page_number": 2,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 4,
+            "similarity_score": 0.6413121550589329,
+            "lexical_score": 0.0,
+            "vector_rank": 1,
+            "lexical_rank": null,
+            "rrf_score": 0.01639344262295082,
+            "evidence_tier": 2
+          },
+          {
+            "id": "6498b2b8-14f1-44d9-828e-421ba0fb12c9",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "1.1Recall Activity 1.1Recall Activity 1.1Recall Activity 1.1Recall Activity 1.1 ,     where a magnesium ribbon burns with a dazzling flame in air (oxygen)\nand changes into a white substance, magnesium oxide. Is magnesium being oxidised or\nreduced in this reaction?\nReprint 2026-27",
+            "page_number": 13,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 36,
+            "similarity_score": 0.6365285976022905,
+            "lexical_score": 0.0,
+            "vector_rank": 3,
+            "lexical_rank": null,
+            "rrf_score": 0.015873015873015872,
+            "evidence_tier": 2
+          },
+          {
+            "id": "a31840e6-148d-40d8-ac92-c50fd19015b1",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "hydrochloric acid or sulphuric acid to this\n(Fig. 1.2).\nCAUTION: Handle the acid with care.\n/square6Do you observe anything happening around the zinc\ngranules?\n/square6Touch the conical flask or test tube. Is there any change in\nits temperature?\n/square6Take lead nitrate\nsolution in a test\ntube.\n/square6Add potassium\niodide solution\nto this.\n/square6What do you\nobserve?\n1.1 CHEMIC1.1 CHEMIC1.1 CHEMIC1.1 CHEMIC1.1 CHEMIC AL EQUA AL EQUAAL EQUA AL EQUAAL EQUA TIONS TIONSTIONSTIONSTIONS\nActivity 1.1 can be described as – when a magnesium ribbon is burnt in\noxygen, it gets converted to magnesium oxide. This description of a\nchemical reaction in a sentence form is quite long. It can be written in a\nshorter form. The simplest way to do this is to write it in the form of a\nword-equation.\nThe word-equation for the above reaction would be –\nMagnesium + Oxygen → Magnesium oxide (1.1)\n            (Reactants) (Product)\nThe substances that undergo chemical change in the reaction (1.1),",
+            "page_number": 2,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 3,
+            "similarity_score": 0.6190329009582862,
+            "lexical_score": 0.0,
+            "vector_rank": 4,
+            "lexical_rank": null,
+            "rrf_score": 0.015625,
+            "evidence_tier": 2
+          },
+          {
+            "id": "8a4cb524-0faf-40b2-8dc4-7ab58fc32639",
+            "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+            "document_title": "Class 10 Science - Chapter 3 - Metals and Non-metals (ch3.pdf)",
+            "content": "We have observed in Activity 3.9 that all metals do not react with\n                           oxygen at the same rate. Different metals show different reactivities\n                           towards oxygen. Metals such as potassium and sodium react so\n                           vigorously that they catch fire if kept in the open. Hence, to protect them\n                           and to prevent accidental fires, they are kept immersed in kerosene oil.\n                           At ordinary temperature, the surfaces of metals such as magnesium,\n                           aluminium, zinc, lead, etc., are covered with a thin layer of oxide. The\n                           protective oxide layer prevents the metal from further oxidation. Iron\n                           does not burn on heating but iron filings burn vigorously when sprinkled\n                           in the flame of the burner. Copper does not burn, but the hot metal is",
+            "page_number": 6,
+            "chapter": "Metals and Non-metals",
+            "chunk_index": 19,
+            "similarity_score": 0.5927486442544466,
+            "lexical_score": 0.0,
+            "vector_rank": 5,
+            "lexical_rank": null,
+            "rrf_score": 0.015384615384615385,
+            "evidence_tier": 2
+          }
+        ]
+      },
+      "after": {
+        "selected_ids": [
+          "6498b2b8-14f1-44d9-828e-421ba0fb12c9",
+          "6b40c0ed-c57d-4908-9029-c44568d46e81",
+          "a31840e6-148d-40d8-ac92-c50fd19015b1",
+          "8a4cb524-0faf-40b2-8dc4-7ab58fc32639"
+        ],
+        "results": [
+          {
+            "id": "6498b2b8-14f1-44d9-828e-421ba0fb12c9",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "1.1Recall Activity 1.1Recall Activity 1.1Recall Activity 1.1Recall Activity 1.1 ,     where a magnesium ribbon burns with a dazzling flame in air (oxygen)\nand changes into a white substance, magnesium oxide. Is magnesium being oxidised or\nreduced in this reaction?\nReprint 2026-27",
+            "page_number": 13,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 36,
+            "similarity_score": 0.6365285976022905,
+            "lexical_score": 0.019792648032307625,
+            "vector_rank": 3,
+            "lexical_rank": 1,
+            "rrf_score": 0.032266458495966696,
+            "evidence_tier": 2
+          },
+          {
+            "id": "6b40c0ed-c57d-4908-9029-c44568d46e81",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "would be –\nMagnesium + Oxygen → Magnesium oxide (1.1)\n            (Reactants) (Product)\nThe substances that undergo chemical change in the reaction (1.1),\nmagnesium and oxygen, are the reactants. The new substance is\nmagnesium oxide, formed during the reaction, as a product.\nA word-equation shows change of reactants to products through an\narrow placed between them. The reactants are written on the left-hand\nside (LHS) with a plus sign (+) between them. Similarly, products are\nwritten on the right-hand side (RHS) with a plus sign (+) between them.\nThe arrowhead points towards the products, and shows the direction of\nthe reaction.\nYou must have observed that magnesium ribbon bur ns with a\ndazzling white flame and changes into a white powder. This powder is\nmagnesium oxide. It is formed due to the reaction between magnesium\nand oxygen pr\nesent in the air.\nReprint 2026-27",
+            "page_number": 2,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 4,
+            "similarity_score": 0.6413121550589329,
+            "lexical_score": 0.0,
+            "vector_rank": 1,
+            "lexical_rank": null,
+            "rrf_score": 0.01639344262295082,
+            "evidence_tier": 2
+          },
+          {
+            "id": "a31840e6-148d-40d8-ac92-c50fd19015b1",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "hydrochloric acid or sulphuric acid to this\n(Fig. 1.2).\nCAUTION: Handle the acid with care.\n/square6Do you observe anything happening around the zinc\ngranules?\n/square6Touch the conical flask or test tube. Is there any change in\nits temperature?\n/square6Take lead nitrate\nsolution in a test\ntube.\n/square6Add potassium\niodide solution\nto this.\n/square6What do you\nobserve?\n1.1 CHEMIC1.1 CHEMIC1.1 CHEMIC1.1 CHEMIC1.1 CHEMIC AL EQUA AL EQUAAL EQUA AL EQUAAL EQUA TIONS TIONSTIONSTIONSTIONS\nActivity 1.1 can be described as – when a magnesium ribbon is burnt in\noxygen, it gets converted to magnesium oxide. This description of a\nchemical reaction in a sentence form is quite long. It can be written in a\nshorter form. The simplest way to do this is to write it in the form of a\nword-equation.\nThe word-equation for the above reaction would be –\nMagnesium + Oxygen → Magnesium oxide (1.1)\n            (Reactants) (Product)\nThe substances that undergo chemical change in the reaction (1.1),",
+            "page_number": 2,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 3,
+            "similarity_score": 0.6190329009582862,
+            "lexical_score": 0.0,
+            "vector_rank": 4,
+            "lexical_rank": null,
+            "rrf_score": 0.015625,
+            "evidence_tier": 2
+          },
+          {
+            "id": "8a4cb524-0faf-40b2-8dc4-7ab58fc32639",
+            "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+            "document_title": "Class 10 Science - Chapter 3 - Metals and Non-metals (ch3.pdf)",
+            "content": "We have observed in Activity 3.9 that all metals do not react with\n                           oxygen at the same rate. Different metals show different reactivities\n                           towards oxygen. Metals such as potassium and sodium react so\n                           vigorously that they catch fire if kept in the open. Hence, to protect them\n                           and to prevent accidental fires, they are kept immersed in kerosene oil.\n                           At ordinary temperature, the surfaces of metals such as magnesium,\n                           aluminium, zinc, lead, etc., are covered with a thin layer of oxide. The\n                           protective oxide layer prevents the metal from further oxidation. Iron\n                           does not burn on heating but iron filings burn vigorously when sprinkled\n                           in the flame of the burner. Copper does not burn, but the hot metal is",
+            "page_number": 6,
+            "chapter": "Metals and Non-metals",
+            "chunk_index": 19,
+            "similarity_score": 0.5927486442544466,
+            "lexical_score": 0.0,
+            "vector_rank": 5,
+            "lexical_rank": null,
+            "rrf_score": 0.015384615384615385,
+            "evidence_tier": 2
+          },
+          {
+            "id": "0ee93110-b864-4749-bf7a-aeac1054cdd5",
+            "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+            "document_title": "Class 10 Science - Chapter 3 - Metals and Non-metals (ch3.pdf)",
+            "content": "/square6   Arrange the metals in the decreasing order of reactivity with dilute\n                                  acids.\n\n                               Write equations for the reactions of magnesium, aluminium, zinc\n                          and iron with dilute hydrochloric acid.\n                               Hydrogen gas is not evolved when a metal reacts with nitric acid. It is\n                          because HNO3 is a strong oxidising agent. It oxidises the H2 produced to\n                          water and itself gets reduced to any of the nitrogen oxides (N2O, NO,\n                          NO2). But magnesium (Mg) and manganese (Mn) react with very dilute\n                          HNO3 to evolve H2 gas.\n                               You must have observed in Activity 3.11, that the rate of formation\n                          of bubbles was the fastest in the case of magnesium. The reaction was",
+            "page_number": 8,
+            "chapter": "Metals and Non-metals",
+            "chunk_index": 29,
+            "similarity_score": 0.562529487534491,
+            "lexical_score": 0.0,
+            "vector_rank": 8,
+            "lexical_rank": null,
+            "rrf_score": 0.014705882352941176,
+            "evidence_tier": 2
+          }
+        ]
+      }
+    },
+    {
+      "question": "Explain displacement reactions with examples.",
+      "lexical_query": "displacement reactions",
+      "before": {
+        "selected_ids": [
+          "2152d189-806c-4bb4-8b80-80f5aa43086a",
+          "53da69d8-a46b-48ab-8c94-d732c59bc700",
+          "c5e454dd-3e4e-4620-b517-b88298da691d",
+          "57cdbc27-00bf-47dd-b62a-78c3a984c22b",
+          "0817ed3a-2650-47a6-aeb0-f3b2b70800af"
+        ],
+        "results": [
+          {
+            "id": "2152d189-806c-4bb4-8b80-80f5aa43086a",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "displacement reactions?\nWrite equations for these reactions.\n14.  In the refining of silver, the recovery of silver from silver nitrate solution involved\ndisplacement by copper metal. Write down the reaction involved.\n15. What do you mean by a precipitation reaction? Explain by giving examples.\n16. Explain the following in terms of gain or loss of oxygen with two examples each.\n(a) Oxidation\n(b) Reduction\n17. A shiny brown coloured element ‘X’ on heating in air becomes black in colour .\nName the element ‘X’ and the black coloured compound formed.\n18. Why do we apply paint on iron articles?\n19. Oil and fat containing food items are flushed with nitrogen. Why?\n20. Explain the following terms with one example each.\n(a) Corrosion\n(b) Rancidity\nReprint 2026-27",
+            "page_number": 16,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 43,
+            "similarity_score": 0.6805401659655818,
+            "lexical_score": 0.0021691974252462387,
+            "vector_rank": 2,
+            "lexical_rank": 1,
+            "rrf_score": 0.03252247488101534,
+            "evidence_tier": 0
+          },
+          {
+            "id": "53da69d8-a46b-48ab-8c94-d732c59bc700",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "another element from its compound, a displacement\nreaction occurs.\n/square6Two different atoms or groups of atoms (ions) are exchanged in double displacement\nreactions.\n/square6Precipitation reactions produce insoluble salts.\n/square6Reactions also involve the gain or loss of oxygen or hydrogen by substances.\nOxidation is the gain of oxygen or loss of hydrogen. Reduction is the loss of oxygen\nor gain of hydrogen.\nEXERCISES\n1. Which of the statements about the reaction below are incorrect?\n2PbO(s) + C(s) →  2Pb(s) + CO2(g)\n(a) Lead is getting reduced.\n(b) Carbon dioxide is getting oxidised.\n(c) Carbon is getting oxidised.\n(d) Lead oxide is getting reduced.\n(i) (a) and (b)\n(ii) (a) and (c)\n(iii) (a), (b) and (c)\n(iv) all\n2. Fe2O3 + 2Al →  Al2O3 + 2Fe\nThe above reaction is an example of a\n(a) combination reaction.\n(b) double displacement reaction.\nReprint 2026-27",
+            "page_number": 14,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 38,
+            "similarity_score": 0.6959046202104494,
+            "lexical_score": 0.0,
+            "vector_rank": 1,
+            "lexical_rank": null,
+            "rrf_score": 0.01639344262295082,
+            "evidence_tier": 1
+          },
+          {
+            "id": "c5e454dd-3e4e-4620-b517-b88298da691d",
+            "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+            "document_title": "Class 10 Science - Chapter 3 - Metals and Non-metals (ch3.pdf)",
+            "content": "/square6  In which test tube did you find that a reaction has occurred?\n   /square6  On what basis can you say that a reaction has actually taken\n       place?\n   /square6  Can you correlate your observations for the Activities 3.9, 3.10\n       and 3.11?\n   /square6   Write a balanced chemical equation for the reaction that has taken\n       place.\n   /square6  Name the type of reaction.\n\n    Reactive metals can displace less\nreactive metals from their compounds in\nsolution or molten form.\n    We have seen in the previous sections\nthat all metals are not equally reactive. We\nchecked the reactivity of various metals\nwith oxygen, water and acids. But all\nmetals do not react with these reagents.\nSo we were not able to put all the metal\nsamples we had collected in decreasing\norder of their reactivity. Displacement\nreactions studied in Chapter 1 give better\nevidence about the reactivity of metals. It",
+            "page_number": 9,
+            "chapter": "Metals and Non-metals",
+            "chunk_index": 32,
+            "similarity_score": 0.6419417092869674,
+            "lexical_score": 0.0,
+            "vector_rank": 3,
+            "lexical_rank": null,
+            "rrf_score": 0.015873015873015872,
+            "evidence_tier": 2
+          },
+          {
+            "id": "57cdbc27-00bf-47dd-b62a-78c3a984c22b",
+            "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+            "document_title": "Class 10 Science - Chapter 3 - Metals and Non-metals (ch3.pdf)",
+            "content": "agents because they can displace metals of lower reactivity from their\n                             compounds. For example, when manganese dioxide is heated with\n                             aluminium powder, the following reaction takes place –\n                                 3MnO2(s) + 4Al(s) → 3Mn(l) + 2Al2O3(s) + Heat\n                                            Can you identify the substances that are getting oxidised\n                                       and reduced?\n                                            These displacement reactions are highly exothermic. The\n                                       amount of heat evolved is so large that the metals are produced\n                                       in the molten state. In fact, the reaction of iron(III) oxide (Fe2O3)\n                                       with aluminium is used to join railway tracks or cracked\n                                       machine parts. This reaction is known as the thermit reaction.",
+            "page_number": 16,
+            "chapter": "Metals and Non-metals",
+            "chunk_index": 60,
+            "similarity_score": 0.639300613111569,
+            "lexical_score": 0.0,
+            "vector_rank": 4,
+            "lexical_rank": null,
+            "rrf_score": 0.015625,
+            "evidence_tier": 2
+          },
+          {
+            "id": "0817ed3a-2650-47a6-aeb0-f3b2b70800af",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "Chemical Reactions and Equations 11\nWhy does the iron nail become brownish in colour and the blue colour\nof copper sulphate solution fades?\nThe following chemical reaction takes place in this Activity–\nFe(s) + CuSO4(aq) → FeSO4(aq)    +   Cu(s) (1.24)\n        (Copper sulphate) (Iron sulphate)\nIn this reaction, iron has displaced or removed another element,\ncopper, fr om copper sulphate solution. This r eaction is known as\ndisplacement reaction.\nOther examples of displacement reactions are\nZn(s) + CuSO4(aq)   → ZnSO4(aq)   +     Cu(s) (1.25)\n     (Copper sulphate) (Zinc sulphate)\nPb(s) + CuCl2(aq)   → PbCl2(aq)     +     Cu(s) (1.26)\n      (Copper chloride) (Lead chloride)\nZinc and lead are more reactive elements than copper. They displace\ncopper from its compounds.\n1.2.4 Double Displacement Reaction\nActivity 1.10Activity 1.10Activity 1.10Activity 1.10Activity 1.10\n/square6Take about 3 mL of sodium sulphate\nsolution in a test tube.\n/square6In another test tube, take about 3 mL of",
+            "page_number": 11,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 28,
+            "similarity_score": 0.6259666831453705,
+            "lexical_score": 0.0,
+            "vector_rank": 5,
+            "lexical_rank": null,
+            "rrf_score": 0.015384615384615385,
+            "evidence_tier": 2
+          }
+        ]
+      },
+      "after": {
+        "selected_ids": [
+          "0817ed3a-2650-47a6-aeb0-f3b2b70800af",
+          "87a245d8-a177-4710-99d8-06eecc3eb47e",
+          "57cdbc27-00bf-47dd-b62a-78c3a984c22b",
+          "c5e454dd-3e4e-4620-b517-b88298da691d",
+          "0e3ef317-447b-48d1-ba05-22c62b90aa6d"
+        ],
+        "results": [
+          {
+            "id": "0817ed3a-2650-47a6-aeb0-f3b2b70800af",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "Chemical Reactions and Equations 11\nWhy does the iron nail become brownish in colour and the blue colour\nof copper sulphate solution fades?\nThe following chemical reaction takes place in this Activity–\nFe(s) + CuSO4(aq) → FeSO4(aq)    +   Cu(s) (1.24)\n        (Copper sulphate) (Iron sulphate)\nIn this reaction, iron has displaced or removed another element,\ncopper, fr om copper sulphate solution. This r eaction is known as\ndisplacement reaction.\nOther examples of displacement reactions are\nZn(s) + CuSO4(aq)   → ZnSO4(aq)   +     Cu(s) (1.25)\n     (Copper sulphate) (Zinc sulphate)\nPb(s) + CuCl2(aq)   → PbCl2(aq)     +     Cu(s) (1.26)\n      (Copper chloride) (Lead chloride)\nZinc and lead are more reactive elements than copper. They displace\ncopper from its compounds.\n1.2.4 Double Displacement Reaction\nActivity 1.10Activity 1.10Activity 1.10Activity 1.10Activity 1.10\n/square6Take about 3 mL of sodium sulphate\nsolution in a test tube.\n/square6In another test tube, take about 3 mL of",
+            "page_number": 11,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 28,
+            "similarity_score": 0.6259666831453705,
+            "lexical_score": 0.093987375497818,
+            "vector_rank": 5,
+            "lexical_rank": 4,
+            "rrf_score": 0.031009615384615385,
+            "evidence_tier": 2
+          },
+          {
+            "id": "87a245d8-a177-4710-99d8-06eecc3eb47e",
+            "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+            "document_title": "NCERT Class 10th Science",
+            "content": "for this reaction.\n(iii) Is this also a double displacement reaction?\nWhat causes this? The  white precipitate of BaSO4 is formed by the\nreaction of 2–\n4SO  and Ba2+. The other product formed is sodium chloride\nwhich remains in the solution. Such reactions in which there is an\nexchange of ions between the reactants are called double displacement\nreactions.\nReprint 2026-27",
+            "page_number": 12,
+            "chapter": "Chemical Reactions and Equations",
+            "chunk_index": 32,
+            "similarity_score": 0.596717177843233,
+            "lexical_score": 0.09885308891534805,
+            "vector_rank": 10,
+            "lexical_rank": 1,
+            "rrf_score": 0.030679156908665108,
+            "evidence_tier": 2
+          },
+          {
+            "id": "57cdbc27-00bf-47dd-b62a-78c3a984c22b",
+            "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+            "document_title": "Class 10 Science - Chapter 3 - Metals and Non-metals (ch3.pdf)",
+            "content": "agents because they can displace metals of lower reactivity from their\n                             compounds. For example, when manganese dioxide is heated with\n                             aluminium powder, the following reaction takes place –\n                                 3MnO2(s) + 4Al(s) → 3Mn(l) + 2Al2O3(s) + Heat\n                                            Can you identify the substances that are getting oxidised\n                                       and reduced?\n                                            These displacement reactions are highly exothermic. The\n                                       amount of heat evolved is so large that the metals are produced\n                                       in the molten state. In fact, the reaction of iron(III) oxide (Fe2O3)\n                                       with aluminium is used to join railway tracks or cracked\n                                       machine parts. This reaction is known as the thermit reaction.",
+            "page_number": 16,
+            "chapter": "Metals and Non-metals",
+            "chunk_index": 60,
+            "similarity_score": 0.639300613111569,
+            "lexical_score": 0.09090909361839294,
+            "vector_rank": 4,
+            "lexical_rank": 7,
+            "rrf_score": 0.03055037313432836,
+            "evidence_tier": 2
+          },
+          {
+            "id": "c5e454dd-3e4e-4620-b517-b88298da691d",
+            "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+            "document_title": "Class 10 Science - Chapter 3 - Metals and Non-metals (ch3.pdf)",
+            "content": "/square6  In which test tube did you find that a reaction has occurred?\n   /square6  On what basis can you say that a reaction has actually taken\n       place?\n   /square6  Can you correlate your observations for the Activities 3.9, 3.10\n       and 3.11?\n   /square6   Write a balanced chemical equation for the reaction that has taken\n       place.\n   /square6  Name the type of reaction.\n\n    Reactive metals can displace less\nreactive metals from their compounds in\nsolution or molten form.\n    We have seen in the previous sections\nthat all metals are not equally reactive. We\nchecked the reactivity of various metals\nwith oxygen, water and acids. But all\nmetals do not react with these reagents.\nSo we were not able to put all the metal\nsamples we had collected in decreasing\norder of their reactivity. Displacement\nreactions studied in Chapter 1 give better\nevidence about the reactivity of metals. It",
+            "page_number": 9,
+            "chapter": "Metals and Non-metals",
+            "chunk_index": 32,
+            "similarity_score": 0.6419417092869674,
+            "lexical_score": 0.09090909361839294,
+            "vector_rank": 3,
+            "lexical_rank": 9,
+            "rrf_score": 0.03036576949620428,
+            "evidence_tier": 2
+          },
+          {
+            "id": "0e3ef317-447b-48d1-ba05-22c62b90aa6d",
+            "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+            "document_title": "Class 10 Science - Chapter 3 - Metals and Non-metals (ch3.pdf)",
+            "content": "collected in decreasing\norder of their reactivity. Displacement\nreactions studied in Chapter 1 give better\nevidence about the reactivity of metals. It\nis simple and easy if metal A displaces                                                       Figure 3.4Figure 3.4Figure 3.4Figure 3.4Figure 3.4\nmetal B from its solution, it is more reactive than B.                                        Reaction of metals with\n    Metal A + Salt solution of B →                                        Salt solution of A + Metal Bsalt solutions\n\n    Which metal, copper or iron, is more reactive according to your\nobservations in Activity 3.12?\n\n3.2.5 The Reactivity Series\nThe reactivity series is a list of metals arranged in the order of their\ndecreasing activities. After performing displacement experiments\n(Activities 1.9 and 3.12), the following series, (Table 3.2) known as the\nreactivity or activity series has been developed.\nTable 3.2 Activity series : Relative reactivities of metals",
+            "page_number": 9,
+            "chapter": "Metals and Non-metals",
+            "chunk_index": 33,
+            "similarity_score": 0.592205286026001,
+            "lexical_score": 0.0917603000998497,
+            "vector_rank": 11,
+            "lexical_rank": 5,
+            "rrf_score": 0.02946912242686891,
+            "evidence_tier": 2
+          }
+        ]
+      }
+    }
+  ]
+}

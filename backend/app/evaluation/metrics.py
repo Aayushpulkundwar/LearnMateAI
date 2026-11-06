@@ -47,3 +47,15 @@ def calculate_threshold_metrics(results: Iterable[Mapping[str, object]], thresho
         else:
             tn += 1
     return ThresholdMetrics(tp, fp, tn, fn)
+
+
+def evaluate_retrieval_relevance(
+    chunks: Iterable[Mapping[str, object]], *, dense_threshold: float, lexical_threshold: float
+) -> tuple[bool, float, float]:
+    """Apply the same deterministic gate in production and threshold evaluation."""
+    materialized = list(chunks)
+    if not materialized:
+        return False, 0.0, 0.0
+    dense = max(float(chunk.get("similarity_score", 0.0)) for chunk in materialized)
+    lexical = max(float(chunk.get("lexical_score", 0.0)) for chunk in materialized)
+    return dense >= dense_threshold or lexical >= lexical_threshold, dense, lexical

@@ -10,6 +10,10 @@ class RetainedChunk(TypedDict):
     chunk_index: int
     content: str
     similarity_score: float
+    lexical_score: float
+    vector_rank: Optional[int]
+    lexical_rank: Optional[int]
+    rrf_score: float
 
 
 class QueryState(TypedDict):
@@ -20,8 +24,11 @@ class QueryState(TypedDict):
     context_chunks: List[RetainedChunk]
     is_relevant: bool
     max_relevance_score: float
+    max_lexical_score: float
+    faithfulness_audit: Dict[str, Any]
     answer: str
     citations: List[Dict[str, Any]]
     is_refused: bool
     refusal_reason: Optional[str]
     mode: str  # "query", "summarize", "quiz"
+    tutoring_context: Dict[str, Any]

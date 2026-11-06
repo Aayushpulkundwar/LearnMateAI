@@ -1,8 +1,11 @@
 import io
+import logging
 from typing import BinaryIO
 from minio import Minio
 from minio.error import S3Error
 from app.core.config import settings
+
+logger = logging.getLogger(__name__)
 
 
 class MinioService:
@@ -23,8 +26,7 @@ class MinioService:
             if not self.client.bucket_exists(self.bucket):
                 self.client.make_bucket(self.bucket)
         except S3Error as exc:
-            # TODO: Add structured logging for bucket initialization warnings
-            print(f"MinIO bucket check warning: {exc}")
+            logger.warning("minio_bucket_check_failed", exc_info=True)
 
     def upload_file(self, object_name: str, file_data: BinaryIO, length: int, content_type: str = "application/pdf") -> str:
         """Upload raw textbook PDF into MinIO bucket and return minio_path."""
@@ -37,6 +39,11 @@ class MinioService:
             content_type=content_type
         )
         return f"{self.bucket}/{object_name}"
+
+    def remove_file(self, object_path: str) -> None:
+        """Best-effort cleanup for an object that failed before DB persistence."""
+        clean_object_name = object_path.removeprefix(f"{self.bucket}/")
+        self.client.remove_object(self.bucket, clean_object_name)
 
     def download_file(self, object_name: str) -> bytes:
         """Retrieve raw textbook PDF bytes from MinIO for parsing."""

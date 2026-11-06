@@ -1,0 +1,97 @@
+{
+  "run_id": "nine_science_03",
+  "corpus_sha256": "d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8",
+  "documents": [
+    {
+      "chapter_number": 1,
+      "id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+      "title": "NCERT Class 10th Science",
+      "chunks": 44,
+      "embedding_dimensions": 1024
+    },
+    {
+      "chapter_number": 2,
+      "id": "93116cc1-6a00-4968-9268-59db13424b09",
+      "title": "Class 10 Science - Chapter 2 - Acids, Bases and Salts (ch2.pdf)",
+      "chunks": 83,
+      "embedding_dimensions": 1024
+    },
+    {
+      "chapter_number": 3,
+      "id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+      "title": "Class 10 Science - Chapter 3 - Metals and Non-metals (ch3.pdf)",
+      "chunks": 84,
+      "embedding_dimensions": 1024
+    },
+    {
+      "chapter_number": 7,
+      "id": "1360321a-7a0d-417a-a1d4-560a635693e1",
+      "title": "Class 10 Science - Chapter 7 - How do Organisms Reproduce? (ch7.pdf)",
+      "chunks": 68,
+      "embedding_dimensions": 1024
+    },
+    {
+      "chapter_number": 9,
+      "id": "a92321fa-f136-4203-95e3-550530be58f7",
+      "title": "Class 10 Science - Chapter 9 - Light - Reflection and Refraction (ch9.pdf)",
+      "chunks": 124,
+      "embedding_dimensions": 1024
+    },
+    {
+      "chapter_number": 10,
+      "id": "925e4a60-1e33-4394-a333-485a7682e584",
+      "title": "Class 10 Science - Chapter 10 - The Human Eye and the Colourful World (ch10.pdf)",
+      "chunks": 45,
+      "embedding_dimensions": 1024
+    },
+    {
+      "chapter_number": 11,
+      "id": "c9981302-fda6-45bc-ab4e-c142379f0035",
+      "title": "Class 10 Science - Chapter 11 - Electricity (ch11.pdf)",
+      "chunks": 99,
+      "embedding_dimensions": 1024
+    },
+    {
+      "chapter_number": 12,
+      "id": "c71bbe0c-0206-4a2c-bb13-d6fa2802f9b4",
+      "title": "Class 10 Science - Chapter 12 - Magnetic Effects of Electric Current (ch12.pdf)",
+      "chunks": 57,
+      "embedding_dimensions": 1024
+    },
+    {
+      "chapter_number": 13,
+      "id": "672dfbdf-af01-4c86-9321-f034f6d25aa9",
+      "title": "Class 10 Science - Chapter 13 - Our Environment (ch13.pdf)",
+      "chunks": 39,
+      "embedding_dimensions": 1024
+    }
+  ],
+  "chunk_count": 643,
+  "embedding_dimensions": 1024,
+  "passage_length_chars": {
+    "min": 243,
+    "max": 999,
+    "mean": 820.3592534992224,
+    "median": 912,
+    "p90": 986.0
+  },
+  "database_identity_at_freeze": [
+    "learnmate_db",
+    "tutor"
+  ],
+  "migration_revision_at_freeze": [
+    "0010_hybrid_retrieval_fts"
+  ],
+  "pgvector_version_at_freeze": "0.8.6",
+  "indexes_at_freeze": [
+    "CREATE INDEX idx_chunks_document_id ON public.chunks USING btree (document_id)",
+    "CREATE INDEX ix_chunks_content_fts ON public.chunks USING gin (to_tsvector('simple'::regconfig, COALESCE(content, ''::text)))",
+    "CREATE UNIQUE INDEX chunks_pkey ON public.chunks USING btree (id)"
+  ],
+  "excluded_chapters": [
+    4,
+    5,
+    6,
+    8
+  ]
+}

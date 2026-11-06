@@ -1,0 +1,43 @@
+{
+  "model": "llama3:8b",
+  "grade": "Class 10",
+  "subject_id": "00992e41-d4fd-40a8-9d74-1cd85e3c1b9a",
+  "results": [
+    {
+      "question": "What is a chemical reaction?",
+      "depth": "brief",
+      "status": 200,
+      "answer": "A chemical reaction is a process where the nature and identity of the initial substance change, resulting in the formation of new substances. For instance, when a magnesium ribbon is burnt in oxygen, it gets converted to magnesium oxide, as described in [Source 1].",
+      "citations": [
+        {
+          "chunk_id": "360588d6-b74f-40ae-bf34-7c20ddcecb08",
+          "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+          "document_title": "NCERT Class 10th Science",
+          "chapter": "Chemical Reactions and Equations",
+          "page_number": 1,
+          "chunk_index": 0,
+          "source_index": 1,
+          "similarity_score": 0.6716973990762771,
+          "snippet": "Chemical Reactions\nand Equations\n1CHAPTER\nC\nonsider the following situations of daily life and think what happens\nwhen –\n/square6milk is left at room ..."
+        }
+      ],
+      "is_refused": false,
+      "refusal_reason": null,
+      "words": 44
+    },
+    {
+      "question": "What is a chemical reaction?",
+      "depth": "standard",
+      "status": 500,
+      "detail": "The textbook tutor is temporarily unavailable. Please try again later.",
+      "words": 0
+    },
+    {
+      "question": "What is a chemical reaction?",
+      "depth": "detailed",
+      "status": 500,
+      "detail": "The textbook tutor is temporarily unavailable. Please try again later.",
+      "words": 0
+    }
+  ]
+}

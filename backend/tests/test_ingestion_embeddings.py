@@ -1,6 +1,6 @@
 from types import SimpleNamespace
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 from uuid import uuid4
 
 from app.services.pdf_extraction import ExtractedPDFPage
@@ -9,6 +9,31 @@ from app.tasks.ingestion import _build_chunk_objects, ingest_document_task
 
 
 class IngestionEmbeddingTests(unittest.TestCase):
+    def test_empty_extraction_is_failed_without_embedding_or_chunk_write(self):
+        document = SimpleNamespace(processing_status='pending', id=uuid4(), minio_path='test.pdf')
+        session, connection = MagicMock(), MagicMock()
+        session.query.return_value.filter.return_value.first.return_value = document
+        connection.execute.return_value.scalar.return_value = True
+        with patch('app.tasks.ingestion.SyncSessionLocal', return_value=session), patch('app.tasks.ingestion.sync_engine.connect', return_value=connection), patch('app.tasks.ingestion.minio_service.download_file', return_value=b'%PDF-test'), patch('app.tasks.ingestion.extract_pdf_pages', return_value=[]), patch('app.tasks.ingestion.chunk_extracted_pages', return_value=[]), patch('app.tasks.ingestion.embedding_service.embed_texts') as embed:
+            with self.assertRaisesRegex(ValueError, 'No readable textbook text'):
+                ingest_document_task.run(str(document.id))
+        self.assertEqual(document.processing_status, 'failed')
+        embed.assert_not_called()
+        session.bulk_save_objects.assert_not_called()
+
+    def test_completed_or_concurrently_locked_document_is_not_reembedded(self):
+        document = SimpleNamespace(processing_status="completed")
+        for lock_acquired in (True, False):
+            session, connection = MagicMock(), MagicMock()
+            connection.execute.return_value.scalar.return_value = lock_acquired
+            session.query.return_value.filter.return_value.first.return_value = document
+            with patch("app.tasks.ingestion.SyncSessionLocal", return_value=session), patch("app.tasks.ingestion.sync_engine.connect", return_value=connection), patch("app.tasks.ingestion.embedding_service.embed_texts") as embed, patch("app.tasks.ingestion.minio_service.download_file") as download:
+                result = ingest_document_task.run(str(uuid4()))
+            self.assertIn(result["status"], ("completed", "already_processing"))
+            embed.assert_not_called()
+            download.assert_not_called()
+            session.bulk_save_objects.assert_not_called()
+
     def test_every_chunk_keeps_metadata_and_receives_its_embedding(self):
         document = SimpleNamespace(id=uuid4(), chapter="Photosynthesis")
         text_chunks = [
@@ -76,6 +101,7 @@ class IngestionEmbeddingTests(unittest.TestCase):
         text_chunks = [TextChunk(page_number=1, content="Final chunk text.", chunk_index=0)]
         with (
             patch("app.tasks.ingestion.SyncSessionLocal", return_value=session),
+            patch("app.tasks.ingestion.sync_engine.connect", return_value=MagicMock()),
             patch("app.tasks.ingestion.minio_service.download_file", return_value=b"pdf bytes"),
             patch("app.tasks.ingestion.extract_pdf_pages", return_value=[ExtractedPDFPage(1, "Final chunk text.")]),
             patch("app.tasks.ingestion.chunk_extracted_pages", return_value=text_chunks),

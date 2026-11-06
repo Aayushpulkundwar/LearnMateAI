@@ -4,6 +4,96 @@
 
 LearnMateAI is an intelligent learning assistant designed to help students understand academic concepts using their own textbooks and learning material.
 
+## Platform update: adaptive learning
+
+LearnMateAI now combines its textbook-grounded tutor with authenticated student profiles, validated MCQ banks, diagnostic and targeted reassessments, deterministic evaluation, performance analytics, evidence-based topic mastery, and adaptive recommendations. The original RAG ingestion, retrieval, Ollama, and citation flow remains the source of truth for tutor answers.
+
+### Architecture
+
+```text
+React/Vite dashboard and tutor
+        | cookie-authenticated API
+FastAPI -> PostgreSQL + pgvector <- Alembic migrations
+   |          |             |
+Celery/Redis  MinIO      Ollama (embeddings + grounded generation)
+```
+
+- Documents are extracted, chunked with page metadata, embedded through Ollama, stored in pgvector, and retrieved with existing similarity and metadata filters.
+- The assessment domain is relational: students, curriculum (grades/subjects/chapters/topics), questions/options, assessments/attempts, answers/evaluations, mastery history, and recommendations.
+- Assessment grading is deterministic on the backend. Correct options are not present in pre-submission assessment responses.
+- Topic mastery is a performance proxy, not a validated probability of knowledge: weighted accuracy (easy 1.0, medium 1.5, hard 2.0) is Bayesian-smoothed with configurable prior settings. Confidence is evidence-based.
+
+### Assessment and adaptive-learning workflow
+
+1. A student registers, signs in, selects a grade-appropriate subject, and begins a randomized diagnostic.
+2. The server snapshots question and option order, grades on submission, stores evaluation aggregates, and recalculates affected topic masteries atomically.
+3. Analytics, the dashboard, and recommendations read persisted student-scoped evidence only.
+4. Recommendations prioritize low mastery when evidence is sufficient; insufficient evidence results in a request for more assessment evidence instead of a weakness claim.
+5. Targeted reassessments use validated, previously unseen questions where available. If sufficient fresh questions do not exist, the API returns a clear warning rather than pretending the attempt is independent.
+6. A dashboard topic can open the tutor with server-derived subject/chapter filters and evidence-sensitive explanation depth. Retrieval grounding and citations remain mandatory.
+
+### API guide
+
+All student data endpoints use the authenticated session and never accept a client-authoritative student ID.
+
+| Area | Endpoints |
+| --- | --- |
+| Auth/profile | `POST /api/v1/auth/register`, `POST /api/v1/auth/login`, `POST /api/v1/auth/logout`, `GET/PATCH /api/v1/students/me` |
+| Assessments | `POST /api/v1/assessments/diagnostic/start`, `GET /api/v1/assessments/attempts/{id}`, `POST /api/v1/assessments/attempts/{id}/submit`, `GET /api/v1/assessments/attempts/{id}/results` |
+| Analytics/mastery | `/api/v1/analytics/*`, `/api/v1/mastery/*` |
+| Adaptive learning | `GET /api/v1/learning/recommendations`, `PATCH /api/v1/learning/recommendations/{id}`, `POST /api/v1/learning/reassessments/start`, `GET /api/v1/learning/progress` |
+| Tutor | `POST /api/v1/query/`; optional `study_topic_id` is validated against the authenticated student's curriculum before personalization is applied |
+
+### Installation and configuration
+
+Copy `.env.example` to `.env` and configure PostgreSQL, Redis, MinIO, `OLLAMA_BASE_URL`, embedding/generation model names, JWT secret, and CORS origins. Start dependencies with Docker Compose, then apply the schema:
+
+```powershell
+cd backend
+python -m alembic upgrade head
+python -m scripts.seed_grades
+
+cd ..\frontend
+npm install
+npm run dev
+```
+
+Run the backend/Celery services using the existing Compose configuration after Ollama has the configured models available.
+
+For an existing Docker installation, run `docker compose exec api python -m scripts.seed_grades`.
+This inserts missing Class 7 through Class 12 records and preserves existing grade IDs and relationships; it is safe to repeat.
+The registration dropdown reads `GET /api/v1/auth/grades` and submits the selected API-provided UUID.
+Frontend requests use the same-origin `/api` proxy by default. Docker routes that proxy to `http://api:8000`; native Vite uses `http://127.0.0.1:8000`.
+Set `VITE_API_BASE_URL` explicitly only when deploying the frontend with a separate API origin (and configure backend CORS for that origin).
+
+To verify registration for every supported grade against the local Docker stack:
+
+```powershell
+docker compose exec -e RUN_REGISTRATION_INTEGRATION=1 api python -m unittest tests.test_registration_grades -v
+```
+
+These integration checks create temporary student accounts and remove them after the run.
+
+### Testing
+
+```powershell
+cd backend
+python -m unittest discover -s tests -v
+python -m alembic upgrade head --sql
+
+cd ..\frontend
+npx tsc --noEmit
+npm run build
+```
+
+The unit suite covers authentication/session behavior, ownership checks, deterministic grading, diagnostics, mastery math, analytics aggregation, question validation, ingestion/extraction, embeddings, relevance, grounded generation, and citation preservation. A live integration run additionally requires PostgreSQL/pgvector, Redis/Celery, MinIO, and Ollama.
+
+### Known limitations and future work
+
+- The current mastery score is an explainable performance proxy rather than calibrated Bayesian Knowledge Tracing or Item Response Theory.
+- Live browser/device testing and service integration require the local dependency stack.
+- Add production rate limits, observability/metrics, admin curriculum management UI, generated-question reviewer UI, and richer chart/accessibility test automation before production rollout.
+
 Instead of relying only on the general knowledge of a Large Language Model, LearnMateAI retrieves relevant passages from indexed educational content and uses those passages as context for generating answers.
 
 Every grounded response can include citations pointing back to the relevant textbook passages, together with a semantic relevance score.
@@ -129,13 +219,13 @@ LearnMateAI uses Ollama to run Llama locally rather than depending entirely on a
 Current model:
 
 ```text
-llama3.1
+llama3:8b
 ```
 
 Ollama resolves the installed model to:
 
 ```text
-llama3.1:latest
+llama3:8b
 ```
 
 ### 🐳 Dockerized Architecture
@@ -197,7 +287,7 @@ flowchart TB
 
     subgraph LLM["Local LLM Infrastructure"]
         Ollama["Ollama Server"]
-        Llama["Llama 3.1"]
+        Llama["Llama 3 8B"]
     end
 
     Student --> UI
@@ -262,7 +352,7 @@ Grounded Prompt Construction
       ↓
 Ollama
       ↓
-Llama 3.1
+Llama 3 8B
       ↓
 Generated Answer
       ↓
@@ -376,7 +466,7 @@ The completed grounded prompt is sent to the local Ollama server.
 Current configuration:
 
 ```text
-Model: llama3.1
+Model: llama3:8b
 Ollama service: http://ollama:11434
 ```
 
@@ -403,7 +493,7 @@ The frontend displays citation information so students can identify the educatio
 | Backend Language | Python |
 | AI Orchestration | LangGraph |
 | LLM Runtime | Ollama |
-| LLM | Llama 3.1 |
+| LLM | Llama 3 8B (`llama3:8b`) |
 | Retrieval | Semantic / Vector Search |
 | Architecture | Retrieval-Augmented Generation |
 | API Communication | REST / HTTP |
@@ -577,13 +667,13 @@ http://ollama:11434
 Current model:
 
 ```text
-llama3.1
+llama3:8b
 ```
 
 Installed model:
 
 ```text
-llama3.1:latest
+llama3:8b
 ```
 
 ---
@@ -597,7 +687,7 @@ sequenceDiagram
     participant LG as LangGraph
     participant LLM as LLM Service
     participant O as Ollama
-    participant M as Llama 3.1
+    participant M as Llama 3 8B
 
     API->>LG: Student question + retrieved context
 
@@ -639,7 +729,7 @@ Ollama
         ↓
 Available Models
         ↓
-Verify llama3.1
+Verify llama3:8b
 ```
 
 Infrastructure details are logged internally but should not be unnecessarily exposed to end users.
@@ -695,7 +785,7 @@ Example configuration:
 ```env
 OLLAMA_BASE_URL=http://ollama:11434
 
-OLLAMA_MODEL=llama3.1
+LLM_MODEL=llama3:8b
 
 OLLAMA_GENERATION_TIMEOUT_SECONDS=300
 ```
@@ -938,7 +1028,7 @@ Prompt Builder
         ↓
 Ollama
         ↓
-Llama 3.1
+Llama 3 8B
         ↓
 Generated Answer
         ↓
@@ -1078,7 +1168,7 @@ Stream generated tokens to the frontend as they are produced.
 
 # 🔧 Troubleshooting
 
-## `Failed to generate text from Ollama model "llama3.1"`
+## `Failed to generate text from Ollama model "llama3:8b"`
 
 Check whether Ollama is running:
 
@@ -1109,7 +1199,7 @@ ollama list
 Expected:
 
 ```text
-llama3.1:latest
+llama3:8b
 ```
 
 ---
@@ -1310,7 +1400,7 @@ LangGraph
         ↓
 Ollama
         ↓
-Llama 3.1
+Llama 3 8B
         ↓
 Grounded Answer
         ↓
@@ -1386,7 +1476,7 @@ flowchart LR
     subgraph Inference["🦙 LLM Layer"]
         LLMService["LLM Service"]
         Ollama["Ollama API"]
-        Llama["Llama 3.1"]
+        Llama["Llama 3 8B"]
     end
 
     Student --> Chat
@@ -1453,7 +1543,7 @@ sequenceDiagram
     participant Retriever
     participant VectorDB as Vector Store
     participant Ollama
-    participant Llama as Llama 3.1
+    participant Llama as Llama 3 8B
 
     Student->>Frontend: Ask question
 

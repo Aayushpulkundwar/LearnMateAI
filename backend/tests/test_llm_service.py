@@ -21,13 +21,43 @@ def _async_client(response=None, post_error=None, get_error=None):
 
 
 class OllamaLLMServiceTests(unittest.TestCase):
-    def setUp(self):
-        self.service = OllamaLLMService(base_url="http://ollama.test", model="llama3.1")
-
-    def test_availability_accepts_latest_tag_for_unqualified_model(self):
+    def test_quiz_json_schema_is_sent_without_changing_default_chat_payload(self):
         response = MagicMock()
         response.raise_for_status.return_value = None
-        response.json.return_value = {"models": [{"name": "llama3.1:latest"}]}
+        response.json.return_value = {'response': '{"questions":[]}'}
+        client = _async_client(response=response)
+        schema = {'type': 'object', 'properties': {'questions': {'type': 'array'}}}
+        with patch('app.services.llm_service.httpx.AsyncClient', return_value=client):
+            asyncio.run(OllamaLLMService().generate('quiz', json_mode=True, json_schema=schema))
+        self.assertEqual(client.post.call_args.kwargs['json']['format'], schema)
+        self.assertEqual(client.post.call_args.kwargs['json']['options']['num_ctx'], 4096)
+        self.assertEqual(client.post.call_args.kwargs['json']['options']['num_predict'], 2400)
+        client.post.reset_mock()
+        with patch('app.services.llm_service.httpx.AsyncClient', return_value=client):
+            asyncio.run(OllamaLLMService().generate('chat'))
+        self.assertNotIn('format', client.post.call_args.kwargs['json'])
+
+    def test_teacher_generation_budgets_reach_ollama_without_switching_models(self):
+        response = MagicMock(); response.raise_for_status.return_value = None
+        response.json.return_value = {'response': 'A teacher explanation. [Source 1]'}
+        for tokens in [256, 512, 1024]:
+            client = _async_client(response=response)
+            service = OllamaLLMService()
+            with patch('app.services.llm_service.httpx.AsyncClient', return_value=client):
+                asyncio.run(service.generate('Question', 'Teacher instructions', num_ctx=8192, num_predict=tokens))
+            payload = client.post.call_args.kwargs['json']
+            self.assertEqual(payload['model'], service.model)
+            self.assertEqual(payload['options']['num_ctx'], 8192)
+            self.assertEqual(payload['options']['num_predict'], tokens)
+            self.assertNotIn('format', payload)
+
+    def setUp(self):
+        self.service = OllamaLLMService(base_url="http://ollama.test", model="llama3:8b")
+
+    def test_availability_accepts_exact_qualified_tag(self):
+        response = MagicMock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = {"models": [{"name": "llama3:8b"}]}
         client = _async_client(response=response)
         with patch("app.services.llm_service.httpx.AsyncClient", return_value=client):
             asyncio.run(self.service.check_availability())
@@ -38,7 +68,7 @@ class OllamaLLMServiceTests(unittest.TestCase):
         response.json.return_value = {"models": [{"name": "other:latest"}]}
         client = _async_client(response=response)
         with patch("app.services.llm_service.httpx.AsyncClient", return_value=client):
-            with self.assertRaisesRegex(RuntimeError, "llama3.1.*unavailable"):
+            with self.assertRaisesRegex(RuntimeError, "llama3:8b.*unavailable"):
                 asyncio.run(self.service.check_availability())
 
     def test_generation_timeout_is_safe_to_callers_and_logged(self):

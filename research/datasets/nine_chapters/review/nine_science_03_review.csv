@@ -1,0 +1,2988 @@
+﻿id,split,chapter_number,chapter_title,document_id,corpus_sha256,question,expected_answer,proposed_relevant_chunk_ids,proposed_passages,decision,reviewer_id,rationale,answerable,gold_passage_ids,reference_answer,evidence_spans_json
+nine-01,dev,1,Chemical Reactions and Equations,6b418b53-971c-4547-b4ac-e0eae9fdff92,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,Why must a chemical equation be balanced?,(not supplied; reviewer must author if answerable),2fe171a3-73cd-4cea-b59e-2ad63f0796bd;3ff5ee19-3a7f-42ab-8750-62355cd479db;5bedd79e-0fab-4af1-ab24-a78f4f813583,"CHUNK: 2fe171a3-73cd-4cea-b59e-2ad63f0796bd
+PAGE: 15
+PASSAGE:
+Chemical Reactions and Equations 15
+(c) decomposition reaction.
+(d) displacement reaction.
+3. What happens when dilute hydr ochloric acid is added to iron fillings? T ick the
+correct answer.
+(a) Hydrogen gas and iron chloride are produced.
+(b) Chlorine gas and iron hydroxide are produced.
+(c) No reaction takes place.
+(d) Iron salt and water are produced.
+4. What is a balanced chemical equation? Why should chemical equations be
+balanced?
+5. Translate the following statements into chemical equations and then balance them.
+(a) Hydrogen gas combines with nitrogen to form ammonia.
+(b) Hydrogen sulphide gas burns in air to give water and sulpur dioxide.
+(c) Barium chloride reacts with aluminium sulphate to give aluminium chloride
+and a precipitate of barium sulphate.
+(d) Potassium metal reacts with water to give potassium hydroxide and hydrogen
+gas.
+6. Balance the following chemical equations.
+(a) HNO3 + Ca(OH)2 →  Ca(NO3)2 + H2O
+(b) NaOH + H2SO4 →  Na2SO4 + H2O
+
+CHUNK: 3ff5ee19-3a7f-42ab-8750-62355cd479db
+PAGE: 4
+PASSAGE:
+Science4
+Step I: To balance a chemical equation, first draw boxes around each
+formula. Do not change anything inside the boxes while balancing the
+equation.
+Fe   +   H2O   →    Fe3O4   +   H2 (1.5)
+Step II: List the number of atoms of different elements present in the
+unbalanced equation (1.5).
+Element Number of atoms Number of atoms
+in reactants (LHS) in products (RHS)
+Fe 1 3
+H 2 2
+O 1 4
+To equalise the number of atoms, it must be remembered that we
+cannot alter the formulae of the compounds or elements involved in the
+reactions. For example, to balance oxygen atoms we can put coefficient
+‘4’ as 4 H2O and not H2O4 or (H2O)4. Now the partly balanced equation
+becomes –
+Fe   +   4 H2O   →   Fe3O4   +   H2
+Step IV: Fe and H atoms are still not balanced. Pick any of these elements
+to proceed further. Let us balance hydrogen atoms in the partly balanced
+equation.
+To equalise the number of H atoms, make the number of molecules
+of hydrogen as four on the RHS.
+
+CHUNK: 5bedd79e-0fab-4af1-ab24-a78f4f813583
+PAGE: 14
+PASSAGE:
+Science14
+What you have learnt
+/square6A complete chemical equation represents the reactants, products and their physical
+states symbolically.
+/square6A chemical equation is balanced so that the numbers of atoms of each type involved
+in a chemical reaction are the same on the reactant and product sides of the
+equation. Equations must always be balanced.
+/square6In a combination reaction two or more substances combine to form a new single
+substance.
+/square6Decomposition reactions are opposite to combination reactions. In a decomposition
+reaction, a single substance decomposes to give two or more substances.
+/square6Reactions in which heat is given out along with the products are called exothermic
+reactions.
+/square6Reactions in which energy is absorbed are known as endothermic reactions.
+/square6When an element displaces another element from its compound, a displacement
+reaction occurs.
+/square6Two different atoms or groups of atoms (ions) are exchanged in double displacement",,,,,,,
+nine-02,dev,1,Chemical Reactions and Equations,6b418b53-971c-4547-b4ac-e0eae9fdff92,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does a combination reaction differ from a decomposition reaction?,(not supplied; reviewer must author if answerable),5bedd79e-0fab-4af1-ab24-a78f4f813583;0817ed3a-2650-47a6-aeb0-f3b2b70800af;2152d189-806c-4bb4-8b80-80f5aa43086a,"CHUNK: 5bedd79e-0fab-4af1-ab24-a78f4f813583
+PAGE: 14
+PASSAGE:
+Science14
+What you have learnt
+/square6A complete chemical equation represents the reactants, products and their physical
+states symbolically.
+/square6A chemical equation is balanced so that the numbers of atoms of each type involved
+in a chemical reaction are the same on the reactant and product sides of the
+equation. Equations must always be balanced.
+/square6In a combination reaction two or more substances combine to form a new single
+substance.
+/square6Decomposition reactions are opposite to combination reactions. In a decomposition
+reaction, a single substance decomposes to give two or more substances.
+/square6Reactions in which heat is given out along with the products are called exothermic
+reactions.
+/square6Reactions in which energy is absorbed are known as endothermic reactions.
+/square6When an element displaces another element from its compound, a displacement
+reaction occurs.
+/square6Two different atoms or groups of atoms (ions) are exchanged in double displacement
+
+CHUNK: 0817ed3a-2650-47a6-aeb0-f3b2b70800af
+PAGE: 11
+PASSAGE:
+Chemical Reactions and Equations 11
+Why does the iron nail become brownish in colour and the blue colour
+of copper sulphate solution fades?
+The following chemical reaction takes place in this Activity–
+Fe(s) + CuSO4(aq) → FeSO4(aq)    +   Cu(s) (1.24)
+        (Copper sulphate) (Iron sulphate)
+In this reaction, iron has displaced or removed another element,
+copper, fr om copper sulphate solution. This r eaction is known as
+displacement reaction.
+Other examples of displacement reactions are
+Zn(s) + CuSO4(aq)   → ZnSO4(aq)   +     Cu(s) (1.25)
+     (Copper sulphate) (Zinc sulphate)
+Pb(s) + CuCl2(aq)   → PbCl2(aq)     +     Cu(s) (1.26)
+      (Copper chloride) (Lead chloride)
+Zinc and lead are more reactive elements than copper. They displace
+copper from its compounds.
+1.2.4 Double Displacement Reaction
+Activity 1.10Activity 1.10Activity 1.10Activity 1.10Activity 1.10
+/square6Take about 3 mL of sodium sulphate
+solution in a test tube.
+/square6In another test tube, take about 3 mL of
+
+CHUNK: 2152d189-806c-4bb4-8b80-80f5aa43086a
+PAGE: 16
+PASSAGE:
+displacement reactions?
+Write equations for these reactions.
+14.  In the refining of silver, the recovery of silver from silver nitrate solution involved
+displacement by copper metal. Write down the reaction involved.
+15. What do you mean by a precipitation reaction? Explain by giving examples.
+16. Explain the following in terms of gain or loss of oxygen with two examples each.
+(a) Oxidation
+(b) Reduction
+17. A shiny brown coloured element ‘X’ on heating in air becomes black in colour .
+Name the element ‘X’ and the black coloured compound formed.
+18. Why do we apply paint on iron articles?
+19. Oil and fat containing food items are flushed with nitrogen. Why?
+20. Explain the following terms with one example each.
+(a) Corrosion
+(b) Rancidity
+Reprint 2026-27",,,,,,,
+nine-03,test,1,Chemical Reactions and Equations,6b418b53-971c-4547-b4ac-e0eae9fdff92,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,What observations indicate that a chemical reaction has occurred?,(not supplied; reviewer must author if answerable),209ceee6-2c7c-4a48-b540-2fbf7b0e6ed1;360588d6-b74f-40ae-bf34-7c20ddcecb08;b19cfd7d-7b6d-425e-a778-71d671688eca,"CHUNK: 209ceee6-2c7c-4a48-b540-2fbf7b0e6ed1
+PAGE: 5
+PASSAGE:
+equation tell us anything about
+the physical state of each reactant and product? No information has
+been given in this equation about their physical states.
+To make a chemical equation more informative, the physical states
+of the reactants and products are mentioned along with their chemical
+formulae. The gaseous, liquid, aqueous and solid states of reactants
+and products are represented by the notations (g), (l), (aq) and (s),
+respectively. The word aqueous (aq) is written if the reactant or product
+is present as a solution in water.
+The balanced Eq. (1.9) becomes
+3Fe(s) + 4H2O(g)  →  Fe3O4(s) + 4H2(g) (1.10)
+Note that the symbol (g) is used with H 2O to indicate that in this
+reaction water is used in the form of steam.
+Usually physical states are not included in a chemical equation unless
+it is necessary to specify them.
+Sometimes the reaction conditions, such as temperature, pressure,
+catalyst, etc., for the reaction are indicated above and/or below the arrow
+
+CHUNK: 360588d6-b74f-40ae-bf34-7c20ddcecb08
+PAGE: 1
+PASSAGE:
+Chemical Reactions
+and Equations
+1CHAPTER
+C
+onsider the following situations of daily life and think what happens
+when –
+/square6milk is left at room temperature during summers.
+/square6an iron tawa/pan/nail is left exposed to humid atmosphere.
+/square6grapes get fermented.
+/square6food is cooked.
+/square6food gets digested in our body.
+/square6we respire.
+In all the above situations, the nature and the identity of the initial
+substance have somewhat changed. We have already learnt about physical
+and chemical changes of matter in our previous classes. Whenever a chemical
+change occurs, we can say that a chemical reaction has taken place.
+You may perhaps be wondering as to what is actually meant by a
+chemical reaction. How do we come to know that a chemical reaction
+has taken place? Let us perform some activities to find the answer to
+these questions.
+Figure 1.1
+Burning of a magnesium ribbon in air and collection of magnesium
+oxide in a watch-glass
+
+CHUNK: b19cfd7d-7b6d-425e-a778-71d671688eca
+PAGE: 2
+PASSAGE:
+Science2
+Activity 1.2Activity 1.2Activity 1.2Activity 1.2Activity 1.2
+Figure 1.2Figure 1.2Figure 1.2Figure 1.2Figure 1.2
+Formation of hydrogen
+gas by the action of
+dilute sulphuric acid on
+zinc
+From the above three activities, we can say that any of
+the following observations helps us to determine whether
+a chemical reaction has taken place –
+/square6change in state
+/square6change in colour
+/square6evolution of a gas
+/square6change in temperature.
+As we observe the changes around us, we can see
+that there is a large variety of chemical reactions taking
+place around us. We will study about the various types
+of chemical reactions and their symbolic representation
+in this Chapter.
+Activity 1.3Activity 1.3Activity 1.3Activity 1.3Activity 1.3
+/square6Take a few zinc granules in a conical flask or a test tube.
+/square6Add dilute hydrochloric acid or sulphuric acid to this
+(Fig. 1.2).
+CAUTION: Handle the acid with care.
+/square6Do you observe anything happening around the zinc
+granules?",,,,,,,
+nine-04,test,1,Chemical Reactions and Equations,6b418b53-971c-4547-b4ac-e0eae9fdff92,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does a displacement reaction differ from a double displacement reaction?,(not supplied; reviewer must author if answerable),0817ed3a-2650-47a6-aeb0-f3b2b70800af;70de6b16-3bd6-4846-aac5-4ba7d47f08fd;0bd6749c-caba-4b89-a547-c5a738e9579d,"CHUNK: 0817ed3a-2650-47a6-aeb0-f3b2b70800af
+PAGE: 11
+PASSAGE:
+Chemical Reactions and Equations 11
+Why does the iron nail become brownish in colour and the blue colour
+of copper sulphate solution fades?
+The following chemical reaction takes place in this Activity–
+Fe(s) + CuSO4(aq) → FeSO4(aq)    +   Cu(s) (1.24)
+        (Copper sulphate) (Iron sulphate)
+In this reaction, iron has displaced or removed another element,
+copper, fr om copper sulphate solution. This r eaction is known as
+displacement reaction.
+Other examples of displacement reactions are
+Zn(s) + CuSO4(aq)   → ZnSO4(aq)   +     Cu(s) (1.25)
+     (Copper sulphate) (Zinc sulphate)
+Pb(s) + CuCl2(aq)   → PbCl2(aq)     +     Cu(s) (1.26)
+      (Copper chloride) (Lead chloride)
+Zinc and lead are more reactive elements than copper. They displace
+copper from its compounds.
+1.2.4 Double Displacement Reaction
+Activity 1.10Activity 1.10Activity 1.10Activity 1.10Activity 1.10
+/square6Take about 3 mL of sodium sulphate
+solution in a test tube.
+/square6In another test tube, take about 3 mL of
+
+CHUNK: 70de6b16-3bd6-4846-aac5-4ba7d47f08fd
+PAGE: 13
+PASSAGE:
+Chemical Reactions and Equations 13
+In reaction (1.31) carbon is oxidised to CO and ZnO is reduced to Zn.
+In reaction (1.32) HCl is oxidised to Cl2 whereas MnO2 is reduced to MnCl2.
+From the above examples we can say that if a substance gains oxygen
+or loses hydrogen during a reaction, it is oxidised. If a substance loses
+oxygen or gains hydrogen during a reaction, it is reduced.
+QUESTIONS
+?
+1. Why does the colour of copper sulphate solution change when
+an iron nail is dipped in it?
+2. Give an example of a double displacement reaction other than
+the one given in Activity 1.10.
+3. Identify the substances that are oxidised and the substances
+that are reduced in the following reactions.
+(i) 4Na(s) + O 2(g) →  2Na2O(s)
+(ii) CuO(s) + H2(g) →  Cu(s) + H2O(l)
+1.3 1.31.3 1.31.3 HAHAHA
+HAHAVE YOU OBSERVED THE EFFECTS OF OVE YOU OBSERVED THE EFFECTS OF OVE YOU OBSERVED THE EFFECTS OF OVE YOU OBSERVED THE EFFECTS OF OVE YOU OBSERVED THE EFFECTS OF O XID XIDXID XIDXIDA AA AATION TIONTION TIONTION
+
+CHUNK: 0bd6749c-caba-4b89-a547-c5a738e9579d
+PAGE: 12
+PASSAGE:
+oxidised.
+If a substance loses oxygen during a reaction, it is said to be reduced.
+During this reaction (1.29), the copper(II) oxide is losing oxygen and
+is being reduced. The hydrogen is gaining oxygen and is being oxidised.
+In other words, one reactant gets oxidised while the other gets reduced
+during a reaction. Such reactions are called oxidation-reduction reactions
+or redox reactions.
+(1.30)
+Some other examples of redox reactions are:
+ZnO + C → + Zn CO (1.31)
+MnO HCl MnCl H O Cl2 2 2 24 2+ → + + (1.32)
+Recall Activity 1.2Recall Activity 1.2Recall Activity 1.2Recall Activity 1.2Recall Activity 1.2 , where you have mixed the solutions of lead(II) nitrate
+and potassium iodide.
+(i) What was the colour of the precipitate formed? Can you name the compound
+precipitated?
+(ii) Write the balanced chemical equation for this reaction.
+(iii) Is this also a double displacement reaction?
+What causes this? The  white precipitate of BaSO4 is formed by the
+reaction of 2–",,,,,,,
+nine-05,test,1,Chemical Reactions and Equations,6b418b53-971c-4547-b4ac-e0eae9fdff92,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,Why is oxidation linked with reduction in a redox reaction?,(not supplied; reviewer must author if answerable),2152d189-806c-4bb4-8b80-80f5aa43086a;5eb8a9ec-3b93-41dc-ae94-17861a604efb;0bd6749c-caba-4b89-a547-c5a738e9579d,"CHUNK: 2152d189-806c-4bb4-8b80-80f5aa43086a
+PAGE: 16
+PASSAGE:
+displacement reactions?
+Write equations for these reactions.
+14.  In the refining of silver, the recovery of silver from silver nitrate solution involved
+displacement by copper metal. Write down the reaction involved.
+15. What do you mean by a precipitation reaction? Explain by giving examples.
+16. Explain the following in terms of gain or loss of oxygen with two examples each.
+(a) Oxidation
+(b) Reduction
+17. A shiny brown coloured element ‘X’ on heating in air becomes black in colour .
+Name the element ‘X’ and the black coloured compound formed.
+18. Why do we apply paint on iron articles?
+19. Oil and fat containing food items are flushed with nitrogen. Why?
+20. Explain the following terms with one example each.
+(a) Corrosion
+(b) Rancidity
+Reprint 2026-27
+
+CHUNK: 5eb8a9ec-3b93-41dc-ae94-17861a604efb
+PAGE: 12
+PASSAGE:
+Science12
+1.2.5 Oxidation and Reduction
+Activity 1.11Activity 1.11Activity 1.11Activity 1.11Activity 1.11
+/square6Heat a china dish containing about 1 g
+copper powder (Fig. 1.10).
+/square6What do you observe?
+Figure 1.10Figure 1.10Figure 1.10Figure 1.10Figure 1.10
+Oxidation of copper to
+copper oxide
+The surface of copper powder becomes coated with
+black copper(II) oxide. Why has this black
+substance formed?
+This is because oxygen is added to copper and
+copper oxide is formed.
+2Cu + O2  Heat →  2CuO (1.28)
+If hydrogen gas is passed over this heated material (CuO), the black
+coating on the surface turns brown as the reverse reaction takes place
+and copper is obtained.
+CuO +H Cu+H O2 2
+Heat →    (1.29)
+If a substance gains oxygen during a reaction, it is said to be oxidised.
+If a substance loses oxygen during a reaction, it is said to be reduced.
+During this reaction (1.29), the copper(II) oxide is losing oxygen and
+
+CHUNK: 0bd6749c-caba-4b89-a547-c5a738e9579d
+PAGE: 12
+PASSAGE:
+oxidised.
+If a substance loses oxygen during a reaction, it is said to be reduced.
+During this reaction (1.29), the copper(II) oxide is losing oxygen and
+is being reduced. The hydrogen is gaining oxygen and is being oxidised.
+In other words, one reactant gets oxidised while the other gets reduced
+during a reaction. Such reactions are called oxidation-reduction reactions
+or redox reactions.
+(1.30)
+Some other examples of redox reactions are:
+ZnO + C → + Zn CO (1.31)
+MnO HCl MnCl H O Cl2 2 2 24 2+ → + + (1.32)
+Recall Activity 1.2Recall Activity 1.2Recall Activity 1.2Recall Activity 1.2Recall Activity 1.2 , where you have mixed the solutions of lead(II) nitrate
+and potassium iodide.
+(i) What was the colour of the precipitate formed? Can you name the compound
+precipitated?
+(ii) Write the balanced chemical equation for this reaction.
+(iii) Is this also a double displacement reaction?
+What causes this? The  white precipitate of BaSO4 is formed by the
+reaction of 2–",,,,,,,
+nine-06,test,1,Chemical Reactions and Equations,6b418b53-971c-4547-b4ac-e0eae9fdff92,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How do corrosion and rancidity affect everyday materials?,(not supplied; reviewer must author if answerable),2152d189-806c-4bb4-8b80-80f5aa43086a;703bed18-f196-459f-a81e-5aacfb3ded73;360588d6-b74f-40ae-bf34-7c20ddcecb08,"CHUNK: 2152d189-806c-4bb4-8b80-80f5aa43086a
+PAGE: 16
+PASSAGE:
+displacement reactions?
+Write equations for these reactions.
+14.  In the refining of silver, the recovery of silver from silver nitrate solution involved
+displacement by copper metal. Write down the reaction involved.
+15. What do you mean by a precipitation reaction? Explain by giving examples.
+16. Explain the following in terms of gain or loss of oxygen with two examples each.
+(a) Oxidation
+(b) Reduction
+17. A shiny brown coloured element ‘X’ on heating in air becomes black in colour .
+Name the element ‘X’ and the black coloured compound formed.
+18. Why do we apply paint on iron articles?
+19. Oil and fat containing food items are flushed with nitrogen. Why?
+20. Explain the following terms with one example each.
+(a) Corrosion
+(b) Rancidity
+Reprint 2026-27
+
+CHUNK: 703bed18-f196-459f-a81e-5aacfb3ded73
+PAGE: 13
+PASSAGE:
+corrosion.
+Corrosion causes damage to car bodies, bridges, iron railings, ships
+and to all objects made of metals, specially those of iron. Corrosion of
+iron is a serious problem. Every year an enormous amount of money is
+spent to replace damaged iron. You will learn more about corrosion in
+Chapter 3.
+1.3.2 Rancidity
+Have you ever tasted or smelt the fat/oil containing food materials left
+for a long time?
+When fats and oils are oxidised, they become rancid and their smell
+and taste change. Usually substances which prevent oxidation
+(antioxidants) are added to foods containing fats and oil. Keeping food
+in air tight containers helps to slow down oxidation. Do you know that
+chips manufacturers usually flush bags of chips with gas such as
+nitrogen to prevent the chips from getting oxidised ?
+Recall Activity 1.1Recall Activity 1.1Recall Activity 1.1Recall Activity 1.1Recall Activity 1.1 ,     where a magnesium ribbon burns with a dazzling flame in air (oxygen)
+
+CHUNK: 360588d6-b74f-40ae-bf34-7c20ddcecb08
+PAGE: 1
+PASSAGE:
+Chemical Reactions
+and Equations
+1CHAPTER
+C
+onsider the following situations of daily life and think what happens
+when –
+/square6milk is left at room temperature during summers.
+/square6an iron tawa/pan/nail is left exposed to humid atmosphere.
+/square6grapes get fermented.
+/square6food is cooked.
+/square6food gets digested in our body.
+/square6we respire.
+In all the above situations, the nature and the identity of the initial
+substance have somewhat changed. We have already learnt about physical
+and chemical changes of matter in our previous classes. Whenever a chemical
+change occurs, we can say that a chemical reaction has taken place.
+You may perhaps be wondering as to what is actually meant by a
+chemical reaction. How do we come to know that a chemical reaction
+has taken place? Let us perform some activities to find the answer to
+these questions.
+Figure 1.1
+Burning of a magnesium ribbon in air and collection of magnesium
+oxide in a watch-glass",,,,,,,
+nine-07,dev,2,"Acids, Bases and Salts",93116cc1-6a00-4968-9268-59db13424b09,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How do acids and bases affect litmus indicators?,(not supplied; reviewer must author if answerable),24a50953-2807-4a83-bd1a-986e0644917d;7416cf9a-070b-44ff-a8d4-d1e6aef64855;d7b77cb5-2f47-4cd1-9725-5e77c20cef24,"CHUNK: 24a50953-2807-4a83-bd1a-986e0644917d
+PAGE: 2
+PASSAGE:
+QUESTION  ?
+
+1.      You have been provided with three test tubes. One of them contains
+       distilled water and the other two contain an acidic solution and a basic
+       solution, respectively. If you are given only red litmus paper, how will
+       you identify the contents of each test tube?
+
+                        2.12.12.12.12.1 UNDERSTUNDERSTUNDERSTUNDERSTANDING THE CHEMICUNDERSTANDING THE CHEMICANDING THE CHEMICANDING THE CHEMICAL PROPERTIES OFANDING THE CHEMICAL PROPERTIES OFAL PROPERTIES OFAL PROPERTIES OFAL PROPERTIES OF
+                              ACIDS AND BASESACIDS AND BASESACIDS AND BASESACIDS AND BASESACIDS AND BASES
+
+                        2.1.1 Acids and Bases in the Laboratory
+                              Activity 2.1Activity 2.1
+                              Activity 2.1Activity 2.1Activity 2.1
+
+CHUNK: 7416cf9a-070b-44ff-a8d4-d1e6aef64855
+PAGE: 5
+PASSAGE:
+Salt + Carbon dioxide + Water
+
+2.1.4 How do Acids and Bases React with each other?
+
+      Activity 2.6Activity 2.6Activity 2.6Activity 2.6Activity 2.6
+
+
+   /square6  Take about 2 mL of dilute NaOH solution in a test tube and add
+       two drops of phenolphthalein solution.
+   /square6  What is the colour of the solution?
+   /square6  Add dilute HCl solution to the above solution drop by drop.
+   /square6  Is there any colour change for the reaction mixture?
+   /square6  Why did the colour of phenolphthalein change after the addition
+       of an acid?
+   /square6  Now add a few drops of NaOH to the above mixture.
+   /square6  Does the pink colour of phenolphthalein reappear?
+   /square6  Why do you think this has happened?
+
+CHUNK: d7b77cb5-2f47-4cd1-9725-5e77c20cef24
+PAGE: 1
+PASSAGE:
+ability of
+      acids and bases to nullify each other’s effect.
+   /square6   Recall how we tested sour and bitter substances without tasting
+      them.
+
+    You already know that acids are sour in taste and change the colour
+of blue litmus to red, whereas, bases are bitter and change the colour of
+the red litmus to blue. Litmus is a natural indicator, turmeric is another
+such indicator. Have you noticed that a stain of curry on a white cloth
+becomes reddish-brown when soap, which is basic in nature, is scrubbed
+on it? It turns yellow again when the cloth is washed with plenty of
+water. You can also use synthetic indicators such as methyl orange and
+phenolphthalein to test for acids and bases.
+    In this Chapter, we will study the reactions of acids and bases, how
+acids and bases cancel out each other’s effects and many more interesting
+things that we use and see in our day-to-day life.",,,,,,,
+nine-08,dev,2,"Acids, Bases and Salts",93116cc1-6a00-4968-9268-59db13424b09,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,Why do aqueous acids conduct electricity?,(not supplied; reviewer must author if answerable),52fb2f7a-cd2e-46f1-a55e-39cb34781304;25e17c26-2283-40ff-a6c3-70befd910073;02bd29e3-07d5-4fa7-bee5-84714516bf0e,"CHUNK: 52fb2f7a-cd2e-46f1-a55e-39cb34781304
+PAGE: 9
+PASSAGE:
+QUESTIONS
+
+   1.    Why do HCl, HNO3, etc., show acidic characters in aqueous solutions
+          while solutions of compounds like alcohol and glucose do not show acidic
+          character?
+   2.    Why does an aqueous solution of an acid conduct electricity?
+   3.     Why does dry HCl gas not change the colour of the dry litmus paper?
+   4.     While diluting an acid, why is it recommended that the acid should be
+          added to water and not water to the acid?
+   5.    How is the concentration of hydronium ions (H3O+) affected when a                    ?
+          solution of an acid is diluted?
+   6.    How is the concentration of hydroxide ions (OH–) affected when excess
+          base is dissolved in a solution of sodium hydroxide?
+
+CHUNK: 25e17c26-2283-40ff-a6c3-70befd910073
+PAGE: 7
+PASSAGE:
+The bulb will start glowing in the case of acids, as shown in Fig. 2.3.
+But you will observe that glucose and alcohol solutions do not conduct
+electricity. Glowing of the bulb indicates that there is a flow of electric
+current through the solution. The electric current is carried through the
+acidic solution by ions.
+    Acids contain H+ ion as cation and anion such as Cl– in HCl, NO                         3– in
+HNO3, SO2–    in H2SO4, CH3COO– in CH3COOH. Since the cation present in
+            4
+acids is H+, this suggests that acids produce hydrogen ions, H+(aq), in
+solution, which are responsible for their acidic properties.
+    Repeat the same Activity using alkalis such as sodium hydroxide, calcium
+hydroxide, etc. What can you conclude from the results of this Activity?
+
+2.2.1 What Happens to an Acid or a Base in a Water Solution?
+Do acids produce ions only in aqueous solution? Let us test this.
+
+      Activity 2.9Activity 2.9Activity 2.9Activity 2.9Activity 2.9
+
+CHUNK: 02bd29e3-07d5-4fa7-bee5-84714516bf0e
+PAGE: 5
+PASSAGE:
+few drops of NaOH to the above mixture.
+   /square6  Does the pink colour of phenolphthalein reappear?
+   /square6  Why do you think this has happened?
+
+
+    In the above Activity, we have observed that the effect of a base is
+nullified by an acid and vice-versa. The reaction taking place is written as –
+    NaOH(aq) + HCl(aq) → NaCl(aq) + H2O(l)
+    The reaction between an acid and a base to give a salt and water is
+known as a neutralisation reaction. In general, a neutralisation reaction
+can be written as –
+    Base + Acid → Salt + Water
+
+2.1.5 Reaction of Metallic Oxides with Acids
+      Activity 2.7Activity 2.7Activity 2.7
+      Activity 2.7Activity 2.7
+
+   /square6  Take a small amount of copper oxide in a beaker and add dilute
+       hydrochloric acid slowly while stirring.
+   /square6  Note the colour of the solution. What has happened to the copper
+       oxide?",,,,,,,
+nine-09,test,2,"Acids, Bases and Salts",93116cc1-6a00-4968-9268-59db13424b09,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does pH indicate the acidic or basic nature of a solution?,(not supplied; reviewer must author if answerable),7a6c9fb8-cb34-485e-b170-b300a164e7d4;3a9644ab-c1d7-4e65-a1b8-d4a3c6a7b94d;5bcc3433-f5a7-4db5-9a4c-9e411fdd1315,"CHUNK: 7a6c9fb8-cb34-485e-b170-b300a164e7d4
+PAGE: 12
+PASSAGE:
+Oxalic acid                          Nettle sting                             Methanoic acid
+
+                       QUESTIONS
+
+   1.      You have two solutions, A and B. The pH of solution A is 6 and pH of
+          solution B is 8. Which solution has more hydrogen ion concentration?
+          Which of this is acidic and which one is basic?
+   2.      What effect does the concentration of H+(aq) ions have on the nature of the
+          solution?
+   3.     Do basic solutions also have H+(aq) ions? If yes, then why are these basic?
+   4.      Under what soil condition do you think a farmer would treat the soil of his
+          fields with quick lime (calcium oxide) or slaked lime (calcium hydroxide) or
+          chalk (calcium carbonate)?        ?
+
+CHUNK: 3a9644ab-c1d7-4e65-a1b8-d4a3c6a7b94d
+PAGE: 9
+PASSAGE:
+different
+colours at different concentrations of hydrogen ions in a solution.
+    A scale for measuring hydrogen ion concentration in a solution, called
+pH scale has been developed. The p in pH stands for ‘potenz’ in German,
+meaning power. On the pH scale we can measure pH generally from
+0 (very acidic) to 14 (very alkaline). pH should be thought of simply as a
+number which indicates the acidic or basic nature of a solution. Higher
+the hydronium ion concentration, lower is the pH value.
+    The pH of a neutral solution is 7. Values less than 7 on the pH scale
+represent an acidic solution. As the pH value increases from 7 to 14, it
+represents an increase in OH– ion concentration in the solution, that is,
+increase in the strength of alkali (Fig. 2.6). Generally paper impregnated
+with the universal indicator is used for measuring pH.
+
+
+
+
+
+
+
+
+
+
+
+
+
+         Figure 2.6Figure 2.6Figure 2.6 Variation of pH with the change in concentration of  H+(aq) and OH–(aq) ionsFigure 2.6Figure 2.6
+
+CHUNK: 5bcc3433-f5a7-4db5-9a4c-9e411fdd1315
+PAGE: 17
+PASSAGE:
+you have learnt
+
+
+
+     n      Acid-base indicators are dyes or mixtures of dyes which are used to indicate the
+           presence of acids and bases.
+
+     n     Acidic nature of a substance is due to the formation of H+(aq) ions in solution.
+           Formation of OH–(aq) ions in solution is responsible for the basic nature of a
+           substance.
+
+     n     When an acid reacts with a metal, hydrogen gas is evolved and a corresponding
+           salt is formed.
+
+     n       When a base reacts with a metal, along with the evolution of hydrogen gas a salt is
+           formed which has a negative ion composed of the metal and oxygen.
+
+     n       When an acid reacts with a metal carbonate or metal hydrogencarbonate, it gives
+           the corresponding salt, carbon dioxide gas and water.
+
+     n    Acidic and basic solutions in water conduct electricity because they produce
+           hydrogen and hydroxide ions respectively.",,,,,,,
+nine-10,test,2,"Acids, Bases and Salts",93116cc1-6a00-4968-9268-59db13424b09,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,Why should acid be added to water during dilution?,(not supplied; reviewer must author if answerable),52fb2f7a-cd2e-46f1-a55e-39cb34781304;02bd29e3-07d5-4fa7-bee5-84714516bf0e;2390434c-ba92-486c-b361-b0a67370e5b8,"CHUNK: 52fb2f7a-cd2e-46f1-a55e-39cb34781304
+PAGE: 9
+PASSAGE:
+QUESTIONS
+
+   1.    Why do HCl, HNO3, etc., show acidic characters in aqueous solutions
+          while solutions of compounds like alcohol and glucose do not show acidic
+          character?
+   2.    Why does an aqueous solution of an acid conduct electricity?
+   3.     Why does dry HCl gas not change the colour of the dry litmus paper?
+   4.     While diluting an acid, why is it recommended that the acid should be
+          added to water and not water to the acid?
+   5.    How is the concentration of hydronium ions (H3O+) affected when a                    ?
+          solution of an acid is diluted?
+   6.    How is the concentration of hydroxide ions (OH–) affected when excess
+          base is dissolved in a solution of sodium hydroxide?
+
+CHUNK: 02bd29e3-07d5-4fa7-bee5-84714516bf0e
+PAGE: 5
+PASSAGE:
+few drops of NaOH to the above mixture.
+   /square6  Does the pink colour of phenolphthalein reappear?
+   /square6  Why do you think this has happened?
+
+
+    In the above Activity, we have observed that the effect of a base is
+nullified by an acid and vice-versa. The reaction taking place is written as –
+    NaOH(aq) + HCl(aq) → NaCl(aq) + H2O(l)
+    The reaction between an acid and a base to give a salt and water is
+known as a neutralisation reaction. In general, a neutralisation reaction
+can be written as –
+    Base + Acid → Salt + Water
+
+2.1.5 Reaction of Metallic Oxides with Acids
+      Activity 2.7Activity 2.7Activity 2.7
+      Activity 2.7Activity 2.7
+
+   /square6  Take a small amount of copper oxide in a beaker and add dilute
+       hydrochloric acid slowly while stirring.
+   /square6  Note the colour of the solution. What has happened to the copper
+       oxide?
+
+CHUNK: 2390434c-ba92-486c-b361-b0a67370e5b8
+PAGE: 19
+PASSAGE:
+more vigorously and why?
+     11.  Fresh milk has a pH of 6. How do you think the pH will change as it turns into
+           curd? Explain your answer.
+     12.  A milkman adds a very small amount of baking soda to fresh milk.
+          (a)    Why does he shift the pH of the fresh milk from 6 to slightly alkaline?
+          (b)    Why does this milk take a long time to set as curd?
+     13.   Plaster of Paris should be stored in a moisture-proof container. Explain why?
+     14.   What is a neutralisation reaction? Give two examples.
+     15.  Give two important uses of  washing soda and baking soda.
+
+
+          Group  Activity
+
+
+    (I) Prepare your own indicator
+
+     n     Crush beetroot in a mortar.
+
+     n       Add sufficient water to obtain the extract.
+
+     n       Filter the extract by the procedure learnt by you in earlier classes.
+
+     n     Collect the filtrate to test the substances you may have tasted earlier.",,,,,,,
+nine-11,test,2,"Acids, Bases and Salts",93116cc1-6a00-4968-9268-59db13424b09,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How is baking soda different from washing soda?,(not supplied; reviewer must author if answerable),2390434c-ba92-486c-b361-b0a67370e5b8;88596d98-de34-482f-adea-291c6df72d02;f5266c79-8b42-4df8-8611-e343d53dd4d4,"CHUNK: 2390434c-ba92-486c-b361-b0a67370e5b8
+PAGE: 19
+PASSAGE:
+more vigorously and why?
+     11.  Fresh milk has a pH of 6. How do you think the pH will change as it turns into
+           curd? Explain your answer.
+     12.  A milkman adds a very small amount of baking soda to fresh milk.
+          (a)    Why does he shift the pH of the fresh milk from 6 to slightly alkaline?
+          (b)    Why does this milk take a long time to set as curd?
+     13.   Plaster of Paris should be stored in a moisture-proof container. Explain why?
+     14.   What is a neutralisation reaction? Give two examples.
+     15.  Give two important uses of  washing soda and baking soda.
+
+
+          Group  Activity
+
+
+    (I) Prepare your own indicator
+
+     n     Crush beetroot in a mortar.
+
+     n       Add sufficient water to obtain the extract.
+
+     n       Filter the extract by the procedure learnt by you in earlier classes.
+
+     n     Collect the filtrate to test the substances you may have tasted earlier.
+
+CHUNK: 88596d98-de34-482f-adea-291c6df72d02
+PAGE: 15
+PASSAGE:
+during the reaction can cause bread or
+     cake to rise making them soft and spongy.
+    (ii)   Sodium hydrogencarbonate is also an ingredient in antacids.
+          Being alkaline, it neutralises excess acid in the stomach and
+          provides relief.
+   (iii)    It is also used in soda-acid fire extinguishers.
+
+Washing soda
+Another chemical that can be obtained from sodium chloride is
+Na2CO3.10H2O (washing soda). You have seen above that sodium
+carbonate can be obtained by heating baking soda; recrystallisation of
+sodium carbonate gives washing soda. It is also a basic salt.
+
+     Na   CO                    H   O        Na   CO              H   O2              3                               2                               2              3                       2+               →                         .10                                                10
+     (Sodium
+     carbonate)
+
+CHUNK: f5266c79-8b42-4df8-8611-e343d53dd4d4
+PAGE: 1
+PASSAGE:
+CHAPTER          2
+                  Acids, Bases
+                  and Salts
+
+
+
+
+     ou have learnt in your previous classes that the sour and bitter
+Ytastes of food are due to acids and bases, respectively, present in them.
+    If someone in the family is suffering from a problem of acidity after
+overeating, which of the following would you suggest as a remedy– lemon
+juice, vinegar or baking soda solution?
+
+   /square6   Which property did you think of while choosing the remedy?
+      Surely you must have used your knowledge about the ability of
+      acids and bases to nullify each other’s effect.
+   /square6   Recall how we tested sour and bitter substances without tasting
+      them.",,,,,,,
+nine-12,test,2,"Acids, Bases and Salts",93116cc1-6a00-4968-9268-59db13424b09,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,What is water of crystallisation in a salt?,(not supplied; reviewer must author if answerable),be127569-3f10-4600-8b5e-4ce8af0ec75d;00385074-6568-4957-bbe7-287339b1c5d5;02bd29e3-07d5-4fa7-bee5-84714516bf0e,"CHUNK: be127569-3f10-4600-8b5e-4ce8af0ec75d
+PAGE: 16
+PASSAGE:
+/square6  What do you observe? Is the blue
+                                                                     colour of copper sulphate restored?
+
+
+
+
+
+Figure 2.9Figure 2.9
+Figure 2.9Figure 2.9Figure 2.9   Copper sulphate crystals which seem to be dry contain water of
+Removing water               crystallisation. When we heat the crystals, this water is removed and the
+of crystallisation           salt turns white.
+                                 If you moisten the crystals again with water, you will find that blue
+                             colour of the crystals reappears.
+                                 Water of crystallisation is the fixed number of water molecules present
+                             in one formula unit of a salt. Five water molecules are present in one
+                             formula unit of copper sulphate. Chemical formula for hydrated copper
+                             sulphate is Cu SO4. 5H2O. Now you would be able to answer the question
+
+CHUNK: 00385074-6568-4957-bbe7-287339b1c5d5
+PAGE: 10
+PASSAGE:
+to be strong acids, and acids that give less H+ ions are said to be
+                         weak acids. Can you now say what weak and strong bases are?
+
+                         2.3.1 Impor2.3.1 Impor2.3.1 Importance of pH in Ever2.3.1 Impor2.3.1 Importance of pH in Evertance of pH in Evertance of pH in Everyday Lifetance of pH in Everyday Lifeyday Lifeyday Lifeyday Life
+
+                         Are plants and animals pH sensitive?
+                         Our body works within the pH range of 7.0 to 7.8. Living organisms can
+                         survive only in a narrow range of pH change. When pH of rain water is
+                         less than 5.6, it is called acid rain. When acid rain flows into the rivers, it
+                         lowers the pH of the river water. The survival of aquatic life in such rivers
+                         becomes difficult.
+
+
+
+26                                                                                                   Science
+
+CHUNK: 02bd29e3-07d5-4fa7-bee5-84714516bf0e
+PAGE: 5
+PASSAGE:
+few drops of NaOH to the above mixture.
+   /square6  Does the pink colour of phenolphthalein reappear?
+   /square6  Why do you think this has happened?
+
+
+    In the above Activity, we have observed that the effect of a base is
+nullified by an acid and vice-versa. The reaction taking place is written as –
+    NaOH(aq) + HCl(aq) → NaCl(aq) + H2O(l)
+    The reaction between an acid and a base to give a salt and water is
+known as a neutralisation reaction. In general, a neutralisation reaction
+can be written as –
+    Base + Acid → Salt + Water
+
+2.1.5 Reaction of Metallic Oxides with Acids
+      Activity 2.7Activity 2.7Activity 2.7
+      Activity 2.7Activity 2.7
+
+   /square6  Take a small amount of copper oxide in a beaker and add dilute
+       hydrochloric acid slowly while stirring.
+   /square6  Note the colour of the solution. What has happened to the copper
+       oxide?",,,,,,,
+nine-13,dev,3,Metals and Non-metals,4a8d4852-5979-45ca-b5b2-44b994ec2385,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How do the physical properties of metals differ from those of non-metals?,(not supplied; reviewer must author if answerable),ef604d39-ee92-44eb-8d9f-77d20dbf2942;1f4bca14-6292-40c7-9d87-da0fb4b61119;6d1c129c-6a3f-455e-bfb0-d5340b784c15,"CHUNK: ef604d39-ee92-44eb-8d9f-77d20dbf2942
+PAGE: 1
+PASSAGE:
+CHAPTER          3
+                 Metals and Non-metals
+
+
+
+
+
+
+
+  n Class IX you have learnt about various elements. You have seen
+Ithat elements can be classified as metals or non-metals on the basis of
+their properties.
+   /square6   Think of some uses of metals and non-metals in your daily life.
+   /square6   What properties did you think of while categorising elements
+      as metals or non-metals?
+   /square6    How are these properties related to the uses of these elements?
+    Let us look at some of these properties in detail.
+3.1 PHYSIC3.1 PHYSIC3.1 PHYSICAL PROPERTIES3.1 PHYSIC3.1 PHYSICAL PROPERTIESAL PROPERTIESAL PROPERTIESAL PROPERTIES
+3.1.1 Metals
+The easiest way to start grouping substances is by comparing their
+physical properties. Let us study this with the help of the following
+activities. For performing Activities 3.1 to 3.6, collect the samples of
+following metals – iron, copper, aluminium, magnesium, sodium, lead,
+zinc and any other metal that is easily available.
+
+CHUNK: 1f4bca14-6292-40c7-9d87-da0fb4b61119
+PAGE: 15
+PASSAGE:
+used for removing the gangue from the ore are based on the differences
+between the physical or chemical properties of the gangue and the ore.
+Different separation techniques are  accordingly employed.
+3.4.3 Extracting Metals Low in the Activity Series
+Metals low in the activity series are very unreactive. The oxides of these
+metals can be  reduced to metals by heating alone. For example, cinnabar
+(HgS) is an ore of mer                        cury. When it is heated in air, it is first converted
+into mercuric oxide (HgO). Mercuric oxide is then reduced to mercury
+on further heating.
+                               Heat
+     2HgS(s) + 3O (g)               2HgO(s) + 2SO (g)2                                                                       2                →
+     2HgO(s)             2Hg(l) + O (g)                →Heat
+                                         2
+    Similarly, copper which is found as Cu2S in nature can be obtained
+from its ore by just heating in air.
+
+CHUNK: 6d1c129c-6a3f-455e-bfb0-d5340b784c15
+PAGE: 3
+PASSAGE:
+electricity.
+a sound? The metals that produce a sound on striking a hard surface
+are said to be sonorous. Can you now say why school bells are made of
+metals?
+
+3.1.2 Non-metals
+In the previous Class you have learnt that there are very few non-metals
+as compared to metals. Some of the examples of non-metals are carbon,
+sulphur, iodine, oxygen, hydrogen, etc. The non-metals are either  solids
+or gases except bromine which is a liquid.
+    Do non-metals also have physical properties similar to that of metals?
+Let us find out.
+
+      Activity 3.7Activity 3.7Activity 3.7Activity 3.7Activity 3.7
+
+
+   /square6  Collect samples of carbon (coal or graphite), sulphur and iodine.
+   /square6  Carry out the Activities 3.1 to 3.4 and 3.6 with these non-metals
+       and record your observations.
+
+Compile your observations regarding metals and non-metals in Table 3.1.",,,,,,,
+nine-14,dev,3,Metals and Non-metals,4a8d4852-5979-45ca-b5b2-44b994ec2385,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,What does the reactivity series predict about displacement reactions?,(not supplied; reviewer must author if answerable),0e3ef317-447b-48d1-ba05-22c62b90aa6d;113e03b1-a364-42f5-80dd-eac0a713e29d;c5e454dd-3e4e-4620-b517-b88298da691d,"CHUNK: 0e3ef317-447b-48d1-ba05-22c62b90aa6d
+PAGE: 9
+PASSAGE:
+collected in decreasing
+order of their reactivity. Displacement
+reactions studied in Chapter 1 give better
+evidence about the reactivity of metals. It
+is simple and easy if metal A displaces                                                       Figure 3.4Figure 3.4Figure 3.4Figure 3.4Figure 3.4
+metal B from its solution, it is more reactive than B.                                        Reaction of metals with
+    Metal A + Salt solution of B →                                        Salt solution of A + Metal Bsalt solutions
+
+    Which metal, copper or iron, is more reactive according to your
+observations in Activity 3.12?
+
+3.2.5 The Reactivity Series
+The reactivity series is a list of metals arranged in the order of their
+decreasing activities. After performing displacement experiments
+(Activities 1.9 and 3.12), the following series, (Table 3.2) known as the
+reactivity or activity series has been developed.
+Table 3.2 Activity series : Relative reactivities of metals
+
+CHUNK: 113e03b1-a364-42f5-80dd-eac0a713e29d
+PAGE: 6
+PASSAGE:
+reacts with aluminium to make a thicker protective oxide layer.  This oxide layer can
+      be dyed easily to give aluminium articles an attractive finish.
+
+                               After performing Activity 3.9, you must have observed that sodium
+                           is the most reactive of the samples of metals taken here. The reaction of
+                           magnesium is less vigorous implying that it is not as reactive as sodium.
+                           But burning in oxygen does not help us to decide about the reactivity of
+                           zinc, iron, copper or lead. Let us see some more reactions to arrive at a
+                           conclusion about the order of reactivity of these metals.
+                           3.2.2 What happens when Metals react with Water?
+
+                                Activity 3.10Activity 3.10
+                                Activity 3.10Activity 3.10Activity 3.10
+
+CHUNK: c5e454dd-3e4e-4620-b517-b88298da691d
+PAGE: 9
+PASSAGE:
+/square6  In which test tube did you find that a reaction has occurred?
+   /square6  On what basis can you say that a reaction has actually taken
+       place?
+   /square6  Can you correlate your observations for the Activities 3.9, 3.10
+       and 3.11?
+   /square6   Write a balanced chemical equation for the reaction that has taken
+       place.
+   /square6  Name the type of reaction.
+
+    Reactive metals can displace less
+reactive metals from their compounds in
+solution or molten form.
+    We have seen in the previous sections
+that all metals are not equally reactive. We
+checked the reactivity of various metals
+with oxygen, water and acids. But all
+metals do not react with these reagents.
+So we were not able to put all the metal
+samples we had collected in decreasing
+order of their reactivity. Displacement
+reactions studied in Chapter 1 give better
+evidence about the reactivity of metals. It",,,,,,,
+nine-15,test,3,Metals and Non-metals,4a8d4852-5979-45ca-b5b2-44b994ec2385,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,Why do ionic compounds have high melting points?,(not supplied; reviewer must author if answerable),31fb4fe2-6247-4f0f-97c3-08ab33d32981;5bb93ce0-da41-4af2-8787-e213a6457ddb;b2c42e46-f943-4dd9-97ec-1552e534c006,"CHUNK: 31fb4fe2-6247-4f0f-97c3-08ab33d32981
+PAGE: 13
+PASSAGE:
+oppositely
+        charged ions are overcome due to the heat. Thus, the ions move
+        freely and conduct electricity.
+                       QUESTIONS ?
+
+   1.          (i)  Write the electron-dot structures for sodium, oxygen and
+                 magnesium.
+           (ii)    Show the formation of Na2O and MgO by the transfer of  electrons.
+          (iii)   What are the ions present in these compounds?
+   2.     Why do ionic compounds have high melting points?
+
+      OCCURRENCE OF METOCCURRENCE OF METALSALSALSALSALSOCCURRENCE OF MET
+3.43.43.43.43.4 OCCURRENCE OF METOCCURRENCE OF MET
+The earth’s crust is the major source of metals. Seawater also contains
+some soluble salts such as sodium chloride, magnesium chloride, etc.
+The elements or compounds, which occur naturally in the earth’s crust,
+are known as minerals. At some places, minerals contain a very high
+percentage of a particular metal and the metal can be profitably extracted
+from it. These minerals are called ores.
+
+CHUNK: 5bb93ce0-da41-4af2-8787-e213a6457ddb
+PAGE: 13
+PASSAGE:
+You may have observed the following general properties for ionic
+    compounds—
+    (i)    Physical nature: Ionic compounds are solids and are somewhat
+        hard because of the strong force of attraction between the positive
+        and negative ions. These compounds are generally brittle and
+        break into pieces when pressure is applied.
+   (ii)    Melting and Boiling points: Ionic compounds have high melting
+        and boiling points (see Table 3.4). This is because a considerable
+        amount of energy is required to break the strong inter-ionic
+        attraction.
+  (iii)  Solubility: Electrovalent compounds are generally soluble in
+        water and insoluble in solvents such as kerosene, petrol, etc.
+   (iv)    Conduction of Electricity: The conduction of electricity through
+        a solution involves the movement of charged particles. A solution
+        of an ionic compound in water contains ions, which move to the
+
+CHUNK: b2c42e46-f943-4dd9-97ec-1552e534c006
+PAGE: 2
+PASSAGE:
+/square6  Note your observations. Does
+                                                                             the metal wire melt?
+
+Figure 3.1Figure 3.1Figure 3.1Figure 3.1Figure 3.1
+Metals are good                  The above activity shows that metals are good conductors of heat
+conductors of heat.
+                             and have high melting points. The best conductors of heat are silver and
+                             copper. Lead and mercury are comparatively poor conductors of heat.
+                                 Do metals also conduct electricity? Let us find out.
+
+
+
+  38                                                                                                         Science",,,,,,,
+nine-16,test,3,Metals and Non-metals,4a8d4852-5979-45ca-b5b2-44b994ec2385,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does a metal react with dilute acid?,(not supplied; reviewer must author if answerable),63a76a1d-0446-4bce-9695-d08837958716;b1367708-5bb4-4447-aa24-de2c09dd1408;0ee93110-b864-4749-bf7a-aeac1054cdd5,"CHUNK: 63a76a1d-0446-4bce-9695-d08837958716
+PAGE: 6
+PASSAGE:
+heating but iron filings burn vigorously when sprinkled
+                           in the flame of the burner. Copper does not burn, but the hot metal is
+                           coated with a black coloured layer of copper(II) oxide. Silver and gold do
+                           not react with oxygen even at high temperatures.
+
+
+
+      Anodising is a process of forming a thick oxide layer of aluminium. Aluminium
+      develops a thin oxide layer when exposed to air. This aluminium oxide coat makes it
+      resistant to further corrosion.  The resistance can be improved further by making the
+      oxide layer thicker.  During anodising, a clean aluminium article is made the anode
+      and is electrolysed with dilute sulphuric acid. The oxygen gas evolved at the anode
+      reacts with aluminium to make a thicker protective oxide layer.  This oxide layer can
+      be dyed easily to give aluminium articles an attractive finish.
+
+CHUNK: b1367708-5bb4-4447-aa24-de2c09dd1408
+PAGE: 5
+PASSAGE:
+3.2.1 What happens when Metals are burnt in Air?
+You have seen in Activity 3.8 that magnesium burns in air with a dazzling
+white flame. Do all metals react in the same manner? Let us check by
+performing the following Activity.
+
+      Activity 3.9Activity 3.9Activity 3.9Activity 3.9Activity 3.9
+
+       CAUTION: The following activity needs the teacher’s assistance.
+       It would be better if students wear eye protection.
+   /square6  Hold any of the samples taken above with a pair of tongs and try
+       burning over a flame. Repeat with the other metal samples.
+   /square6  Collect the product if formed.
+   /square6  Let the products and the metal surface cool down.
+   /square6  Which metals burn easily?
+   /square6  What flame colour did you observe when the metal burnt?
+   /square6  How does the metal surface appear after burning?
+   /square6  Arrange the metals in the decreasing order of their reactivity
+       towards oxygen.
+   /square6  Are the products soluble in water?
+
+CHUNK: 0ee93110-b864-4749-bf7a-aeac1054cdd5
+PAGE: 8
+PASSAGE:
+/square6   Arrange the metals in the decreasing order of reactivity with dilute
+                                  acids.
+
+                               Write equations for the reactions of magnesium, aluminium, zinc
+                          and iron with dilute hydrochloric acid.
+                               Hydrogen gas is not evolved when a metal reacts with nitric acid. It is
+                          because HNO3 is a strong oxidising agent. It oxidises the H2 produced to
+                          water and itself gets reduced to any of the nitrogen oxides (N2O, NO,
+                          NO2). But magnesium (Mg) and manganese (Mn) react with very dilute
+                          HNO3 to evolve H2 gas.
+                               You must have observed in Activity 3.11, that the rate of formation
+                          of bubbles was the fastest in the case of magnesium. The reaction was",,,,,,,
+nine-17,test,3,Metals and Non-metals,4a8d4852-5979-45ca-b5b2-44b994ec2385,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does electrolytic refining purify a metal?,(not supplied; reviewer must author if answerable),b1367708-5bb4-4447-aa24-de2c09dd1408;c661edc5-de14-4856-9c1f-dd8aa08ea9cb;ffaadee4-bf25-4386-8282-812b1c3380d5,"CHUNK: b1367708-5bb4-4447-aa24-de2c09dd1408
+PAGE: 5
+PASSAGE:
+3.2.1 What happens when Metals are burnt in Air?
+You have seen in Activity 3.8 that magnesium burns in air with a dazzling
+white flame. Do all metals react in the same manner? Let us check by
+performing the following Activity.
+
+      Activity 3.9Activity 3.9Activity 3.9Activity 3.9Activity 3.9
+
+       CAUTION: The following activity needs the teacher’s assistance.
+       It would be better if students wear eye protection.
+   /square6  Hold any of the samples taken above with a pair of tongs and try
+       burning over a flame. Repeat with the other metal samples.
+   /square6  Collect the product if formed.
+   /square6  Let the products and the metal surface cool down.
+   /square6  Which metals burn easily?
+   /square6  What flame colour did you observe when the metal burnt?
+   /square6  How does the metal surface appear after burning?
+   /square6  Arrange the metals in the decreasing order of their reactivity
+       towards oxygen.
+   /square6  Are the products soluble in water?
+
+CHUNK: c661edc5-de14-4856-9c1f-dd8aa08ea9cb
+PAGE: 21
+PASSAGE:
+8.   In the electrolytic refining of a metal M, what would you take as the anode, the
+            cathode and the electrolyte?
+       9.   Pratyush took sulphur powder on a spatula and heated it. He collected the gas
+            evolved by inverting a test tube over it, as shown in figure below.
+           (a)      What will be the action of gas on
+                   (i)   dry litmus paper?
+                  (ii)    moist litmus paper?
+           (b)     Write a balanced chemical
+                  equation for the reaction
+                  taking place.
+     10. State two ways to prevent the
+            rusting of iron.
+     11.    What type of oxides are formed when
+            non-metals combine with oxygen?
+     12.   Give reasons
+           (a)     Platinum, gold and silver are
+                  used to make jewellery.
+           (b)  Sodium, potassium and
+                  lithium are stored under oil.
+            (c)       Aluminium is a highly reactive
+
+CHUNK: ffaadee4-bf25-4386-8282-812b1c3380d5
+PAGE: 16
+PASSAGE:
+refining.
+                                              Electrolytic Refining: Electrolytic Refining: Many metals, such as copper, zinc,Electrolytic Refining:
+                                              Electrolytic Refining: Electrolytic Refining:
+                                              tin, nickel, silver, gold, etc., are refined electrolytically. In
+Figure 3.12Figure 3.12Figure 3.12Figure 3.12Figure 3.12this process, the impure metal is made the anode and a
+Electrolytic refining of copper. The          thin strip of pure metal is made the cathode. A solution of
+electrolyte is a solution of acidified copper the metal salt is used as an electrolyte. The apparatus is
+sulphate. The anode is impure copper,         set up as shown in Fig. 3.12. On passing the current
+whereas, the cathode is a strip of pure       through the electrolyte, the pure metal from the anode
+copper. On passing electric current, pure",,,,,,,
+nine-18,test,3,Metals and Non-metals,4a8d4852-5979-45ca-b5b2-44b994ec2385,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How can corrosion of iron be prevented?,(not supplied; reviewer must author if answerable),622ff088-5309-4f0c-80f1-754f2b703828;0619fc16-504d-4b59-8fdb-1ffa20760ba9;137807ea-56aa-4ab9-bd7e-8f74b5bf176a,"CHUNK: 622ff088-5309-4f0c-80f1-754f2b703828
+PAGE: 18
+PASSAGE:
+3.5.1 Prevention of Corrosion
+                          The rusting of iron can be prevented by painting, oiling, greasing,
+                          galvanising, chrome plating, anodising or making alloys.
+                               Galvanisation is a method of protecting steel and iron from rusting
+                          by coating them with a thin layer of zinc. The galvanised article is
+                          protected against rusting even if the zinc coating is broken. Can you
+                          reason this out?
+                               Alloying is a very good method of improving the properties of a metal.
+                          We can get the desired properties by this method. For example, iron is
+                          the most widely used metal. But it is never used in its pure state. This is
+                          because pure iron is very soft and stretches easily when hot. But, if it is
+
+CHUNK: 0619fc16-504d-4b59-8fdb-1ffa20760ba9
+PAGE: 2
+PASSAGE:
+You will find that metals are generally hard. The hardness varies
+                             from metal to metal.
+
+                                   Activity 3.3Activity 3.3Activity 3.3Activity 3.3Activity 3.3
+
+                                 /square6   Take pieces of iron, zinc, lead and copper.
+                                 /square6  Place any one metal on a block of iron and strike it four or five
+                                    times with a hammer. What do you observe?
+                                 /square6  Repeat with other metals.
+                                 /square6  Record the change in the shape of these metals.
+
+                                 You will find that some metals can be beaten into thin sheets. This
+                             property is called malleability. Did you know that gold and silver are the
+                             most malleable metals?
+
+CHUNK: 137807ea-56aa-4ab9-bd7e-8f74b5bf176a
+PAGE: 13
+PASSAGE:
+places, minerals contain a very high
+percentage of a particular metal and the metal can be profitably extracted
+from it. These minerals are called ores.
+
+3.4.1 Extraction of Metals
+
+You have learnt about the reactivity series of metals. Having this
+knowledge, you can easily understand how a metal is extracted from its
+ore. Some metals are found in the earth’s crust in the free state. Some
+are found in the form of their compounds. The metals at the bottom of
+the activity series are the least reactive. They are often found in a free
+
+
+
+Metals and Non-metals                                                                                                                 49",,,,,,,
+nine-19,dev,7,How do Organisms Reproduce?,1360321a-7a0d-417a-a1d4-560a635693e1,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,Why is DNA copying important in reproduction?,(not supplied; reviewer must author if answerable),0e6fe6e2-c622-4170-969b-9ff6f0ed5ca5;c1098b01-7c90-445e-98a9-dcf9b6cf812f;8f8a817f-91f4-49a6-a937-cdd9750d254f,"CHUNK: 0e6fe6e2-c622-4170-969b-9ff6f0ed5ca5
+PAGE: 7
+PASSAGE:
+vegetative propagation practised for growing some types of
+         plants?
+   5.     Why is DNA copying an essential part of the process of reproduction?
+
+7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION
+We are also familiar with modes of reproduction that depend on the
+involvement of two individuals before a new generation can be created.
+Bulls alone cannot produce new calves, nor can hens alone produce
+new chicks. In such cases, both sexes, males and females, are needed to
+produce new generations. What is the significance of this sexual mode
+of reproduction? Are there any limitations of the asexual mode of
+reproduction, which we have been discussing above?
+7.3.1 Why the Sexual Mode of Reproduction?
+
+CHUNK: c1098b01-7c90-445e-98a9-dcf9b6cf812f
+PAGE: 2
+PASSAGE:
+would survive and grow further. Variation is thus useful for the survival
+                         of species over time.
+
+                      QUESTIONS
+
+
+ 1.     What is the importance of DNA copying in reproduction?
+ 2.    Why is variation beneficial to the species but not necessarily
+        for the individual?
+
+
+
+
+
+114                 ?Science
+
+CHUNK: 8f8a817f-91f4-49a6-a937-cdd9750d254f
+PAGE: 7
+PASSAGE:
+All the modes of reproduction that we have discussed so far allow
+new generations to be created from a single individual. This is known as
+asexual reproduction.
+                       QUESTIONS?
+
+   1.     How does binary fission differ from multiple fission?
+   2.     How will an organism be benefited if it reproduces through spores?
+   3.    Can you think of reasons why more complex organisms cannot give
+         rise to new individuals through regeneration?
+   4.    Why is vegetative propagation practised for growing some types of
+         plants?
+   5.     Why is DNA copying an essential part of the process of reproduction?",,,,,,,
+nine-20,dev,7,How do Organisms Reproduce?,1360321a-7a0d-417a-a1d4-560a635693e1,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does binary fission differ from budding?,(not supplied; reviewer must author if answerable),8f8a817f-91f4-49a6-a937-cdd9750d254f;22fc1c52-c8bd-4600-8ffd-8900a96223f9;8ebb1823-084a-4235-aa38-cde5727908ad,"CHUNK: 8f8a817f-91f4-49a6-a937-cdd9750d254f
+PAGE: 7
+PASSAGE:
+All the modes of reproduction that we have discussed so far allow
+new generations to be created from a single individual. This is known as
+asexual reproduction.
+                       QUESTIONS?
+
+   1.     How does binary fission differ from multiple fission?
+   2.     How will an organism be benefited if it reproduces through spores?
+   3.    Can you think of reasons why more complex organisms cannot give
+         rise to new individuals through regeneration?
+   4.    Why is vegetative propagation practised for growing some types of
+         plants?
+   5.     Why is DNA copying an essential part of the process of reproduction?
+
+CHUNK: 22fc1c52-c8bd-4600-8ffd-8900a96223f9
+PAGE: 14
+PASSAGE:
+QUESTIONS?
+
+ 1.     How is the process of pollination different from fertilisation?
+ 2.     What is the role of the seminal vesicles and the prostate gland?
+ 3.     What are the changes seen in girls at the time of puberty?
+ 4.     How does the embryo get nourishment inside the mother’s body?
+ 5.    If a woman is using a copper-T, will it help in protecting her from
+         sexually transmitted diseases?
+
+      What you have learnt
+
+
+
+    /square6       Reproduction, unlike other life processes, is not essential to maintain the life of an
+          individual organism.
+
+    /square6      Reproduction involves creation of a DNA copy and additional cellular apparatus
+          by the cell involved in the process.
+
+    /square6     Various organisms use different modes of reproduction depending on their body
+          design.
+
+    /square6      In fission, many bacteria and protozoa simply divide into two or more daughter
+          cells.
+
+CHUNK: 8ebb1823-084a-4235-aa38-cde5727908ad
+PAGE: 9
+PASSAGE:
+carefully and observe
+       the different parts.
+   /square6   Compare your observations with the Fig. 7.9
+       and see if you can identify all the parts.
+
+7.3.3 Reproduction in Human Beings
+So far, we have been discussing the variety of modes that different species
+use for reproduction. Let us now look at the species that we are most
+interested in, namely, humans. Humans use a sexual mode of
+reproduction. How does this process work?
+    Let us begin at an apparently unrelated point. All of us know that
+our bodies change as we become older. You have learnt changes that
+take place in your body earlier in Class VIII also. We notice that our
+height has increased continuously from early age till now. W                                    e acquire
+teeth, we even lose the old, so-called milk teeth and acquire new ones.
+
+
+
+How do Organisms Reproduce?                                                                                                           121",,,,,,,
+nine-21,test,7,How do Organisms Reproduce?,1360321a-7a0d-417a-a1d4-560a635693e1,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,What advantages does vegetative propagation offer?,(not supplied; reviewer must author if answerable),0e6fe6e2-c622-4170-969b-9ff6f0ed5ca5;8f8a817f-91f4-49a6-a937-cdd9750d254f;c9e11c11-56f8-4808-af7d-7ec199e50a72,"CHUNK: 0e6fe6e2-c622-4170-969b-9ff6f0ed5ca5
+PAGE: 7
+PASSAGE:
+vegetative propagation practised for growing some types of
+         plants?
+   5.     Why is DNA copying an essential part of the process of reproduction?
+
+7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION
+We are also familiar with modes of reproduction that depend on the
+involvement of two individuals before a new generation can be created.
+Bulls alone cannot produce new calves, nor can hens alone produce
+new chicks. In such cases, both sexes, males and females, are needed to
+produce new generations. What is the significance of this sexual mode
+of reproduction? Are there any limitations of the asexual mode of
+reproduction, which we have been discussing above?
+7.3.1 Why the Sexual Mode of Reproduction?
+
+CHUNK: 8f8a817f-91f4-49a6-a937-cdd9750d254f
+PAGE: 7
+PASSAGE:
+All the modes of reproduction that we have discussed so far allow
+new generations to be created from a single individual. This is known as
+asexual reproduction.
+                       QUESTIONS?
+
+   1.     How does binary fission differ from multiple fission?
+   2.     How will an organism be benefited if it reproduces through spores?
+   3.    Can you think of reasons why more complex organisms cannot give
+         rise to new individuals through regeneration?
+   4.    Why is vegetative propagation practised for growing some types of
+         plants?
+   5.     Why is DNA copying an essential part of the process of reproduction?
+
+CHUNK: c9e11c11-56f8-4808-af7d-7ec199e50a72
+PAGE: 15
+PASSAGE:
+EXERCISES
+
+      1.   Asexual reproduction takes place through budding in
+           (a)         Amoeba.
+          (b)    Yeast.
+           (c)        Plasmodium.
+          (d)          Leishmania.
+      2.   Which of the following is not a part of the female reproductive system in human
+           beings?
+           (a)     Ovary
+          (b)     Uterus
+           (c)     Vas deferens
+          (d)      Fallopian tube
+      3.    The anther contains
+           (a)       sepals.
+          (b)       ovules.
+           (c)       pistil.
+          (d)      pollen grains.
+      4.   What are the advantages of sexual reproduction over asexual reproduction?
+      5.    What are the functions performed by the testis in human beings?
+      6.   Why does menstruation occur?
+      7.   Draw a labelled diagram of the longitudinal section of a flower.
+      8.    What are the different methods of contraception?
+      9. How are the modes for reproduction different in unicellular and",,,,,,,
+nine-22,test,7,How do Organisms Reproduce?,1360321a-7a0d-417a-a1d4-560a635693e1,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,What happens during pollination and fertilisation in flowering plants?,(not supplied; reviewer must author if answerable),0e6fe6e2-c622-4170-969b-9ff6f0ed5ca5;1b661262-51e2-4b24-9749-dee87fcbdf1c;212f4f63-c948-4a62-8c44-5266620aa909,"CHUNK: 0e6fe6e2-c622-4170-969b-9ff6f0ed5ca5
+PAGE: 7
+PASSAGE:
+vegetative propagation practised for growing some types of
+         plants?
+   5.     Why is DNA copying an essential part of the process of reproduction?
+
+7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION
+We are also familiar with modes of reproduction that depend on the
+involvement of two individuals before a new generation can be created.
+Bulls alone cannot produce new calves, nor can hens alone produce
+new chicks. In such cases, both sexes, males and females, are needed to
+produce new generations. What is the significance of this sexual mode
+of reproduction? Are there any limitations of the asexual mode of
+reproduction, which we have been discussing above?
+7.3.1 Why the Sexual Mode of Reproduction?
+
+CHUNK: 1b661262-51e2-4b24-9749-dee87fcbdf1c
+PAGE: 8
+PASSAGE:
+female gamete. We shall see in the next few sections
+                            how the need to create these two different types of gametes give rise to
+                            differences in the male and female reproductive organs and, in some
+                            cases, differences in the bodies of the male and female organisms.
+
+                            7.3.2 Sexual Reproduction in Flowering Plants
+                            The reproductive parts of angiosperms are located in the flower. You
+                            have already studied the different parts of a flower – sepals, petals,
+                                                               stamens and pistil. Stamens and pistil are
+                                                               the reproductive parts of a flower which
+                                                               contain the germ-cells. What possible
+
+CHUNK: 212f4f63-c948-4a62-8c44-5266620aa909
+PAGE: 12
+PASSAGE:
+7.3.3 (c) What happens when the Egg is not Fertilised?
+                          If the egg is not fertilised, it lives for about one day. Since the ovary
+                          releases one egg every month, the uterus also prepares itself every month
+                          to receive a fertilised egg. Thus its lining becomes thick and spongy.
+                          This would be required for nourishing the embryo if fertilisation had
+                          taken place. Now, however, this lining is not needed any longer. So, the
+                          lining slowly breaks and comes out through the vagina as blood and
+                          mucous. This cycle takes place roughly every month and is known as
+                          menstruation. It usually lasts for about two to eight days.
+                          7.3.3 (d) Reproductive Health
+                          As we have seen, the process of sexual maturation is gradual, and takes",,,,,,,
+nine-23,test,7,How do Organisms Reproduce?,1360321a-7a0d-417a-a1d4-560a635693e1,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,What are the roles of the testes and ovaries in human reproduction?,(not supplied; reviewer must author if answerable),c9e11c11-56f8-4808-af7d-7ec199e50a72;0e6fe6e2-c622-4170-969b-9ff6f0ed5ca5;2bebb1b5-d2a1-44b7-8b60-a163b368eeda,"CHUNK: c9e11c11-56f8-4808-af7d-7ec199e50a72
+PAGE: 15
+PASSAGE:
+EXERCISES
+
+      1.   Asexual reproduction takes place through budding in
+           (a)         Amoeba.
+          (b)    Yeast.
+           (c)        Plasmodium.
+          (d)          Leishmania.
+      2.   Which of the following is not a part of the female reproductive system in human
+           beings?
+           (a)     Ovary
+          (b)     Uterus
+           (c)     Vas deferens
+          (d)      Fallopian tube
+      3.    The anther contains
+           (a)       sepals.
+          (b)       ovules.
+           (c)       pistil.
+          (d)      pollen grains.
+      4.   What are the advantages of sexual reproduction over asexual reproduction?
+      5.    What are the functions performed by the testis in human beings?
+      6.   Why does menstruation occur?
+      7.   Draw a labelled diagram of the longitudinal section of a flower.
+      8.    What are the different methods of contraception?
+      9. How are the modes for reproduction different in unicellular and
+
+CHUNK: 0e6fe6e2-c622-4170-969b-9ff6f0ed5ca5
+PAGE: 7
+PASSAGE:
+vegetative propagation practised for growing some types of
+         plants?
+   5.     Why is DNA copying an essential part of the process of reproduction?
+
+7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION7.3 SEXUAL REPRODUCTION
+We are also familiar with modes of reproduction that depend on the
+involvement of two individuals before a new generation can be created.
+Bulls alone cannot produce new calves, nor can hens alone produce
+new chicks. In such cases, both sexes, males and females, are needed to
+produce new generations. What is the significance of this sexual mode
+of reproduction? Are there any limitations of the asexual mode of
+reproduction, which we have been discussing above?
+7.3.1 Why the Sexual Mode of Reproduction?
+
+CHUNK: 2bebb1b5-d2a1-44b7-8b60-a163b368eeda
+PAGE: 14
+PASSAGE:
+which are useful for ensuring the
+          survival of the species. Modes of sexual reproduction allow for greater variation to
+          be generated.
+
+    /square6       Reproduction in flowering plants involves transfer of pollen grains from the anther
+          to the stigma which is referred to as pollination. This is followed by fertilisation.
+
+    /square6      Changes in the body at puberty, such as increase in breast size in girls and new
+          facial hair growth in boys, are signs of sexual maturation.
+
+    /square6       The male reproductive system in human beings consists of testes which produce
+          sperms, vas deferens, seminal vesicles, prostate gland, urethra and penis.
+
+    /square6     The female reproductive system in human beings consists of ovaries, fallopian
+          tubes, uterus and vagina.",,,,,,,
+nine-24,test,7,How do Organisms Reproduce?,1360321a-7a0d-417a-a1d4-560a635693e1,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How do contraceptive methods help prevent pregnancy?,(not supplied; reviewer must author if answerable),65ea11a2-8c4b-4b03-9cd8-51f2402a42f4;00953dbd-d3eb-4542-8eb7-0b7337b3d335;c898e649-7851-4c85-aa51-55e658e83bd1,"CHUNK: 65ea11a2-8c4b-4b03-9cd8-51f2402a42f4
+PAGE: 15
+PASSAGE:
+section of a flower.
+      8.    What are the different methods of contraception?
+      9. How are the modes for reproduction different in unicellular and
+           multicellular organisms?
+    10.   How does reproduction help in providing stability to populations of species?
+    11.   What could be the reasons for adopting contraceptive methods?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How do Organisms Reproduce?                                                                                           127
+
+CHUNK: 00953dbd-d3eb-4542-8eb7-0b7337b3d335
+PAGE: 5
+PASSAGE:
+Such methods
+also make possible the propagation of plants such as banana, orange,
+rose and jasmine that have lost the capacity to produce seeds. Another
+advantage of vegetative propagation is that all plants produced are
+genetically similar enough to the parent plant to have all its
+characteristics.
+
+
+
+How do Organisms Reproduce?                                                                                                          117
+
+CHUNK: c898e649-7851-4c85-aa51-55e658e83bd1
+PAGE: 13
+PASSAGE:
+We must also consider the possible health consequences of having
+sex. We have discussed in Class IX that diseases can be transmitted
+from person to person in a variety of ways. Since the sexual act is a
+very intimate connection of bodies, it is not surprising that many
+diseases can be sexually transmitted. These include bacterial infections
+such as gonorrhoea and syphilis, and viral infections such as warts
+and HIV-AIDS. Is it possible to prevent the transmission of such diseases
+during the sexual act? Using a covering, called a condom, for the penis
+during sex helps to prevent transmission of many of these infections to
+some extent.
+    The sexual act always has the potential to lead to pregnancy.
+Pregnancy will make major demands on the body and the mind of the
+woman, and if she is not ready for it, her health will be adversely
+affected. Therefore, many ways have been devised to avoid pregnancy.
+These contraceptive methods fall in a number of categories. One",,,,,,,
+nine-25,dev,9,Light - Reflection and Refraction,a92321fa-f136-4203-95e3-550530be58f7,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,What are the principal focus and focal length of a concave mirror?,(not supplied; reviewer must author if answerable),04fad56c-521d-49eb-a927-0918da7c7e13;43a4e353-f739-4712-aa05-fe5ae7aba6e5;45ed2aaa-a91f-4a5d-aa3b-2ba5026f374d,"CHUNK: 04fad56c-521d-49eb-a927-0918da7c7e13
+PAGE: 4
+PASSAGE:
+The reflecting surface of a spherical mirror is by-and-large spherical.
+The surface, then, has a circular outline. The diameter of the reflecting
+surface of spherical mirror is called its aperture. In Fig.9.2, distance MN
+represents the aperture. We shall consider in our discussion only such
+spherical mirrors whose aperture is much smaller than its radius of
+curvature.
+    Is there a relationship between the radius of curvature R,                                                                                                             and focal
+length f, of a spherical mirror? For spherical mirrors of small apertures,
+the radius of curvature is found to be equal to twice the focal length. We
+put this as R = 2f                     .  This implies that the principal focus of a spherical
+mirror lies midway between the pole and centre of curvature.
+
+CHUNK: 43a4e353-f739-4712-aa05-fe5ae7aba6e5
+PAGE: 9
+PASSAGE:
+mirrors enable the driver to view much larger
+                           area than would be possible with a plane mirror.
+                       QUESTIONS?
+
+ 1.     Define the principal focus of a concave mirror.
+ 2.      The radius of curvature of a spherical mirror is 20 cm.  What is its focal
+        length?
+ 3.     Name a mirror that can give an erect and enlarged image of an object.
+ 4.     Why do we prefer a convex mirror as a rear-view mirror in vehicles?
+
+                           9.2.3 Sign Convention for Reflection by Spherical Mirrors
+                           While dealing with the reflection of light by spherical mirrors, we shall
+                           follow a set of sign conventions called the New Cartesian Sign
+                           Convention. In this convention, the pole (P) of the mirror is taken as the
+                           origin (Fig. 9.9).  The principal axis of the mirror is taken as the x-axis
+
+CHUNK: 45ed2aaa-a91f-4a5d-aa3b-2ba5026f374d
+PAGE: 10
+PASSAGE:
+The New Cartesian Sign Convention described above is illustrated in
+Fig.9.9 for your reference. These sign conventions are applied to obtain
+the mirror formula and solve related numerical problems.
+
+9.2.4  Mirror Formula and  Magnification
+In a spherical mirror                       , the distance of the
+object from its pole is called the object
+distance (u).  The distance of the image from
+the pole of the mirror is called the image
+distance (v). You already know that the
+distance of the principal focus from the pole
+is called the focal length (f). There is a
+relationship between these three quantities
+given by the mirror formula which is
+expressed as
+       1    1     1+           =                        (9.1)
+       v    u      f",,,,,,,
+nine-26,dev,9,Light - Reflection and Refraction,a92321fa-f136-4203-95e3-550530be58f7,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does image formation by a convex mirror differ from that by a concave mirror?,(not supplied; reviewer must author if answerable),f87af665-d97e-481c-8106-a17d7a72c50b;0be0ec25-cfa0-4ae4-a71c-f7817d037665;0c48697e-448e-48e4-a180-083c478c49f1,"CHUNK: f87af665-d97e-481c-8106-a17d7a72c50b
+PAGE: 27
+PASSAGE:
+length is held 25 cm away from a converging lens of focal length
+         10 cm.  Draw the ray diagram and find the position, size and the nature of the
+         image formed.
+   11.    A concave lens of focal length 15 cm forms an image 10 cm from the lens.  How far
+         is the object placed from the lens? Draw the ray diagram.
+   12.  An object is placed at a distance of 10 cm from a convex mirror of focal length
+         15 cm. Find the position and nature of the image.
+   13.   The magnification produced by a plane mirror is +1. What does this mean?
+   14.  An object 5.0 cm in length is placed at a distance of 20 cm in front of a convex
+         mirror of radius of curvature 30 cm.  Find the position of the image, its nature
+         and size.
+   15.  An object of size 7.0 cm is placed at 27 cm in front of a concave mirror of focal
+         length 18 cm. At what distance from the mirror should a screen be placed, so that
+
+CHUNK: 0be0ec25-cfa0-4ae4-a71c-f7817d037665
+PAGE: 12
+PASSAGE:
+′ = – 6.0 cm
+     The image is inverted and enlarged.
+
+                           QUESTIONS?
+
+    1.    Find the focal length of a convex mirror whose radius of curvature is
+            32 cm.
+    2.     A concave mirror produces three times magnified (enlarged) real image
+            of an object placed at 10 cm in front of it. Where is the image located?
+
+
+9.3 REFRACTION OF LIGHT9.3 REFRACTION OF LIGHT
+9.3 REFRACTION OF LIGHT9.3 REFRACTION OF LIGHT9.3 REFRACTION OF LIGHT
+Light seems to travel along straight-line paths in a transparent medium.
+What happens when light enters from one transparent medium to
+another? Does it still move along a straight-line path or change its
+direction? We shall recall some of our day-to-day experiences.
+    You might have observed that the bottom of a tank or a pond
+containing water appears to be raised. Similarly, when a thick glass slab
+is placed over some printed matter, the letters appear raised when viewed
+
+CHUNK: 0c48697e-448e-48e4-a180-083c478c49f1
+PAGE: 4
+PASSAGE:
+this as R = 2f                     .  This implies that the principal focus of a spherical
+mirror lies midway between the pole and centre of curvature.
+
+9.2.1  Image Formation by Spherical Mirrors
+You have studied about the image formation by plane mirrors. You also
+know the nature, position and relative size of the images formed by them.
+How about the images formed by spherical mirrors? How can we locate
+the image formed by a concave mirror for different positions of the object?
+Are the images real or virtual? Are they enlarged, diminished or have
+the same size? We shall explore this with an Activity.
+      Activity 9.3Activity 9.3Activity 9.3Activity 9.3Activity 9.3",,,,,,,
+nine-27,test,9,Light - Reflection and Refraction,a92321fa-f136-4203-95e3-550530be58f7,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,What is the relationship between refractive index and the speed of light?,(not supplied; reviewer must author if answerable),22209009-3a80-4d71-a0a6-b1a71a76ae43;9e0bb94b-c784-43d8-8e07-81f47f4b86da;0b999bc2-650b-49bb-a700-39696afd3c5d,"CHUNK: 22209009-3a80-4d71-a0a6-b1a71a76ae43
+PAGE: 26
+PASSAGE:
+/square6       Light travels in vacuum with an enormous speed of 3×108 m s-1.  The speed of light
+             is different in different media.
+
+      /square6      The refractive index of a transparent medium is the ratio of the speed of light in
+             vacuum to that in the medium.
+
+      /square6     In case of a rectangular glass slab, the refraction takes place at both air-glass
+             interface and glass-air interface. The emergent ray is parallel to the direction of
+             incident ray.
+                                  1   1   1–    =
+      /square6     Lens formula,  v    u    f  , gives the relationship between the object-distance (u),
+             image-distance (v), and the focal length (f) of a spherical lens.
+
+      /square6       Power of a lens is the reciprocal of its focal length. The SI unit of power of a lens is
+             dioptre.
+
+           EXERCISES
+
+CHUNK: 9e0bb94b-c784-43d8-8e07-81f47f4b86da
+PAGE: 17
+PASSAGE:
+QUESTIONS
+
+   1.     A ray of light travelling in air enters obliquely into water. Does the light
+          ray bend towards the normal or away from the normal? Why?
+   2.     Light enters from air to glass having refractive index 1.50. What is the
+          speed of light in the glass? The speed of light in vacuum is 3 × 108 m s–1.
+   3.    Find out, from Table 9.3, the medium having highest optical density.
+          Also find the medium with lowest optical density.
+   4.     You are given kerosene, turpentine and water. In which of these does                     ?
+          the light travel fastest? Use the information given in Table 9.3.
+   5.    The refractive index of diamond is 2.42. What is the meaning of this
+          statement?
+
+CHUNK: 0b999bc2-650b-49bb-a700-39696afd3c5d
+PAGE: 15
+PASSAGE:
+marginally less, compared to that in vacuum. It reduces
+                                considerably in glass or water. The value of the refractive index for a
+                                given pair of media depends upon the speed of light in the two media, as
+                                given below.
+                                     Consider a ray of light travelling from medium 1 into medium 2, as
+                                shown in Fig.9.11.  Let v1 be the speed of light in medium 1 and v2 be the
+                                speed of light in medium 2.  The refractive index of medium 2 with respect
+                                to medium 1 is given by the ratio of the speed of light in medium 1 and
+                                the speed of light in medium 2. This is usually represented by the symbol
+                                n21. This can be expressed in an equation form as",,,,,,,
+nine-28,test,9,Light - Reflection and Refraction,a92321fa-f136-4203-95e3-550530be58f7,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does a convex lens form a real image?,(not supplied; reviewer must author if answerable),411b3d6e-3d43-46e2-b6bb-15fbdd45b038;75fc621a-5a97-4e37-b2d4-5897688ad029;f87af665-d97e-481c-8106-a17d7a72c50b,"CHUNK: 411b3d6e-3d43-46e2-b6bb-15fbdd45b038
+PAGE: 19
+PASSAGE:
+9.3.4 Image Formation by Lenses
+
+                             Lenses form images by refracting light. How do lenses form images?
+                             What is their nature? Let us study this for a convex lens first.
+
+                                   Activity 9.12Activity 9.12
+                                   Activity 9.12Activity 9.12Activity 9.12
+
+
+                                 n  Take a convex lens.  Find its approximate focal length in a way
+                                    described in Activity 9.11.
+                                 n   Draw five parallel straight lines, using chalk, on a long Table such
+                                    that the distance between the successive lines is equal to the
+                                    focal length of the lens.
+                                 n  Place the lens on a lens stand.  Place it on the central line such
+                                    that the optical centre of the lens lies just over the line.
+
+CHUNK: 75fc621a-5a97-4e37-b2d4-5897688ad029
+PAGE: 18
+PASSAGE:
+paper and the lens in the same position for a while.  Keep
+       observing the paper. What happened? Why? Recall your experience
+       in Activity 9.2.
+
+    The paper begins to burn producing smoke. It may even catch fire
+after a while.  Why does this happen? The light from the Sun constitutes
+parallel rays of light.  These rays were converged by the lens at the sharp
+bright spot formed on the paper.  In fact, the bright spot you got on the
+paper is a real image of the Sun. The concentration of the sunlight at a
+point generated heat.  This caused the paper to burn.
+    Now, we shall consider rays of light parallel to the principal axis of a
+lens.  What happens when you pass such rays of light through a lens?
+This is illustrated for a convex lens in Fig.9.12 (a) and for a concave lens
+in Fig.9.12 (b).
+    Observe Fig.9.12 (a) carefully. Several rays of light parallel to the
+principal axis are falling on a convex lens. These rays, after refraction
+
+CHUNK: f87af665-d97e-481c-8106-a17d7a72c50b
+PAGE: 27
+PASSAGE:
+length is held 25 cm away from a converging lens of focal length
+         10 cm.  Draw the ray diagram and find the position, size and the nature of the
+         image formed.
+   11.    A concave lens of focal length 15 cm forms an image 10 cm from the lens.  How far
+         is the object placed from the lens? Draw the ray diagram.
+   12.  An object is placed at a distance of 10 cm from a convex mirror of focal length
+         15 cm. Find the position and nature of the image.
+   13.   The magnification produced by a plane mirror is +1. What does this mean?
+   14.  An object 5.0 cm in length is placed at a distance of 20 cm in front of a convex
+         mirror of radius of curvature 30 cm.  Find the position of the image, its nature
+         and size.
+   15.  An object of size 7.0 cm is placed at 27 cm in front of a concave mirror of focal
+         length 18 cm. At what distance from the mirror should a screen be placed, so that",,,,,,,
+nine-29,test,9,Light - Reflection and Refraction,a92321fa-f136-4203-95e3-550530be58f7,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How is the power of a lens related to its focal length?,(not supplied; reviewer must author if answerable),19710ad5-b61c-4346-a3e0-201ff3f8f44f;22209009-3a80-4d71-a0a6-b1a71a76ae43;411b3d6e-3d43-46e2-b6bb-15fbdd45b038,"CHUNK: 19710ad5-b61c-4346-a3e0-201ff3f8f44f
+PAGE: 24
+PASSAGE:
++=                                 =  −30cm2
+                  −15cm
+      The negative signs of m and h ′ show that the image is inverted and
+     real. It is formed below the principal axis. Thus, a real, inverted image,
+     4 cm tall, is formed at a distance of 30 cm on the other side of the
+     lens. The image is two times enlarged.
+
+9.3.8 Power of a Lens
+
+You have already learnt that the ability of a lens to converge or diverge
+light rays depends on its focal length. For example, a convex lens of
+short focal length bends the light rays through large angles, by focussing
+them closer to the optical centre. Similarly, concave lens of very short
+focal length causes higher divergence than the one with longer focal
+length. The degree of convergence or divergence of light rays achieved
+by a lens is expressed in terms of its power. The power of a lens is defined
+as the reciprocal of its focal length. It is represented by the letter P.  The
+
+CHUNK: 22209009-3a80-4d71-a0a6-b1a71a76ae43
+PAGE: 26
+PASSAGE:
+/square6       Light travels in vacuum with an enormous speed of 3×108 m s-1.  The speed of light
+             is different in different media.
+
+      /square6      The refractive index of a transparent medium is the ratio of the speed of light in
+             vacuum to that in the medium.
+
+      /square6     In case of a rectangular glass slab, the refraction takes place at both air-glass
+             interface and glass-air interface. The emergent ray is parallel to the direction of
+             incident ray.
+                                  1   1   1–    =
+      /square6     Lens formula,  v    u    f  , gives the relationship between the object-distance (u),
+             image-distance (v), and the focal length (f) of a spherical lens.
+
+      /square6       Power of a lens is the reciprocal of its focal length. The SI unit of power of a lens is
+             dioptre.
+
+           EXERCISES
+
+CHUNK: 411b3d6e-3d43-46e2-b6bb-15fbdd45b038
+PAGE: 19
+PASSAGE:
+9.3.4 Image Formation by Lenses
+
+                             Lenses form images by refracting light. How do lenses form images?
+                             What is their nature? Let us study this for a convex lens first.
+
+                                   Activity 9.12Activity 9.12
+                                   Activity 9.12Activity 9.12Activity 9.12
+
+
+                                 n  Take a convex lens.  Find its approximate focal length in a way
+                                    described in Activity 9.11.
+                                 n   Draw five parallel straight lines, using chalk, on a long Table such
+                                    that the distance between the successive lines is equal to the
+                                    focal length of the lens.
+                                 n  Place the lens on a lens stand.  Place it on the central line such
+                                    that the optical centre of the lens lies just over the line.",,,,,,,
+nine-30,test,9,Light - Reflection and Refraction,a92321fa-f136-4203-95e3-550530be58f7,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,What sign convention is used in the mirror formula?,(not supplied; reviewer must author if answerable),43a4e353-f739-4712-aa05-fe5ae7aba6e5;45ed2aaa-a91f-4a5d-aa3b-2ba5026f374d;4dba4fec-f7f0-4acc-a382-1e3f728b747d,"CHUNK: 43a4e353-f739-4712-aa05-fe5ae7aba6e5
+PAGE: 9
+PASSAGE:
+mirrors enable the driver to view much larger
+                           area than would be possible with a plane mirror.
+                       QUESTIONS?
+
+ 1.     Define the principal focus of a concave mirror.
+ 2.      The radius of curvature of a spherical mirror is 20 cm.  What is its focal
+        length?
+ 3.     Name a mirror that can give an erect and enlarged image of an object.
+ 4.     Why do we prefer a convex mirror as a rear-view mirror in vehicles?
+
+                           9.2.3 Sign Convention for Reflection by Spherical Mirrors
+                           While dealing with the reflection of light by spherical mirrors, we shall
+                           follow a set of sign conventions called the New Cartesian Sign
+                           Convention. In this convention, the pole (P) of the mirror is taken as the
+                           origin (Fig. 9.9).  The principal axis of the mirror is taken as the x-axis
+
+CHUNK: 45ed2aaa-a91f-4a5d-aa3b-2ba5026f374d
+PAGE: 10
+PASSAGE:
+The New Cartesian Sign Convention described above is illustrated in
+Fig.9.9 for your reference. These sign conventions are applied to obtain
+the mirror formula and solve related numerical problems.
+
+9.2.4  Mirror Formula and  Magnification
+In a spherical mirror                       , the distance of the
+object from its pole is called the object
+distance (u).  The distance of the image from
+the pole of the mirror is called the image
+distance (v). You already know that the
+distance of the principal focus from the pole
+is called the focal length (f). There is a
+relationship between these three quantities
+given by the mirror formula which is
+expressed as
+       1    1     1+           =                        (9.1)
+       v    u      f
+
+CHUNK: 4dba4fec-f7f0-4acc-a382-1e3f728b747d
+PAGE: 10
+PASSAGE:
+these three quantities
+given by the mirror formula which is
+expressed as
+       1    1     1+           =                        (9.1)
+       v    u      f
+
+This formula is valid in all situations for all
+spherical mirrors for all positions of the
+                                                                   Figure 9.9Figure 9.9
+object. You must use the New Cartesian Sign                        Figure 9.9Figure 9.9Figure 9.9
+Convention while substituting numerical                            The New Cartesian Sign Convention for spherical mirrors
+values for u, v, f, and R in the mirror formula
+for solving problems.",,,,,,,
+nine-31,dev,10,The Human Eye and the Colourful World,925e4a60-1e33-4394-a333-485a7682e584,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does the human eye accommodate objects at different distances?,(not supplied; reviewer must author if answerable),4b971ca4-35b3-45ba-b637-8652f0c4f0e0;6dbe17ed-d1e3-4c8e-a1a4-9de7141d89e2;0e80f5ae-9a3d-45e7-8ce2-b66ba5eea6a1,"CHUNK: 4b971ca4-35b3-45ba-b637-8652f0c4f0e0
+PAGE: 1
+PASSAGE:
+on the front
+surface of the eyeball as shown in Fig. 10.1.
+The eyeball is approximately spherical in shape
+with a diameter of about 2.3 cm. Most of the
+refraction for the light rays entering the eye
+occurs at the outer surface of the cornea. The
+crystalline lens merely provides the finer
+adjustment of focal length required to focus
+objects at different distances on the retina. We find a structure called iris         Figure 10.1Figure 10.1Figure 10.1Figure 10.1Figure 10.1
+behind the cornea. Iris is a dark muscular diaphragm that controls the                 The human eye
+size of the pupil.  The pupil regulates and controls the amount of light
+
+CHUNK: 6dbe17ed-d1e3-4c8e-a1a4-9de7141d89e2
+PAGE: 10
+PASSAGE:
+the retina) is corrected by using a convex lens of suitable power                       . The eye loses its
+          power of accommodation at old age.
+    /square6       The splitting of white light into its component colours is called dispersion.
+    /square6       Scattering of light causes the blue colour of sky.
+
+        EXERCISES
+
+    1.   The human eye can focus on objects at different distances by adjusting the focal
+         length of the eye lens. This is due to
+         (a)      presbyopia.                                 (b)         accommodation.
+         (c)      near-sightedness.                     (d)          far-sightedness.
+    2.   The human eye forms the image of an object at  its
+         (a)    cornea.                           (b)  iris.                      (c)  pupil.               (d)  retina.
+    3.    The least distance of distinct vision for a young adult with normal vision is about
+
+CHUNK: 0e80f5ae-9a3d-45e7-8ce2-b66ba5eea6a1
+PAGE: 7
+PASSAGE:
+present in the                        Sunlight
+atmosphere. A rainbow is always formed in a direction
+opposite to that of the Sun. The water droplets act like
+small prisms. They refract and disperse the incident
+sunlight, then reflect it internally, and finally refract it
+again when it comes out of the raindrop (Fig. 10.8). Due
+to the dispersion of light and internal reflection, different
+colours reach the observer’s eye.
+    You can also see a rainbow on a sunny day when
+you look at the sky through a waterfall or through a water
+fountain, with the Sun behind you.                                            Figure 10.8 Figure 10.8 Figure 10.8 Rainbow formationFigure 10.8 Figure 10.8
+
+
+
+The Human Eye and the Colourful World                                                                                           167",,,,,,,
+nine-32,dev,10,The Human Eye and the Colourful World,925e4a60-1e33-4394-a333-485a7682e584,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How is myopia corrected using a lens?,(not supplied; reviewer must author if answerable),1ae23f3c-d5b9-4b94-b816-93de207b2443;1c847e80-bb81-430b-91d7-a47672d2a2d0;33afff83-3e45-4512-8883-9045e7ccebb1,"CHUNK: 1ae23f3c-d5b9-4b94-b816-93de207b2443
+PAGE: 3
+PASSAGE:
+(a)  Myopia
+      Myopia is also known as near-
+      sightedness. A person with myopia
+      can see nearby objects clearly but
+      cannot see distant objects distinctly.
+      A person with this defect has the far
+      point nearer than infinity. Such a
+      person may see clearly upto a
+      distance of a few metres. In a myopic
+      eye, the image of a distant object is
+      formed in front of the retina [Fig.
+      10.2 (b)] and not at the retina itself.
+      This defect may arise due to (i)
+      excessive curvature of the eye lens,
+      or (ii) elongation of the eyeball. This
+      defect can be corrected by using a
+      concave lens of suitable power. This            Figure 10.2Figure 10.2
+      is illustrated in Fig. 10.2 (c). A              Figure 10.2Figure 10.2Figure 10.2
+      concave lens of suitable power will             (a), (b) The myopic eye, and (c) correction for myopia with a
+                                                      concave lens
+
+CHUNK: 1c847e80-bb81-430b-91d7-a47672d2a2d0
+PAGE: 10
+PASSAGE:
+What you have learnt
+
+
+    /square6     The ability of the eye to focus on both near and distant objects, by adjusting its
+          focal length, is called the accommodation of the eye.
+    /square6      The smallest distance, at which the eye can see objects clearly without strain, is
+          called the near point of the eye or the least distance of distinct vision.  For a young
+          adult with normal vision, it is about 25 cm.
+    /square6   The common refractive defects of vision include myopia, hypermetropia and
+          presbyopia. Myopia (short-sightedness – the image of distant objects is focussed
+          before the retina) is corrected by using a concave lens of suitable power.
+          Hypermetropia (far-sightedness – the image of nearby objects is focussed beyond
+          the retina) is corrected by using a convex lens of suitable power                       . The eye loses its
+          power of accommodation at old age.
+
+CHUNK: 33afff83-3e45-4512-8883-9045e7ccebb1
+PAGE: 3
+PASSAGE:
+power will             (a), (b) The myopic eye, and (c) correction for myopia with a
+                                                      concave lens
+      bring the image back on to the
+      retina and thus the defect is corrected.
+(b)    Hypermetropia
+      Hypermetropia is also known as far-sightedness.
+      A person with hypermetropia can see distant
+      objects clearly but cannot see nearby objects
+      distinctly. The near point, for the person, is farther
+      away from the normal near point (25 cm). Such a
+      person has to keep a reading material much
+      beyond 25 cm from the eye for comfortable
+      reading. This is because the light rays from a
+      closeby object are focussed at a point behind the
+      retina as shown in Fig. 10.3 (b). This defect arises
+      either because (i) the focal length of the eye lens is
+      too long, or (ii) the eyeball has become too small.
+      This defect can be corrected by using a convex",,,,,,,
+nine-33,test,10,The Human Eye and the Colourful World,925e4a60-1e33-4394-a333-485a7682e584,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How is hypermetropia corrected using a lens?,(not supplied; reviewer must author if answerable),1c847e80-bb81-430b-91d7-a47672d2a2d0;33afff83-3e45-4512-8883-9045e7ccebb1;896339bc-e22f-489d-991b-b503827c033b,"CHUNK: 1c847e80-bb81-430b-91d7-a47672d2a2d0
+PAGE: 10
+PASSAGE:
+What you have learnt
+
+
+    /square6     The ability of the eye to focus on both near and distant objects, by adjusting its
+          focal length, is called the accommodation of the eye.
+    /square6      The smallest distance, at which the eye can see objects clearly without strain, is
+          called the near point of the eye or the least distance of distinct vision.  For a young
+          adult with normal vision, it is about 25 cm.
+    /square6   The common refractive defects of vision include myopia, hypermetropia and
+          presbyopia. Myopia (short-sightedness – the image of distant objects is focussed
+          before the retina) is corrected by using a concave lens of suitable power.
+          Hypermetropia (far-sightedness – the image of nearby objects is focussed beyond
+          the retina) is corrected by using a convex lens of suitable power                       . The eye loses its
+          power of accommodation at old age.
+
+CHUNK: 33afff83-3e45-4512-8883-9045e7ccebb1
+PAGE: 3
+PASSAGE:
+power will             (a), (b) The myopic eye, and (c) correction for myopia with a
+                                                      concave lens
+      bring the image back on to the
+      retina and thus the defect is corrected.
+(b)    Hypermetropia
+      Hypermetropia is also known as far-sightedness.
+      A person with hypermetropia can see distant
+      objects clearly but cannot see nearby objects
+      distinctly. The near point, for the person, is farther
+      away from the normal near point (25 cm). Such a
+      person has to keep a reading material much
+      beyond 25 cm from the eye for comfortable
+      reading. This is because the light rays from a
+      closeby object are focussed at a point behind the
+      retina as shown in Fig. 10.3 (b). This defect arises
+      either because (i) the focal length of the eye lens is
+      too long, or (ii) the eyeball has become too small.
+      This defect can be corrected by using a convex
+
+CHUNK: 896339bc-e22f-489d-991b-b503827c033b
+PAGE: 3
+PASSAGE:
+(i) the focal length of the eye lens is
+      too long, or (ii) the eyeball has become too small.
+      This defect can be corrected by using a convex
+      lens of appropriate power                . This is illustrated in
+      Fig. 10.3 (c). Eye-glasses with converging lenses
+      provide the additional focussing power required
+      for forming the image on the retina.
+
+(c)   Presbyopia                                                      Figure 10.3Figure 10.3
+      The power of accommodation of the eye usually                   Figure 10.3Figure 10.3Figure 10.3
+                                                                       (a), (b) The hypermetropic eye, and (c)
+      decreases with ageing. For most people, the near                 correction for hypermetropia
+      point gradually recedes away. They find it difficult             N = Near point of a
+      to see nearby objects comfortably and distinctly                       hypermetropic eye.",,,,,,,
+nine-34,test,10,The Human Eye and the Colourful World,925e4a60-1e33-4394-a333-485a7682e584,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,Why does a prism disperse white light?,(not supplied; reviewer must author if answerable),be5daab4-3a87-45e0-ab1c-b958128a208c;3ea8b09d-a2d7-4fb9-86fa-fd49b35418ab;ad3b65d1-7d9a-4bcd-8fa0-1c98d1ff136e,"CHUNK: be5daab4-3a87-45e0-ab1c-b958128a208c
+PAGE: 6
+PASSAGE:
+activity.
+                                  Activity 10.2Activity 10.2Activity 10.2
+                                  Activity 10.2Activity 10.2
+
+
+                                /square6  Take a thick sheet of cardboard and make a small hole or narrow
+                                    slit in its middle.
+                                /square6   Allow sunlight to fall on the narrow slit. This gives a narrow beam
+                                    of white light.
+                                /square6  Now, take a glass prism and allow the light from the slit to fall on
+                                    one of its faces as shown in Fig. 10.5.
+                                /square6  Turn the prism slowly until the light that comes out of it appears
+                                    on a nearby screen.
+                                /square6  What do you observe? You will find a beautiful band of colours.
+                                    Why does this happen?
+
+CHUNK: 3ea8b09d-a2d7-4fb9-86fa-fd49b35418ab
+PAGE: 7
+PASSAGE:
+The prism has probably split the incident
+white light into a band of colours.  Note the
+colours that appear at the two ends of the
+colour band. What is the sequence of colours
+that you see on the screen? The various
+colours seen are Violet, Indigo, Blue, Green,
+Yellow, Orange and Red, as shown in
+Fig. 10.5. The acronym VIBGYOR will help
+you to remember the sequence of colours.
+The band of the coloured components of a
+                                                          Figure 10.5 Figure 10.5 Dispersion of white light by the glass prismFigure 10.5
+light beam is called its spectrum. You might              Figure 10.5 Figure 10.5
+not be able to see all the colours separately.
+Yet something makes each colour distinct from the other. The splitting
+of light into its component colours is called dispersion.
+    You have seen that white light is dispersed
+into its seven-colour components by a prism.
+Why do we get these colours? Different colours
+
+CHUNK: ad3b65d1-7d9a-4bcd-8fa0-1c98d1ff136e
+PAGE: 7
+PASSAGE:
+dispersion.
+    You have seen that white light is dispersed
+into its seven-colour components by a prism.
+Why do we get these colours? Different colours
+of light bend through different angles with
+respect to the incident ray, as they pass
+through a prism. The red light bends the least
+while the violet the most. Thus the rays of each
+colour emerge along different paths and thus                 Figure 10.6 Figure 10.6 Figure 10.6 Recombination of the spectrum ofFigure 10.6 Figure 10.6
+become distinct. It is the band of distinct                                  white light
+colours that we see in a spectrum.
+    Isaac Newton was the first to use a glass prism to obtain
+the spectrum of sunlight. He tried to split the colours of
+the spectrum of white light further by using another similar
+prism. However, he could not get any more colours. He
+then placed a second identical prism in an inverted position
+with respect to the first prism, as shown in Fig. 10.6. This",,,,,,,
+nine-35,test,10,The Human Eye and the Colourful World,925e4a60-1e33-4394-a333-485a7682e584,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,Why does the sky appear blue?,(not supplied; reviewer must author if answerable),34743713-b14b-4c1f-a1e1-e55fc1e74da9;474dbd1b-d333-4cdd-bf72-1209a075adf9;f35cf4f5-8277-4ead-962b-5e8886b707a8,"CHUNK: 34743713-b14b-4c1f-a1e1-e55fc1e74da9
+PAGE: 9
+PASSAGE:
+such fine
+particles, the path of the beam becomes visible. The light reaches us,
+after being reflected diffusely by these particles. The phenomenon of
+scattering of light by the colloidal particles gives rise to Tyndall effect
+which you have studied in Class IX. This phenomenon is seen when a
+fine beam of sunlight enters a smoke-filled room through a small hole.
+Thus, scattering of light makes the particles visible. Tyndall effect can
+also be observed when sunlight passes through a canopy of a dense
+forest.  Here, tiny water droplets in the mist scatter light.
+    The colour of the scattered light depends on the size of the scattering
+particles. Very fine particles scatter mainly blue light while particles of
+larger size scatter light of longer wavelengths.  If the size of the scattering
+particles is large enough, then, the scattered light may even appear
+white.
+10.6.2 Why is the colour of the clear Sky Blue?
+The molecules of air and other fine particles in the atmosphere have size
+
+CHUNK: 474dbd1b-d333-4cdd-bf72-1209a075adf9
+PAGE: 10
+PASSAGE:
+nature and
+         power of the lens required to correct the problem?
+    7.  Make a diagram to show how hypermetropia is corrected. The near point of a
+         hypermetropic eye is 1 m. What is the power of the lens required to correct this
+         defect? Assume that the near point of the normal eye is 25 cm.
+    8.   Why is a normal eye not able to see clearly the objects placed closer than 25 cm?
+    9.    What happens to the image distance in the eye when we increase the distance of an
+         object from the eye?
+   10.   Why do stars twinkle?
+   11.   Explain why the planets do not twinkle.
+   12.   Why does the sky appear dark instead of blue to an astronaut?
+
+
+
+
+170                                                                                                             Science
+
+CHUNK: f35cf4f5-8277-4ead-962b-5e8886b707a8
+PAGE: 9
+PASSAGE:
+light may even appear
+white.
+10.6.2 Why is the colour of the clear Sky Blue?
+The molecules of air and other fine particles in the atmosphere have size
+smaller than the wavelength of visible light. These are more effective in
+scattering light of shorter wavelengths at the blue end than light of longer
+wavelengths at the red end. The red light has a wavelength about 1.8
+times greater than blue light. Thus, when sunlight passes through the
+atmosphere, the fine particles in air scatter the blue colour (shorter
+wavelengths) more strongly than red. The scattered blue light enters
+our eyes. If the earth had no atmosphere, there would not have been
+any scattering. Then, the sky would have looked dark.  The sky appears
+dark to passengers flying at very high altitudes, as scattering is not
+prominent at such heights.
+    You might have observed that ‘danger’ signal lights are red in colour.
+Do you know why? The red is least scattered by fog or smoke.  Therefore,",,,,,,,
+nine-36,dev,11,Electricity,c9981302-fda6-45bc-ab4e-c142379f0035,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,"What is the relationship between current, potential difference, and resistance in Ohm's law?",(not supplied; reviewer must author if answerable),3dff8cba-b4c3-4e83-9709-ec881a60bfd4;91340ad6-4c73-4663-8ba5-64398411d732;f1d451f3-161f-43f3-81d7-6190694f5fc5,"CHUNK: 3dff8cba-b4c3-4e83-9709-ec881a60bfd4
+PAGE: 18
+PASSAGE:
+What is (a) the highest, (b) the lowest total resistance that can be secured
+        by combinations of four coils of resistance 4 Ω, 8 Ω, 12 Ω, 24 Ω?
+
+                           11.7 HEA11.7 HEA11.7 HEATING EFFECT OF ELECTRIC CURRENT11.7 HEA11.7 HEATING EFFECT OF ELECTRIC CURRENTTING EFFECT OF ELECTRIC CURRENTTING EFFECT OF ELECTRIC CURRENTTING EFFECT OF ELECTRIC CURRENT
+                           We know that a battery or a cell is a source of electrical energy. The
+                           chemical reaction within the cell generates the potential difference between
+                           its two terminals that sets the electrons in motion to flow the current
+                           through a resistor or a system of resistors connected to the battery. We
+                           have also seen, in Section 11.2, that to maintain the current, the source
+                           has to keep expending its energy. Where does this energy go? A part of
+
+CHUNK: 91340ad6-4c73-4663-8ba5-64398411d732
+PAGE: 23
+PASSAGE:
+75 W                     (c) 50 W               (d) 25 W
+       4.    Two conducting wires of the same material and of equal lengths and equal diameters
+            are first connected in series and then parallel in a circuit across the same potential
+            difference. The ratio of heat produced in series and parallel combinations would be –
+            (a)   1:2                             (b) 2:1                          (c) 1:4                  (d) 4:1
+       5.    How is a voltmeter connected in the circuit to measure the potential difference between
+            two points?
+       6.   A copper wire has diameter 0.5 mm and resistivity of 1.6 × 10–8 Ω m. What will be
+            the length of this wire to make its resistance 10 Ω? How much does the resistance
+            change if the diameter is doubled?
+       7.   The values of current I flowing in a given resistor for the corresponding values of
+            potential difference V across the resistor are given below –
+
+CHUNK: f1d451f3-161f-43f3-81d7-6190694f5fc5
+PAGE: 6
+PASSAGE:
+In this Activity, you will find that approximately the
+                                                 same value for V/I                          is obtained in each case. Thus the V–I
+                                                 graph is a straight line that passes through the origin of
+                                                 the graph, as shown in Fig. 11.3. Thus, V/I                                                                  is a constant
+                                                 ratio.
+                                                     In 1827, a German physicist Georg Simon Ohm
+                                                 (1787–1854) found out the relationship between the current
+                                                 I, flowing in a metallic wire and the potential difference
+                                                 across its terminals. The potential difference, V, across the",,,,,,,
+nine-37,dev,11,Electricity,c9981302-fda6-45bc-ab4e-c142379f0035,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does the resistance of a conductor depend on its length and cross-sectional area?,(not supplied; reviewer must author if answerable),1fa97d86-d2e3-43d8-9160-f4bfbc5752fc;8c74de28-ad99-4200-8510-ca8f4cdf242e;68cad100-7bc1-432d-b204-8c64d2948b8d,"CHUNK: 1fa97d86-d2e3-43d8-9160-f4bfbc5752fc
+PAGE: 8
+PASSAGE:
+value of the current.
+ /square6  Notice the difference in the current in all cases.
+ /square6  Does the current depend on the length of the conductor?
+ /square6  Does the current depend on the area of cross-section of the wire used?
+
+
+
+                                  It is observed that the ammeter reading decreases to one-half when
+                             the length of the wire is doubled. The ammeter reading is increased when
+                             a thicker wire of the same material and of the same length is used in the
+                             circuit. A change in ammeter reading is observed when a wire of different
+                             material of the same length and the same area of cross-section is used.
+                             On applying Ohm’s law [Eqs. (11.5) – (11.7)], we observe that the
+                             resistance of the conductor depends (i) on its length, (ii) on its area of
+
+CHUNK: 8c74de28-ad99-4200-8510-ca8f4cdf242e
+PAGE: 8
+PASSAGE:
+Figure 11.5 Figure 11.5 Figure 11.5 Electric circuit to study the factors on which the  resistance of conducting wires dependsFigure 11.5 Figure 11.5
+
+
+ /square6  Now, plug the key. Note the current in the ammeter.
+ /square6  Replace the nichrome wire by another nichrome wire of same thickness but twice the
+     length, that is 2l [marked (2) in the Fig. 11.5].
+ /square6  Note the ammeter reading.
+ /square6  Now replace the wire by a thicker nichrome wire, of the same length l [marked (3)]. A
+     thicker wire has a larger cross-sectional area. Again note down the current through the
+     circuit.
+ /square6  Instead of taking a nichrome wire, connect a copper wire [marked (4) in Fig. 11.5] in the
+     circuit. Let the wire be of the same length and same area of cross-section as that of the
+     first nichrome wire [marked (1)]. Note the value of the current.
+ /square6  Notice the difference in the current in all cases.
+ /square6  Does the current depend on the length of the conductor?
+
+CHUNK: 68cad100-7bc1-432d-b204-8c64d2948b8d
+PAGE: 8
+PASSAGE:
+law [Eqs. (11.5) – (11.7)], we observe that the
+                             resistance of the conductor depends (i) on its length, (ii) on its area of
+                             cross-section, and (iii) on the nature of its material. Precise measurements
+                             have shown that resistance of a uniform metallic conductor is directly
+                             proportional to its length (l                                     ) and inversely proportional to the area of
+                             cross-section (A). That is,
+                                             R ∝ l                                                                                          (11.8)
+                                  and      R ∝ 1/A                                                                                             (11.9)
+                             Combining Eqs. (11.8) and (11.9) we get
+                                             R ∝   l",,,,,,,
+nine-38,test,11,Electricity,c9981302-fda6-45bc-ab4e-c142379f0035,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How is equivalent resistance calculated for resistors in series?,(not supplied; reviewer must author if answerable),ab389892-2c57-4a4b-a8cf-22bce688d69c;09c23ba2-5ec9-4246-b94d-34f2ed223905;3c6c316c-dc3c-414e-97c4-a567729d8e92,"CHUNK: ab389892-2c57-4a4b-a8cf-22bce688d69c
+PAGE: 18
+PASSAGE:
+QUESTIONS
+
+ 1.    Judge the equivalent resistance when the following are connected in
+        parallel – (a) 1 Ω and 106 Ω, (b) 1 Ω and 103 Ω, and 106 Ω.
+ 2.    An electric lamp of 100 Ω, a toaster of resistance 50 Ω, and a water
+        filter of resistance 500 Ω are connected in parallel to a 220 V source.
+        What is the resistance of an electric iron connected to the same source
+        that takes as much current as all three appliances, and what is the
+        current through it?
+ 3.    What are the advantages of connecting electrical devices in parallel
+        with the battery instead of connecting them in series?                                     ?
+ 4.     How can three resistors of resistances 2 Ω, 3 Ω, and 6 Ω be connected
+        to give a total resistance of (a) 4 Ω, (b) 1 Ω?
+ 5.       What is (a) the highest, (b) the lowest total resistance that can be secured
+        by combinations of four coils of resistance 4 Ω, 8 Ω, 12 Ω, 24 Ω?
+
+CHUNK: 09c23ba2-5ec9-4246-b94d-34f2ed223905
+PAGE: 17
+PASSAGE:
+p, is given by [Eq. (11.18)]
+       1    1    1     1    1=         +             +              =
+
+        pR   5   10   30   3
+     Thus, Rp = 3 Ω.
+
+     Example 11.9
+     If in Fig. 11.12, R1 = 10  Ω, R2 = 40 Ω, R3 = 30 Ω, R   4 = 20 Ω, R5 = 60 Ω,
+     and a 12 V battery is connected to the arrangement. Calculate
+     (a) the total resistance in the circuit, and (b) the total current flowing
+     in the circuit.
+
+     Solution
+     Suppose we replace the parallel resistors R1 and R2 by an
+     equivalent resistor of resistance, R                                                                                                                                                                                                                                ′. Similarly we replace
+     the parallel resistors R3, R4 and R5 by an equivalent single
+     resistor of resistance R ″. Then using Eq. (11.18), we have
+     1/ R′ = 1/10 + 1/40      =  5/40; that is R′  = 8 Ω       .
+
+CHUNK: 3c6c316c-dc3c-414e-97c4-a567729d8e92
+PAGE: 22
+PASSAGE:
+potential difference across the ends of a resistor is directly
+          proportional to the current through it, provided its temperature remains the same.
+
+    /square6       The resistance of a conductor depends directly on its length, inversely on its area of
+          cross-section, and also on the material of the conductor   .
+
+    /square6    The equivalent resistance of several resistors in series is equal to the sum of
+          their individual resistances.
+
+    /square6     A set of resistors connected in parallel has an equivalent resistance R                                                                                                                                                                                         p given by
+
+            1      1      1      1=               +                +                +...
+
+             pR      R      R      R1          2          3",,,,,,,
+nine-39,test,11,Electricity,c9981302-fda6-45bc-ab4e-c142379f0035,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How is equivalent resistance calculated for resistors in parallel?,(not supplied; reviewer must author if answerable),ab389892-2c57-4a4b-a8cf-22bce688d69c;09c23ba2-5ec9-4246-b94d-34f2ed223905;3c6c316c-dc3c-414e-97c4-a567729d8e92,"CHUNK: ab389892-2c57-4a4b-a8cf-22bce688d69c
+PAGE: 18
+PASSAGE:
+QUESTIONS
+
+ 1.    Judge the equivalent resistance when the following are connected in
+        parallel – (a) 1 Ω and 106 Ω, (b) 1 Ω and 103 Ω, and 106 Ω.
+ 2.    An electric lamp of 100 Ω, a toaster of resistance 50 Ω, and a water
+        filter of resistance 500 Ω are connected in parallel to a 220 V source.
+        What is the resistance of an electric iron connected to the same source
+        that takes as much current as all three appliances, and what is the
+        current through it?
+ 3.    What are the advantages of connecting electrical devices in parallel
+        with the battery instead of connecting them in series?                                     ?
+ 4.     How can three resistors of resistances 2 Ω, 3 Ω, and 6 Ω be connected
+        to give a total resistance of (a) 4 Ω, (b) 1 Ω?
+ 5.       What is (a) the highest, (b) the lowest total resistance that can be secured
+        by combinations of four coils of resistance 4 Ω, 8 Ω, 12 Ω, 24 Ω?
+
+CHUNK: 09c23ba2-5ec9-4246-b94d-34f2ed223905
+PAGE: 17
+PASSAGE:
+p, is given by [Eq. (11.18)]
+       1    1    1     1    1=         +             +              =
+
+        pR   5   10   30   3
+     Thus, Rp = 3 Ω.
+
+     Example 11.9
+     If in Fig. 11.12, R1 = 10  Ω, R2 = 40 Ω, R3 = 30 Ω, R   4 = 20 Ω, R5 = 60 Ω,
+     and a 12 V battery is connected to the arrangement. Calculate
+     (a) the total resistance in the circuit, and (b) the total current flowing
+     in the circuit.
+
+     Solution
+     Suppose we replace the parallel resistors R1 and R2 by an
+     equivalent resistor of resistance, R                                                                                                                                                                                                                                ′. Similarly we replace
+     the parallel resistors R3, R4 and R5 by an equivalent single
+     resistor of resistance R ″. Then using Eq. (11.18), we have
+     1/ R′ = 1/10 + 1/40      =  5/40; that is R′  = 8 Ω       .
+
+CHUNK: 3c6c316c-dc3c-414e-97c4-a567729d8e92
+PAGE: 22
+PASSAGE:
+potential difference across the ends of a resistor is directly
+          proportional to the current through it, provided its temperature remains the same.
+
+    /square6       The resistance of a conductor depends directly on its length, inversely on its area of
+          cross-section, and also on the material of the conductor   .
+
+    /square6    The equivalent resistance of several resistors in series is equal to the sum of
+          their individual resistances.
+
+    /square6     A set of resistors connected in parallel has an equivalent resistance R                                                                                                                                                                                         p given by
+
+            1      1      1      1=               +                +                +...
+
+             pR      R      R      R1          2          3",,,,,,,
+nine-40,test,11,Electricity,c9981302-fda6-45bc-ab4e-c142379f0035,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does Joule's law describe the heating effect of electric current?,(not supplied; reviewer must author if answerable),a66cfa56-a521-4fa0-be96-1672db2933a4;3dff8cba-b4c3-4e83-9709-ec881a60bfd4;4b46f688-a7d3-444b-9205-1fe0c26e2ac8,"CHUNK: a66cfa56-a521-4fa0-be96-1672db2933a4
+PAGE: 1
+PASSAGE:
+CHAPTER          11
+                 Electricity
+
+
+
+
+
+
+
+     lectricity has an important place in modern society. It is a controllable
+Eand convenient form of energy for a variety of uses in homes, schools,
+hospitals, industries and so on. What constitutes electricity? How does
+it flow in an electric circuit? What are the factors that control or regulate
+the current through an electric circuit? In this Chapter, we shall attempt
+to answer such questions. We shall also discuss the heating effect of
+electric current and its applications.
+
+11.1 ELECTRIC CURRENT AND CIRCUIT11.1 ELECTRIC CURRENT AND CIRCUIT11.1 ELECTRIC CURRENT AND CIRCUIT11.1 ELECTRIC CURRENT AND CIRCUIT11.1 ELECTRIC CURRENT AND CIRCUIT
+
+CHUNK: 3dff8cba-b4c3-4e83-9709-ec881a60bfd4
+PAGE: 18
+PASSAGE:
+What is (a) the highest, (b) the lowest total resistance that can be secured
+        by combinations of four coils of resistance 4 Ω, 8 Ω, 12 Ω, 24 Ω?
+
+                           11.7 HEA11.7 HEA11.7 HEATING EFFECT OF ELECTRIC CURRENT11.7 HEA11.7 HEATING EFFECT OF ELECTRIC CURRENTTING EFFECT OF ELECTRIC CURRENTTING EFFECT OF ELECTRIC CURRENTTING EFFECT OF ELECTRIC CURRENT
+                           We know that a battery or a cell is a source of electrical energy. The
+                           chemical reaction within the cell generates the potential difference between
+                           its two terminals that sets the electrons in motion to flow the current
+                           through a resistor or a system of resistors connected to the battery. We
+                           have also seen, in Section 11.2, that to maintain the current, the source
+                           has to keep expending its energy. Where does this energy go? A part of
+
+CHUNK: 4b46f688-a7d3-444b-9205-1fe0c26e2ac8
+PAGE: 1
+PASSAGE:
+electric circuit. Now, if the circuit is broken anywhere (or the switch of the
+torch is turned off), the current stops flowing and the bulb does not glow.
+    How do we express electric current? Electric current is expressed by
+the amount of charge flowing through a particular area in unit time. In
+other words, it is the rate of flow of electric charges. In circuits using
+metallic wires, electrons constitute the flow of charges. However, electrons
+were not known at the time when the phenomenon of electricity was first
+observed. So, electric current was considered to be the flow of positive
+charges and the direction of flow of positive charges was taken to be the
+direction of electric current. Conventionally, in an electric circuit the
+direction of electric current is taken as opposite to the direction of the
+flow of electrons, which are negative charges.",,,,,,,
+nine-41,dev,12,Magnetic Effects of Electric Current,c71bbe0c-0206-4a2c-bb13-d6fa2802f9b4,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How can the direction of the magnetic field around a current-carrying wire be determined?,(not supplied; reviewer must author if answerable),2e7006d9-24ef-43fa-978c-fb08cccb3c77;e89a07ff-4334-4b41-b59d-d50777f2d0af;80f6867b-d64a-4b22-9815-1799e12979af,"CHUNK: 2e7006d9-24ef-43fa-978c-fb08cccb3c77
+PAGE: 5
+PASSAGE:
+wire (say at point Q). What change do you observe? W                            e see
+that the deflection in the needle decreases. Thus the magnetic field
+produced by a given current in the conductor decreases as the distance
+from it increases. From Fig. 12.6, it can be noticed that the concentric
+circles representing the magnetic field around a current-carrying straight
+wire become larger and larger as we move away from it.
+12.2.2 Right-Hand Thumb Rule
+A convenient way of finding the direction of magnetic field associated
+with a current-carrying conductor is given in Fig. 12.7.
+
+
+
+Magnetic Effects of Electric Current                                                                                                199
+
+CHUNK: e89a07ff-4334-4b41-b59d-d50777f2d0af
+PAGE: 5
+PASSAGE:
+You would find
+       that the iron filings align themselves showing
+       a pattern of concentric circles around the
+       copper wire (Fig. 12.6).
+   /square6  What do these concentric circles represent?
+       They represent the magnetic field lines.
+   /square6  How can the direction of the magnetic field be
+       found? Place a compass at a point (say P) over
+       a circle. Observe the direction of the needle. The
+       direction of the north pole of the compass                                                 (b)
+       needle would give the direction of the field lines                  Figure 12.6Figure 12.6Figure 12.6
+       produced by the electric current through the                        Figure 12.6Figure 12.6
+       straight wire at point P. Show the direction by                     (a) A pattern of concentric circles indicating
+       an arrow.                                                           the field lines of a magnetic field around a
+
+CHUNK: 80f6867b-d64a-4b22-9815-1799e12979af
+PAGE: 7
+PASSAGE:
+12.10Figure 12.10Figure 12.10
+parallel straight lines. This indicates that the magnetic field is                     Field lines of the magnetic field
+the same at all points inside the solenoid. That is, the field is                      through and around a current
+uniform inside the solenoid.                                                           carrying solenoid.
+    A strong magnetic field produced inside a solenoid can be
+used to magnetise a piece of magnetic material, like soft iron,
+when placed inside the coil (Fig. 12.11). The magnet so formed is
+called an electromagnet.
+      QUESTIONS
+                                                                                      Figure 12.11Figure 12.11Figure 12.11Figure 12.11Figure 12.11
+   1.     Consider a circular loop of wire lying in                                   A current-carrying solenoid coil
+          the plane of the table. Let the current                                     is used to magnetise steel rod",,,,,,,
+nine-42,dev,12,Magnetic Effects of Electric Current,c71bbe0c-0206-4a2c-bb13-d6fa2802f9b4,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does the magnetic field of a solenoid resemble that of a bar magnet?,(not supplied; reviewer must author if answerable),ddeb36d8-3c9c-4eb3-a483-9e84e42c8a79;da069ea6-d8de-4b4a-8087-05a91f4cc4e9;e38501fc-91a7-4982-b618-29e8e865a4fa,"CHUNK: ddeb36d8-3c9c-4eb3-a483-9e84e42c8a79
+PAGE: 2
+PASSAGE:
+is said to have a magnetic field.  The lines along which the iron filings
+                         align themselves represent magnetic field lines.
+                             Are there other ways of obtaining magnetic field lines around a bar
+                         magnet?  Yes, you can yourself draw the field lines of a bar magnet.
+                              Activity 12.3Activity 12.3Activity 12.3Activity 12.3Activity 12.3
+
+                             /square6  Take a small compass and a bar magnet.
+                             /square6  Place the magnet on a sheet of white paper fixed on a drawing
+                                board, using some adhesive material.
+                             /square6  Mark the boundary of the magnet.
+                             /square6  Place the compass near the north pole of the magnet. How does
+                                it behave? The south pole of the needle points towards the north
+
+CHUNK: da069ea6-d8de-4b4a-8087-05a91f4cc4e9
+PAGE: 7
+PASSAGE:
+Magnetic field produced by a current-
+       cardboard.                                                           carrying circular coil.
+
+12.2.4 Magnetic Field due to a Current in a Solenoid
+A coil of many circular turns of insulated copper wire wrapped
+closely in the shape of a cylinder is called a solenoid. The pattern
+of the magnetic field lines around a current-carrying solenoid is
+shown in Fig. 12.10. Compare the pattern of the field with the
+magnetic field around a bar magnet (Fig. 12.4). Do they look
+similar? Yes, they are similar              . In fact, one end of the solenoid
+behaves as a magnetic north pole, while the other behaves as the
+south pole. The field lines inside the solenoid are in the form of                     Figure 12.10Figure 12.10Figure 12.10Figure 12.10Figure 12.10
+parallel straight lines. This indicates that the magnetic field is                     Field lines of the magnetic field
+
+CHUNK: e38501fc-91a7-4982-b618-29e8e865a4fa
+PAGE: 12
+PASSAGE:
+direction that a north pole placed at that
+          point would take. Field lines are shown closer together where the magnetic field is
+          greater.
+
+    /square6       A metallic wire carrying an electric current has associated with it a magnetic field.
+          The field lines about the wire consist of a series of concentric circles whose direction
+          is given by the right-hand rule.
+
+    /square6     The pattern of the magnetic field around a conductor due to an electric current
+          flowing through it depends on the shape of the conductor. The magnetic field of a
+          solenoid carrying a current is similar to that of a bar magnet.
+
+    /square6    An electromagnet consists of a core of soft iron wrapped around with a coil of
+          insulated copper wire.",,,,,,,
+nine-43,test,12,Magnetic Effects of Electric Current,c71bbe0c-0206-4a2c-bb13-d6fa2802f9b4,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,What determines the direction of force on a current-carrying conductor in a magnetic field?,(not supplied; reviewer must author if answerable),08036860-b0ae-4096-9927-efae882f2e28;9994f9c6-5cff-4f38-bff6-4809a6f51663;c2808934-3e59-45a6-81d9-0e6e3eb12207,"CHUNK: 08036860-b0ae-4096-9927-efae882f2e28
+PAGE: 9
+PASSAGE:
+the direction of force acting on the current-carrying rod gets reversed. It
+shows that the direction of the force on the conductor depends upon the
+direction of current and the direction of the magnetic field. Experiments
+have shown that the displacement of the rod is largest (or the magnitude
+of the force is the highest) when the direction of current is at right angles
+to the direction of the magnetic field. In such a condition we can use a
+simple rule to find the direction of the force on the conductor.
+    In Activity 12.7, we considered the
+direction of the current and that of the magnetic
+field perpendicular to each other and found
+that the force is perpendicular to both of them.
+The three directions can be illustrated through
+a simple rule, called Fleming’s left-hand rule.
+According to this rule, stretch the thumb,
+forefinger and middle finger of your left hand
+such that they are mutually perpendicular
+(Fig. 12.13). If the first finger points in the
+
+CHUNK: 9994f9c6-5cff-4f38-bff6-4809a6f51663
+PAGE: 13
+PASSAGE:
+current will be
+                  parallel straight lines.
+           (b)      A wire with a green insulation is usually the live wire of an electric supply.
+      4.    List two methods of producing magnetic fields.
+      5.    When is the force experienced by a current–carrying conductor placed in a magnetic
+           field largest?
+      6.   Imagine that you are sitting in a chamber with your back to one wall. An electron
+           beam, moving horizontally from back wall towards the front wall, is deflected by a
+           strong magnetic field to your right side. What is the direction of magnetic field?
+      7.   State the rule to determine the direction of a (i) magnetic field produced around a
+           straight conductor-carrying current, (ii) force experienced by a curr                ent-carrying
+           straight conductor placed in a magnetic field which is perpendicular to it, and
+           (iii) current induced in a coil due to its rotation in a magnetic field.
+
+CHUNK: c2808934-3e59-45a6-81d9-0e6e3eb12207
+PAGE: 12
+PASSAGE:
+that of a bar magnet.
+
+    /square6    An electromagnet consists of a core of soft iron wrapped around with a coil of
+          insulated copper wire.
+
+    /square6       A current-carrying conductor when placed in a magnetic field experiences a force.
+          If the direction of the field and that of the current are mutually perpendicular to
+          each other, then the force acting on the conductor will be perpendicular to both
+          and will be given by Fleming’s left-hand rule.
+
+    /square6       In our houses we receive AC electric power of 220 V with a frequency of 50 Hz. One
+          of the wires in this supply is with red insulation, called live wire. The other one is of
+          black insulation, which is a neutral wire. The potential difference between the two
+          is 220 V. The third is the earth wire that has green insulation and this is connected
+          to a metallic body deep inside earth. It is used as a safety measure to ensure that",,,,,,,
+nine-44,test,12,Magnetic Effects of Electric Current,c71bbe0c-0206-4a2c-bb13-d6fa2802f9b4,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,Why is an earth wire used in domestic electrical appliances?,(not supplied; reviewer must author if answerable),a7a2a0a7-cfbb-4855-8d92-63d0cfb1006b;c2808934-3e59-45a6-81d9-0e6e3eb12207;80f6867b-d64a-4b22-9815-1799e12979af,"CHUNK: a7a2a0a7-cfbb-4855-8d92-63d0cfb1006b
+PAGE: 13
+PASSAGE:
+conductor placed in a magnetic field which is perpendicular to it, and
+           (iii) current induced in a coil due to its rotation in a magnetic field.
+      8.    When does an electric short circuit occur?
+      9.  What is the function of an earth wire? Why is it necessary to earth metallic
+           appliances?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Magnetic Effects of Electric Current                                                                                                207
+
+CHUNK: c2808934-3e59-45a6-81d9-0e6e3eb12207
+PAGE: 12
+PASSAGE:
+that of a bar magnet.
+
+    /square6    An electromagnet consists of a core of soft iron wrapped around with a coil of
+          insulated copper wire.
+
+    /square6       A current-carrying conductor when placed in a magnetic field experiences a force.
+          If the direction of the field and that of the current are mutually perpendicular to
+          each other, then the force acting on the conductor will be perpendicular to both
+          and will be given by Fleming’s left-hand rule.
+
+    /square6       In our houses we receive AC electric power of 220 V with a frequency of 50 Hz. One
+          of the wires in this supply is with red insulation, called live wire. The other one is of
+          black insulation, which is a neutral wire. The potential difference between the two
+          is 220 V. The third is the earth wire that has green insulation and this is connected
+          to a metallic body deep inside earth. It is used as a safety measure to ensure that
+
+CHUNK: 80f6867b-d64a-4b22-9815-1799e12979af
+PAGE: 7
+PASSAGE:
+12.10Figure 12.10Figure 12.10
+parallel straight lines. This indicates that the magnetic field is                     Field lines of the magnetic field
+the same at all points inside the solenoid. That is, the field is                      through and around a current
+uniform inside the solenoid.                                                           carrying solenoid.
+    A strong magnetic field produced inside a solenoid can be
+used to magnetise a piece of magnetic material, like soft iron,
+when placed inside the coil (Fig. 12.11). The magnet so formed is
+called an electromagnet.
+      QUESTIONS
+                                                                                      Figure 12.11Figure 12.11Figure 12.11Figure 12.11Figure 12.11
+   1.     Consider a circular loop of wire lying in                                   A current-carrying solenoid coil
+          the plane of the table. Let the current                                     is used to magnetise steel rod",,,,,,,
+nine-45,test,12,Magnetic Effects of Electric Current,c71bbe0c-0206-4a2c-bb13-d6fa2802f9b4,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How do a fuse and an overload protect a domestic circuit?,(not supplied; reviewer must author if answerable),b9435b19-097d-48a4-a2c1-7026dd9e5227;e134de03-bef5-4e34-ad35-46ff1db85bd1;1a09df65-de9b-4d87-9977-1239eb81d1bb,"CHUNK: b9435b19-097d-48a4-a2c1-7026dd9e5227
+PAGE: 11
+PASSAGE:
+Figure 12.15Figure 12.15Figure 12.15 A schematic diagram of one of the common domestic circuitsFigure 12.15Figure 12.15
+
+    Figure 12.15 gives a schematic diagram of one of the common
+domestic circuits. In each separate circuit, different appliances can be
+connected across the live and neutral wires. Each appliance has a
+separate switch to ‘ON’/‘OFF’ the flow of current through it. In order
+that each appliance has equal potential difference, they are connected
+parallel to each other.
+    Electric fuse is an important component of all domestic circuits. We
+have already studied the principle and working of a fuse in the previous
+chapter (see Section 11.7). A fuse in a circuit prevents damage to the
+appliances and the circuit due to overloading. Overloading can occur
+when the live wire and the neutral wire come into direct contact. (This
+occurs when the insulation of wires is damaged or there is a fault in the
+appliance.) In such a situation, the current in the circuit abruptly
+
+CHUNK: e134de03-bef5-4e34-ad35-46ff1db85bd1
+PAGE: 11
+PASSAGE:
+accidental hike in the supply
+voltage. Sometimes overloading is caused by connecting too many
+appliances to a single socket.
+                         QUESTIONS?
+
+   1.    Name two safety measures commonly used in electric circuits and
+          appliances.
+   2.     An electric oven of 2 kW power rating is operated in a domestic electric
+          circuit (220 V) that has a current rating of 5 A. What result do you
+          expect? Explain.
+   3.    What precaution should be taken to avoid the overloading of domestic
+          electric circuits?
+
+
+
+
+
+Magnetic Effects of Electric Current                                                                                                  205
+
+CHUNK: 1a09df65-de9b-4d87-9977-1239eb81d1bb
+PAGE: 10
+PASSAGE:
+2.    In Activity 12.7, how do we think the displacement of rod AB will be
+        affected if (i) current in rod AB is increased; (ii) a stronger horse-shoe
+        magnet is used; and (iii) length of the rod AB is increased?
+ 3.    A positively-charged particle (alpha-particle) projected towards west is
+        deflected towards north by a magnetic field. The direction of magnetic
+        field is
+        (a)  towards south       (b)  towards east
+        (c)  downward           (d)  upward",,,,,,,
+nine-46,dev,13,Our Environment,672dfbdf-af01-4c86-9321-f034f6d25aa9,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How do biodegradable and non-biodegradable wastes differ?,(not supplied; reviewer must author if answerable),c60d24a5-c1c1-45b7-94f7-e7588300ea37;7bd9d138-41b5-44e4-b0a2-e18f5b14a134;a36d7878-f922-4644-a999-546c1a8f6a50,"CHUNK: c60d24a5-c1c1-45b7-94f7-e7588300ea37
+PAGE: 7
+PASSAGE:
+members of the eco-system.
+
+                               Activity 13.6Activity 13.6Activity 13.6
+                               Activity 13.6Activity 13.6
+
+
+                             /square6  Use the library or internet to find out more about biodegradable
+                                 and non-biodegradable substances.
+                             /square6  How long are various non-biodegradable substances expected to
+                                 last in our environment?
+                             /square6    These days, new types of plastics which are said to be biodegradable
+                                 are available. Find out more about such materials and whether
+                                 they do or do not harm the environment.
+
+                       QUESTIONS?
+
+CHUNK: 7bd9d138-41b5-44e4-b0a2-e18f5b14a134
+PAGE: 8
+PASSAGE:
+Activity 13.7Activity 13.7
+     Activity 13.7Activity 13.7Activity 13.7
+
+
+   /square6  Find out what happens to the waste generated at home. Is there a
+       system in place to collect this waste?
+   /square6  Find out how the local body (panchayat, municipal corporation,
+       resident welfare association) deals with the waste. Are there
+       mechanisms in place to treat the biodegradable and non-
+       biodegradable wastes separately?
+   /square6  Calculate how much waste is generated at home in a day.
+   /square6  How much of this waste is biodegradable?
+   /square6  Calculate how much waste is generated in the classroom
+       in a day.
+   /square6  How much of this waste is biodegradable?
+   /square6  Suggest ways of dealing with this waste.
+
+
+     Activity 13.8Activity 13.8Activity 13.8Activity 13.8Activity 13.8
+
+CHUNK: a36d7878-f922-4644-a999-546c1a8f6a50
+PAGE: 7
+PASSAGE:
+out more about such materials and whether
+                                 they do or do not harm the environment.
+
+                       QUESTIONS?
+
+
+ 1.     Why are some substances biodegradable and some non-biodegradable?
+ 2.     Give any two ways in which biodegradable substances would affect the
+        environment.
+ 3.     Give any two ways in which non-biodegradable substances would affect
+        the environment.
+
+
+
+                              Visit any town or city, and we are sure to find heaps of garbage all over
+                          the place. Visit any place of tourist interest and we are sure to find the
+                          place littered with empty food wrappers. In the earlier classes we have
+                          talked about this problem of dealing with the garbage that we generate. Let
+                          us now look at the problem a bit more deeply.",,,,,,,
+nine-47,dev,13,Our Environment,672dfbdf-af01-4c86-9321-f034f6d25aa9,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,"What roles do producers, consumers, and decomposers play in an ecosystem?",(not supplied; reviewer must author if answerable),329b9957-a493-4bfd-bad1-c8a4d8c9865c;54433ba8-dad4-4972-ae62-c2ed805e9c96;0f2b522b-97c5-4791-8f28-acabb2758e61,"CHUNK: 329b9957-a493-4bfd-bad1-c8a4d8c9865c
+PAGE: 2
+PASSAGE:
+/square6  If we add a few aquatic plants and animals it can become a self-
+       sustaining system. Can you think how this happens? An aquarium
+       is an example of a human-made ecosystem.
+   /square6  Can we leave the aquarium as such after we set it up? Why does
+       it have to be cleaned once in a while? Do we have to clean ponds
+       or lakes in the same manner? Why or why not?
+
+
+    We have seen in earlier classes that organisms can be gr                                                        ouped as
+producers, consumers and decomposers according to the manner in
+which they obtain their sustenance from the environment. Let us recall
+what we have learnt through the self sustaining ecosystem created by
+us above. Which organisms can make organic compounds like sugar
+and starch from inorganic substances using the radiant energy of the
+Sun in the presence of chlorophyll? All green plants and certain bacteria
+which can produce food by photosynthesis come under this category
+
+CHUNK: 54433ba8-dad4-4972-ae62-c2ed805e9c96
+PAGE: 5
+PASSAGE:
+/square6  Discuss what methods could be applied to reduce our intake of
+                              pesticides.
+
+                      QUESTIONS
+
+
+ 1.    What are trophic levels? Give an example of a food chain and state the
+       different trophic levels in it.
+ 2.     What is the role of decomposers in the ecosystem?                                    ?
+
+
+                        13.213.213.2  HOW DO OUR ACTIVITIES AFFECT THE13.213.2HOW DO OUR ACTIVITIES AFFECT THEHOW DO OUR ACTIVITIES AFFECT THEHOW DO OUR ACTIVITIES AFFECT THEHOW DO OUR ACTIVITIES AFFECT THE
+                                  ENVIRONMENT?ENVIRONMENT?ENVIRONMENT?ENVIRONMENT?ENVIRONMENT?
+
+CHUNK: 0f2b522b-97c5-4791-8f28-acabb2758e61
+PAGE: 2
+PASSAGE:
+energy of the
+Sun in the presence of chlorophyll? All green plants and certain bacteria
+which can produce food by photosynthesis come under this category
+and are called the producers.
+    Organisms depend on the producers either directly or indirectly for
+their sustenance? These organisms which consume the food produced,
+either directly from producers or indirectly by feeding on other consumers
+are the consumers. Consumers can be classed variously as herbivores,
+carnivores, omnivores and parasites. Can you give examples for each of
+these categories of consumers?
+   /square6    Imagine the situation where you do not clean the  aquarium and
+       some fish and plants have died. Have you ever thought what
+       happens when an organism dies? The microorganisms, comprising
+       bacteria and fungi, break-down the dead remains and waste
+       products of organisms. These microorganisms are the decomposers
+       as they break-down the complex organic substances into simple",,,,,,,
+nine-48,test,13,Our Environment,672dfbdf-af01-4c86-9321-f034f6d25aa9,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,Why is energy transfer between trophic levels limited?,(not supplied; reviewer must author if answerable),7e6a807e-c5c8-4834-9a5c-53512137d9ac;94382438-22e3-4a2f-a2a9-a3ab56147f21;b49b5ded-fcb4-4f34-b43f-d4aee23b35de,"CHUNK: 7e6a807e-c5c8-4834-9a5c-53512137d9ac
+PAGE: 9
+PASSAGE:
+?
+
+      What you have learnt
+
+
+
+   /square6       The various components of an ecosystem are interdependent.
+
+   /square6       The producers make the energy from sunlight available to the rest of the ecosystem.
+
+   /square6       There is a loss of energy as we go from one trophic level to the next, this limits the
+         number of trophic levels in a food-chain.
+
+   /square6       Human activities have an impact on the environment.
+
+   /square6      The use of chemicals like CFCs has endangered the ozone layer. Since the ozone
+         layer protects against the ultraviolet radiation from the Sun, this could damage
+         the environment.
+
+   /square6      The waste we generate may be biodegradable or non-biodegradable.
+
+   /square6       The disposal of the waste we generate is causing serious environmental problems.
+
+       EXERCISES
+
+CHUNK: 94382438-22e3-4a2f-a2a9-a3ab56147f21
+PAGE: 4
+PASSAGE:
+From the energy flow diagram (Fig. 13.4),
+two things become clear. Firstly, the flow of
+energy is unidirectional. The energy that is
+captured by the autotrophs does not revert
+back to the solar input and the energy which
+passes to the herbivores does not come back
+to autotrophs. As it moves progressively
+through the various trophic levels it is no
+longer available to the previous level.
+Secondly, the energy available at each trophic
+level gets diminished progressively due to loss
+of energy at each level.
+    Another interesting aspect of food chain
+is how unknowingly some harmful
+chemicals enter our bodies through the food
+chain. You have read in Class IX how water
+gets polluted. One of the reasons is the use of
+several pesticides and other chemicals to
+protect our crops from diseases and pests.
+These chemicals are either washed down into
+the soil or into the water bodies. From the
+soil, these are absorbed by the plants along
+with water and minerals, and from the water
+
+CHUNK: b49b5ded-fcb4-4f34-b43f-d4aee23b35de
+PAGE: 3
+PASSAGE:
+can be taken as the average value for the amount
+                                    of organic matter that is present at each step and reaches the next
+                                    level of consumers.
+Figure 13.2Figure 13.2Figure 13.2Figure 13.2Figure 13.2/square6     Since so little energy is available for the next level of consumers,
+Trophic levels                      food chains generally consist of only three or four steps. The loss
+                                    of energy at each step is so great that very little usable energy
+                                    remains after four trophic levels.
+                                /square6    There are generally a greater number of individuals at the lower
+                                    trophic levels of an ecosystem, the greatest number is of the
+                                    producers.
+                                /square6      The length and complexity of food chains vary greatly. Each organism",,,,,,,
+nine-49,test,13,Our Environment,672dfbdf-af01-4c86-9321-f034f6d25aa9,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does biological magnification affect higher trophic levels?,(not supplied; reviewer must author if answerable),54433ba8-dad4-4972-ae62-c2ed805e9c96;eb957f0f-1631-4a93-b26c-361ca233a7a1;533b2731-78b8-45ad-b3a6-af91831b37f1,"CHUNK: 54433ba8-dad4-4972-ae62-c2ed805e9c96
+PAGE: 5
+PASSAGE:
+/square6  Discuss what methods could be applied to reduce our intake of
+                              pesticides.
+
+                      QUESTIONS
+
+
+ 1.    What are trophic levels? Give an example of a food chain and state the
+       different trophic levels in it.
+ 2.     What is the role of decomposers in the ecosystem?                                    ?
+
+
+                        13.213.213.2  HOW DO OUR ACTIVITIES AFFECT THE13.213.2HOW DO OUR ACTIVITIES AFFECT THEHOW DO OUR ACTIVITIES AFFECT THEHOW DO OUR ACTIVITIES AFFECT THEHOW DO OUR ACTIVITIES AFFECT THE
+                                  ENVIRONMENT?ENVIRONMENT?ENVIRONMENT?ENVIRONMENT?ENVIRONMENT?
+
+CHUNK: eb957f0f-1631-4a93-b26c-361ca233a7a1
+PAGE: 10
+PASSAGE:
+(c)      Goat, cow and elephant
+           (d)      Grass, fish and goat
+      3.    Which of the following are environment-friendly practices?
+           (a)      Carrying cloth-bags to put purchases in while shopping
+           (b)      Switching off unnecessary lights and fans
+           (c)      Walking to school instead of getting your mother to drop you on her scooter
+           (d)      All of the above
+      4.    What will happen if we kill all the organisms in one trophic level?
+      5.  Will the impact of removing all the organisms in a trophic level be different for
+           different trophic levels? Can the organisms of any trophic level be removed without
+           causing any damage to the ecosystem?
+      6.    What is biological magnification? Will the levels of this magnification be different at
+           different levels of the ecosystem?
+      7.    What are the problems caused by the non-biodegradable wastes that we generate?
+
+CHUNK: 533b2731-78b8-45ad-b3a6-af91831b37f1
+PAGE: 9
+PASSAGE:
+Activity 13.9Activity 13.9
+                               Activity 13.9Activity 13.9Activity 13.9
+
+
+                             /square6   Search the internet or library to find out what hazardous materials
+                                 have to be dealt with while disposing of electronic items. How would
+                                 these materials affect the environment?
+                             /square6  Find out how plastics are recycled. Does the recycling process
+                                 have any impact on the environment?
+
+                       QUESTIONS
+
+
+  1.     What is ozone and how does it affect any ecosystem?
+  2.    How can you help in reducing the problem of waste disposal? Give
+         any two methods.                                                                          ?
+
+      What you have learnt
+
+
+
+   /square6       The various components of an ecosystem are interdependent.",,,,,,,
+nine-50,test,13,Our Environment,672dfbdf-af01-4c86-9321-f034f6d25aa9,d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8,How does ozone depletion affect living organisms?,(not supplied; reviewer must author if answerable),2a02966c-d274-43c7-bf37-6c8b77d5a94f;533b2731-78b8-45ad-b3a6-af91831b37f1;f65b90b6-0080-42bc-b579-98af07ea3010,"CHUNK: 2a02966c-d274-43c7-bf37-6c8b77d5a94f
+PAGE: 5
+PASSAGE:
+OUR ACTIVITIES AFFECT THEHOW DO OUR ACTIVITIES AFFECT THE
+                                  ENVIRONMENT?ENVIRONMENT?ENVIRONMENT?ENVIRONMENT?ENVIRONMENT?
+
+                        We are an integral part of the environment. Changes in the environment
+                        affect us and our activities change the environment around us. We have
+                        already seen in Class IX how our activities pollute the environment. In
+                        this chapter, we shall be looking at two of the environmental problems
+                        in detail, that is, depletion of the ozone layer and waste disposal.
+
+                        13.2.1 Ozone Layer and How it is Getting Depleted
+
+CHUNK: 533b2731-78b8-45ad-b3a6-af91831b37f1
+PAGE: 9
+PASSAGE:
+Activity 13.9Activity 13.9
+                               Activity 13.9Activity 13.9Activity 13.9
+
+
+                             /square6   Search the internet or library to find out what hazardous materials
+                                 have to be dealt with while disposing of electronic items. How would
+                                 these materials affect the environment?
+                             /square6  Find out how plastics are recycled. Does the recycling process
+                                 have any impact on the environment?
+
+                       QUESTIONS
+
+
+  1.     What is ozone and how does it affect any ecosystem?
+  2.    How can you help in reducing the problem of waste disposal? Give
+         any two methods.                                                                          ?
+
+      What you have learnt
+
+
+
+   /square6       The various components of an ecosystem are interdependent.
+
+CHUNK: f65b90b6-0080-42bc-b579-98af07ea3010
+PAGE: 5
+PASSAGE:
+in detail, that is, depletion of the ozone layer and waste disposal.
+
+                        13.2.1 Ozone Layer and How it is Getting Depleted
+
+                        Ozone (O3) is a molecule formed by three atoms of oxygen. While O2,
+                        which we normally refer to as oxygen, is essential for all aerobic forms of
+                        life. Ozone, is a deadly poison. However, at the higher levels of the
+                        atmosphere, ozone performs an essential function. It shields the surface
+                        of the earth from ultraviolet (UV) radiation from the Sun. This radiation
+
+
+
+
+212                                                                                             Science",,,,,,,

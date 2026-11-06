@@ -1,0 +1,40 @@
+﻿[stdout] NAME             IMAGE                                    COMMAND                  SERVICE    CREATED          STATUS                 PORTS
+tutor_api        learnmateai-api                          "uvicorn app.main:apΓÇª"   api        51 minutes ago   Up 51 minutes          0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+tutor_frontend   learnmateai-frontend                     "docker-entrypoint.sΓÇª"   frontend   5 weeks ago      Up 3 hours             0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+tutor_minio      bigbeartechworld/big-bear-minio:latest   "/usr/bin/entrypointΓÇª"   minio      5 weeks ago      Up 3 hours (healthy)   0.0.0.0:9000-9001->9000-9001/tcp, [::]:9000-9001->9000-9001/tcp
+tutor_ollama     ollama/ollama:latest                     "/bin/ollama serve"      ollama     5 weeks ago      Up 3 hours (healthy)   0.0.0.0:11434->11434/tcp, [::]:11434->11434/tcp
+tutor_postgres   pgvector/pgvector:pg16                   "docker-entrypoint.sΓÇª"   postgres   5 weeks ago      Up 3 hours (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+tutor_redis      redis:7-alpine                           "docker-entrypoint.sΓÇª"   redis      5 weeks ago      Up 3 hours (healthy)   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+tutor_worker     learnmateai-worker                       "celery -A app.core.ΓÇª"   worker     51 minutes ago   Up 51 minutes          8000/tcp
+
+[stderr]  tutor_api Copying C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\datasets\nine_chapters\questions.candidates.jsonl to tutor_api:/tmp/nine-nine_science_03.candidates.jsonl
+ tutor_api Copied C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\datasets\nine_chapters\questions.candidates.jsonl to tutor_api:/tmp/nine-nine_science_03.candidates.jsonl
+
+[stderr]  tutor_api Copying tutor_api:/tmp/learnmate-nine-nine_science_03/. to C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\results\nine_science_03
+ tutor_api Copied tutor_api:/tmp/learnmate-nine-nine_science_03/. to C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\results\nine_science_03
+
+[stderr]  tutor_api Copying C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\datasets\nine_chapters\questions.reviewed.jsonl to tutor_api:/tmp/nine-nine_science_03.reviewed.jsonl
+ tutor_api Copied C:\Users\Aayush Pulkundwar\OneDrive\Desktop\LearnMateAI\research\datasets\nine_chapters\questions.reviewed.jsonl to tutor_api:/tmp/nine-nine_science_03.reviewed.jsonl
+
+[stderr] Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/app/scripts/nine_chapter_research.py", line 320, in <module>
+    main()
+  File "/app/scripts/nine_chapter_research.py", line 310, in main
+    asyncio.run(run(args))
+  File "/usr/local/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/app/scripts/nine_chapter_research.py", line 112, in run
+    validate_judgments(records, frozen)
+  File "/app/app/evaluation/nine_chapter_corpus.py", line 51, in validate_judgments
+    raise ValueError("All relevance judgments require explicit human review.")
+ValueError: All relevance judgments require explicit human review.
+

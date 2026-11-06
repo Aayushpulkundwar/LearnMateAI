@@ -47,7 +47,9 @@ class GroundedContextTests(unittest.TestCase):
         context, used_chunks = build_grounded_context(chunks, 150)
 
         self.assertLessEqual(len(context), 150)
-        self.assertEqual(used_chunks, [chunks[0]])
+        self.assertEqual(used_chunks[0]['id'], chunks[0]['id'])
+        self.assertTrue(chunks[0]['content'].startswith(used_chunks[0]['content']))
+        self.assertLess(len(used_chunks[0]['content']), len(chunks[0]['content']))
         self.assertIn("A", context)
         self.assertNotIn("B" * 10, context)
 
@@ -60,7 +62,7 @@ class GenerationNodeTests(unittest.TestCase):
     def test_accepted_generation_calls_llm_with_grounded_prompts(self):
         with patch(
             "app.graph.nodes.llm_service.generate",
-            new=AsyncMock(return_value="Call InsertTree with its parameters."),
+            new=AsyncMock(return_value="Call InsertTree with its parameters. [Source 1]"),
         ) as generate:
             result = asyncio.run(generate_node(self._state()))
 
@@ -69,7 +71,7 @@ class GenerationNodeTests(unittest.TestCase):
         self.assertIn("Student Question: How do I call InsertTree?", kwargs["prompt"])
         self.assertIn("CALL InsertTree", kwargs["prompt"])
         self.assertIn("untrusted reference data", kwargs["system_prompt"])
-        self.assertEqual(result["answer"], "Call InsertTree with its parameters.")
+        self.assertEqual(result["answer"], "Call InsertTree with its parameters. [Source 1]")
         self.assertFalse(result["is_refused"])
 
     def test_generation_failure_is_propagated_not_replaced_with_sample_answer(self):
@@ -118,7 +120,7 @@ class GenerationNodeTests(unittest.TestCase):
             new=AsyncMock(return_value=[retrieved]),
         ), patch(
             "app.graph.nodes.llm_service.generate",
-            new=AsyncMock(return_value="Use CALL InsertTree(...)."),
+            new=AsyncMock(return_value="Use CALL InsertTree(...). [Source 1]"),
         ) as generate:
             result = asyncio.run(app_graph.ainvoke({
                 "question": "How do I call InsertTree?", "filters": {},
@@ -141,7 +143,7 @@ class GenerationNodeTests(unittest.TestCase):
         client.post = AsyncMock(return_value=response)
         client.__aenter__ = AsyncMock(return_value=client)
         client.__aexit__ = AsyncMock(return_value=None)
-        service = OllamaLLMService(base_url="http://ollama.test", model="llama3.1")
+        service = OllamaLLMService(base_url="http://ollama.test", model="llama3:8b")
 
         with patch("app.services.llm_service.httpx.AsyncClient", return_value=client):
             with self.assertRaisesRegex(RuntimeError, "empty generation response"):

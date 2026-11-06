@@ -21,3 +21,4 @@ class Chunk(Base):
 
     # Relationship to document
     document = relationship("Document", back_populates="chunks")
+    questions = relationship("Question", back_populates="source_chunk")

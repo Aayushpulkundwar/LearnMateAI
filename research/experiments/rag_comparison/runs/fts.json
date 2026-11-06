@@ -1,0 +1,963 @@
+{
+  "run_id": "nine_science_03",
+  "corpus_sha256": "d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8",
+  "dataset_sha256": "11fa3329a2c3fd8a0b366a0e16c74462333bbc6afa48c2a5a7d6f142ea4e8298",
+  "mode": "fts",
+  "top_k": 10,
+  "candidate_depth": 40,
+  "retrieval_settings": {
+    "dense_similarity": {
+      "value": "cosine similarity",
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "Chunk.embedding.cosine_distance(query_embedding); score=1-distance"
+    },
+    "embedding_model": {
+      "value": "bge-m3",
+      "source": "backend/app/core/config.py",
+      "evidence": "EMBEDDING_MODEL default; frozen run environment uses model tag"
+    },
+    "embedding_digest": {
+      "value": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+      "source": "research/results/nine_science_03/ollama_models.json",
+      "evidence": "Ollama /api/tags captured in frozen run"
+    },
+    "embedding_model_details": {
+      "value": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "bert",
+        "families": [
+          "bert"
+        ],
+        "parameter_size": "566.70M",
+        "quantization_level": "F16",
+        "context_length": 8192,
+        "embedding_length": 1024
+      },
+      "source": "research/results/nine_science_03/ollama_models.json",
+      "evidence": "Ollama tag details captured in frozen run"
+    },
+    "embedding_dimensions": {
+      "value": 1024,
+      "source": "research/results/nine_science_03/corpus.json",
+      "evidence": "frozen vectors verified at 1024 dimensions"
+    },
+    "fts_dictionary": {
+      "value": "simple",
+      "source": "backend/app/services/retrieval_service.py; backend/alembic/versions/0010_hybrid_retrieval_fts.py",
+      "evidence": "to_tsvector and websearch_to_tsquery use literal simple config"
+    },
+    "fts_query_construction": {
+      "value": "websearch_to_tsquery",
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "websearch_to_tsquery('simple', query_text)"
+    },
+    "fts_ranking": {
+      "value": "ts_rank_cd normalization=32",
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "ts_rank_cd(search_vector, search_query, 32), descending score then chunk ID"
+    },
+    "hybrid_fusion": {
+      "value": "RRF",
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "reciprocal_rank_fusion; sum 1/(rrf_k+rank); deterministic tie breaks"
+    },
+    "rrf_k": {
+      "value": 60,
+      "source": "backend/app/core/config.py",
+      "evidence": "RETRIEVAL_RRF_K"
+    },
+    "candidate_multiplier": {
+      "value": 4,
+      "source": "backend/app/core/config.py",
+      "evidence": "RETRIEVAL_CANDIDATE_MULTIPLIER; candidate_limit=max(top_k,top_k*multiplier)"
+    },
+    "candidate_depth_for_top10": {
+      "value": 40,
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "top_k=10 and recorded multiplier=4"
+    },
+    "final_top_k": {
+      "value": 10,
+      "source": "research/experiments/rag_comparison protocol",
+      "evidence": "research run requests top_k=10"
+    },
+    "generation_top_k": {
+      "value": 5,
+      "source": "backend/app/core/config.py",
+      "evidence": "RETRIEVAL_TOP_K"
+    },
+    "dense_relevance_threshold": {
+      "value": 0.55,
+      "source": "backend/app/core/config.py",
+      "evidence": "RELEVANCE_THRESHOLD"
+    },
+    "lexical_relevance_threshold": {
+      "value": 0.08,
+      "source": "backend/app/core/config.py",
+      "evidence": "LEXICAL_RELEVANCE_THRESHOLD"
+    },
+    "context_min_similarity": {
+      "value": 0.5,
+      "source": "backend/app/core/config.py",
+      "evidence": "CONTEXT_MIN_SIMILARITY"
+    },
+    "context_max_similarity_drop": {
+      "value": 0.06,
+      "source": "backend/app/core/config.py",
+      "evidence": "CONTEXT_MAX_SIMILARITY_DROP"
+    },
+    "context_budget_chars": {
+      "value": 6000,
+      "source": "backend/app/core/config.py",
+      "evidence": "RAG_MAX_CONTEXT_CHARS"
+    },
+    "vector_index": {
+      "value": "No HNSW/IVFFlat vector index appears in the frozen pg_indexes evidence; runtime query plan not captured, so exact execution plan is unverified.",
+      "source": "research/results/nine_science_03/corpus.json:indexes"
+    },
+    "generation_model": {
+      "value": "llama3:8b",
+      "source": "backend/app/core/config.py",
+      "evidence": "LLM_MODEL; frozen run Ollama tags"
+    },
+    "generation_digest": {
+      "value": "365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1",
+      "source": "research/results/nine_science_03/ollama_models.json",
+      "evidence": "Ollama /api/tags captured in frozen run"
+    },
+    "generation_model_details": {
+      "value": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_0",
+        "context_length": 8192,
+        "embedding_length": 4096
+      },
+      "source": "research/results/nine_science_03/ollama_models.json",
+      "evidence": "Ollama tag details captured in frozen run"
+    },
+    "generation_request": {
+      "value": {
+        "stream": false,
+        "temperature": 0.2,
+        "other_generation_options": "not set in source"
+      },
+      "source": "backend/app/services/llm_service.py",
+      "evidence": "non-streaming Ollama /api/generate; only temperature is sent in options"
+    },
+    "generation_temperature": {
+      "value": 0.2,
+      "source": "backend/app/core/config.py",
+      "evidence": "LLM_TEMPERATURE"
+    },
+    "generation_timeout_seconds": {
+      "value": 300.0,
+      "source": "backend/app/core/config.py",
+      "evidence": "OLLAMA_GENERATION_TIMEOUT_SECONDS"
+    },
+    "database_migration_revision": {
+      "value": [
+        "0010_hybrid_retrieval_fts"
+      ],
+      "source": "research/results/nine_science_03/corpus.json",
+      "evidence": "Alembic revision observed at freeze"
+    },
+    "postgres_runtime_parameters": {
+      "value": null,
+      "source": "not captured by frozen run; query runtime configuration from authorized host if required"
+    },
+    "chunking": {
+      "chunk_size_chars": {
+        "value": 1000,
+        "source": "backend/app/core/config.py",
+        "evidence": "CHUNK_SIZE; source default, deployed override not captured"
+      },
+      "chunk_overlap_chars": {
+        "value": 150,
+        "source": "backend/app/core/config.py",
+        "evidence": "CHUNK_OVERLAP; source default, deployed override not captured"
+      },
+      "method": {
+        "value": "deterministic character-based page-aware chunking",
+        "source": "backend/app/services/text_chunking.py",
+        "evidence": "page-local natural boundary chunking; page number retained"
+      }
+    },
+    "frozen_passage_length_chars": {
+      "value": {
+        "min": 243,
+        "max": 999,
+        "mean": 820.3592534992224,
+        "median": 912,
+        "p90": 986.0
+      },
+      "source": "research/results/nine_science_03/corpus.json:chunks[].content"
+    },
+    "database": {
+      "identity": [
+        "learnmate_db",
+        "tutor"
+      ],
+      "pgvector_version": "0.8.6",
+      "indexes": [
+        "CREATE INDEX idx_chunks_document_id ON public.chunks USING btree (document_id)",
+        "CREATE INDEX ix_chunks_content_fts ON public.chunks USING gin (to_tsvector('simple'::regconfig, COALESCE(content, ''::text)))",
+        "CREATE UNIQUE INDEX chunks_pkey ON public.chunks USING btree (id)"
+      ]
+    },
+    "runtime_caveat": "Values from environment.json and Ollama tags are recorded in the frozen run. The current runtime and database have not been queried by this process."
+  },
+  "warmup": "No explicit warmup; model/service cache state not controlled. Three conditions randomized per question with seed 20261030.",
+  "execution": {
+    "queries": 40,
+    "successes": 40,
+    "failures": 0,
+    "hardware": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.41",
+    "python": "3.11.18",
+    "finished_at_utc": "2026-10-30T06:13:00.111612+00:00"
+  },
+  "queries": [
+    {
+      "question_id": "nine-01",
+      "question": "Why must a chemical equation be balanced?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 3955.378,
+      "latency_ms": 46.397,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-02",
+      "question": "How does a combination reaction differ from a decomposition reaction?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 85.01,
+      "latency_ms": 13.178,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-07",
+      "question": "How do acids and bases affect litmus indicators?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 69.664,
+      "latency_ms": 8.294,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-08",
+      "question": "Why do aqueous acids conduct electricity?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 63.793,
+      "latency_ms": 6.639,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-13",
+      "question": "How do the physical properties of metals differ from those of non-metals?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 160.481,
+      "latency_ms": 11.994,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-14",
+      "question": "What does the reactivity series predict about displacement reactions?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 107.257,
+      "latency_ms": 33.123,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-19",
+      "question": "Why is DNA copying important in reproduction?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 252.663,
+      "latency_ms": 12.953,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-20",
+      "question": "How does binary fission differ from budding?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 245.202,
+      "latency_ms": 26.154,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-25",
+      "question": "What are the principal focus and focal length of a concave mirror?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 79.763,
+      "latency_ms": 15.647,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-26",
+      "question": "How does image formation by a convex mirror differ from that by a concave mirror?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 262.628,
+      "latency_ms": 16.785,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-31",
+      "question": "How does the human eye accommodate objects at different distances?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 98.94,
+      "latency_ms": 8.829,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-32",
+      "question": "How is myopia corrected using a lens?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 63.964,
+      "latency_ms": 8.524,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-36",
+      "question": "What is the relationship between current, potential difference, and resistance in Ohm's law?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 85.638,
+      "latency_ms": 10.557,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-37",
+      "question": "How does the resistance of a conductor depend on its length and cross-sectional area?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 77.854,
+      "latency_ms": 12.064,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-41",
+      "question": "How can the direction of the magnetic field around a current-carrying wire be determined?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 104.416,
+      "latency_ms": 10.48,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-42",
+      "question": "How does the magnetic field of a solenoid resemble that of a bar magnet?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 72.589,
+      "latency_ms": 7.983,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-46",
+      "question": "How do biodegradable and non-biodegradable wastes differ?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 70.234,
+      "latency_ms": 8.609,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-47",
+      "question": "What roles do producers, consumers, and decomposers play in an ecosystem?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 85.564,
+      "latency_ms": 11.77,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-03",
+      "question": "What observations indicate that a chemical reaction has occurred?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 57.944,
+      "latency_ms": 8.481,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-09",
+      "question": "How does pH indicate the acidic or basic nature of a solution?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 67.715,
+      "latency_ms": 11.663,
+      "pre_gate_ranked": [
+        {
+          "rank": 1,
+          "chunk_id": "3a9644ab-c1d7-4e65-a1b8-d4a3c6a7b94d",
+          "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+          "chapter": "Acids, Bases and Salts",
+          "page_number": 9,
+          "chunk_index": 38,
+          "similarity_score": 0.0,
+          "lexical_score": 0.09313725680112839,
+          "vector_rank": null,
+          "lexical_rank": 1,
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "rank": 2,
+          "chunk_id": "5bcc3433-f5a7-4db5-9a4c-9e411fdd1315",
+          "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+          "chapter": "Acids, Bases and Salts",
+          "page_number": 17,
+          "chunk_index": 72,
+          "similarity_score": 0.0,
+          "lexical_score": 0.03485254570841789,
+          "vector_rank": null,
+          "lexical_rank": 2,
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "rank": 3,
+          "chunk_id": "7a6c9fb8-cb34-485e-b170-b300a164e7d4",
+          "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+          "chapter": "Acids, Bases and Salts",
+          "page_number": 12,
+          "chunk_index": 50,
+          "similarity_score": 0.0,
+          "lexical_score": 0.007735793013125658,
+          "vector_rank": null,
+          "lexical_rank": 3,
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "rank": 4,
+          "chunk_id": "93642931-4d75-4a7b-8a4f-4b919da4a078",
+          "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+          "chapter": "Acids, Bases and Salts",
+          "page_number": 13,
+          "chunk_index": 55,
+          "similarity_score": 0.0,
+          "lexical_score": 0.005045532714575529,
+          "vector_rank": null,
+          "lexical_rank": 4,
+          "rrf_score": 0.015625
+        },
+        {
+          "rank": 5,
+          "chunk_id": "b1c2bea2-3621-4e69-989b-a170c6cd41cd",
+          "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+          "chapter": "Metals and Non-metals",
+          "page_number": 19,
+          "chunk_index": 76,
+          "similarity_score": 0.0,
+          "lexical_score": 0.001490312977693975,
+          "vector_rank": null,
+          "lexical_rank": 5,
+          "rrf_score": 0.015384615384615385
+        }
+      ],
+      "post_gate": {
+        "accepted": true,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.09313725680112839,
+        "evidence": [
+          {
+            "chunk_id": "3a9644ab-c1d7-4e65-a1b8-d4a3c6a7b94d",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "page_number": 9,
+            "chapter": "Acids, Bases and Salts",
+            "similarity_score": 0.0,
+            "lexical_score": 0.09313725680112839,
+            "rrf_score": 0.01639344262295082
+          },
+          {
+            "chunk_id": "5bcc3433-f5a7-4db5-9a4c-9e411fdd1315",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "page_number": 17,
+            "chapter": "Acids, Bases and Salts",
+            "similarity_score": 0.0,
+            "lexical_score": 0.03485254570841789,
+            "rrf_score": 0.016129032258064516
+          },
+          {
+            "chunk_id": "7a6c9fb8-cb34-485e-b170-b300a164e7d4",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "page_number": 12,
+            "chapter": "Acids, Bases and Salts",
+            "similarity_score": 0.0,
+            "lexical_score": 0.007735793013125658,
+            "rrf_score": 0.015873015873015872
+          },
+          {
+            "chunk_id": "93642931-4d75-4a7b-8a4f-4b919da4a078",
+            "document_id": "93116cc1-6a00-4968-9268-59db13424b09",
+            "page_number": 13,
+            "chapter": "Acids, Bases and Salts",
+            "similarity_score": 0.0,
+            "lexical_score": 0.005045532714575529,
+            "rrf_score": 0.015625
+          },
+          {
+            "chunk_id": "b1c2bea2-3621-4e69-989b-a170c6cd41cd",
+            "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+            "page_number": 19,
+            "chapter": "Metals and Non-metals",
+            "similarity_score": 0.0,
+            "lexical_score": 0.001490312977693975,
+            "rrf_score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "nine-15",
+      "question": "Why do ionic compounds have high melting points?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 70.412,
+      "latency_ms": 13.547,
+      "pre_gate_ranked": [
+        {
+          "rank": 1,
+          "chunk_id": "31fb4fe2-6247-4f0f-97c3-08ab33d32981",
+          "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+          "chapter": "Metals and Non-metals",
+          "page_number": 13,
+          "chunk_index": 51,
+          "similarity_score": 0.0,
+          "lexical_score": 0.09090909361839294,
+          "vector_rank": null,
+          "lexical_rank": 1,
+          "rrf_score": 0.01639344262295082
+        }
+      ],
+      "post_gate": {
+        "accepted": true,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.09090909361839294,
+        "evidence": [
+          {
+            "chunk_id": "31fb4fe2-6247-4f0f-97c3-08ab33d32981",
+            "document_id": "4a8d4852-5979-45ca-b5b2-44b994ec2385",
+            "page_number": 13,
+            "chapter": "Metals and Non-metals",
+            "similarity_score": 0.0,
+            "lexical_score": 0.09090909361839294,
+            "rrf_score": 0.01639344262295082
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "nine-21",
+      "question": "What advantages does vegetative propagation offer?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 57.502,
+      "latency_ms": 8.297,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-27",
+      "question": "What is the relationship between refractive index and the speed of light?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 63.6,
+      "latency_ms": 10.163,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-33",
+      "question": "How is hypermetropia corrected using a lens?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 60.555,
+      "latency_ms": 9.079,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-38",
+      "question": "How is equivalent resistance calculated for resistors in series?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 67.641,
+      "latency_ms": 9.234,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-43",
+      "question": "What determines the direction of force on a current-carrying conductor in a magnetic field?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 88.42,
+      "latency_ms": 8.614,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-48",
+      "question": "Why is energy transfer between trophic levels limited?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 56.667,
+      "latency_ms": 10.762,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-04",
+      "question": "How does a displacement reaction differ from a double displacement reaction?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 71.591,
+      "latency_ms": 9.129,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-10",
+      "question": "Why should acid be added to water during dilution?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 55.329,
+      "latency_ms": 10.202,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-16",
+      "question": "How does a metal react with dilute acid?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 54.705,
+      "latency_ms": 6.996,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-22",
+      "question": "What happens during pollination and fertilisation in flowering plants?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 73.303,
+      "latency_ms": 8.525,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-28",
+      "question": "How does a convex lens form a real image?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 64.896,
+      "latency_ms": 11.123,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-34",
+      "question": "Why does a prism disperse white light?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 70.794,
+      "latency_ms": 12.433,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-39",
+      "question": "How is equivalent resistance calculated for resistors in parallel?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 62.521,
+      "latency_ms": 8.155,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-44",
+      "question": "Why is an earth wire used in domestic electrical appliances?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 66.739,
+      "latency_ms": 10.352,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-49",
+      "question": "How does biological magnification affect higher trophic levels?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 63.711,
+      "latency_ms": 6.447,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-05",
+      "question": "Why is oxidation linked with reduction in a redox reaction?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 63.687,
+      "latency_ms": 8.866,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-11",
+      "question": "How is baking soda different from washing soda?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 57.44,
+      "latency_ms": 7.53,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-17",
+      "question": "How does electrolytic refining purify a metal?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 69.726,
+      "latency_ms": 8.816,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    },
+    {
+      "question_id": "nine-23",
+      "question": "What are the roles of the testes and ovaries in human reproduction?",
+      "mode": "fts",
+      "status": "success",
+      "embedding_latency_ms": 70.849,
+      "latency_ms": 9.885,
+      "pre_gate_ranked": [],
+      "post_gate": {
+        "accepted": false,
+        "max_dense_score": 0.0,
+        "max_lexical_score": 0.0,
+        "evidence": []
+      }
+    }
+  ]
+}

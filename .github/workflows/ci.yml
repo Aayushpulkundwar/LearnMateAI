@@ -1,0 +1,153 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: backend
+    env:
+      ENVIRONMENT: development
+      DATABASE_URL: postgresql+asyncpg://ci:ci_only_password@127.0.0.1:5432/learnmate_ci
+      SYNC_DATABASE_URL: postgresql+psycopg2://ci:ci_only_password@127.0.0.1:5432/learnmate_ci
+      JWT_SECRET_KEY: ci-only-signing-key-never-use-in-production-2026
+      AUTH_COOKIE_SECURE: 'false'
+      # Tests already mock generation, embeddings, storage and queue calls.
+      # Closed local ports fail accidental external calls without real services.
+      OLLAMA_BASE_URL: http://127.0.0.1:9
+      MINIO_ENDPOINT: 127.0.0.1:9
+      MINIO_ACCESS_KEY: ci_only_access
+      MINIO_SECRET_KEY: ci_only_secret
+      REDIS_URL: redis://127.0.0.1:9/0
+      RUN_QUIZ_INTEGRATION: '1'
+      RUN_TUTOR_INTEGRATION: '1'
+      RUN_REGISTRATION_INTEGRATION: '1'
+      REGISTRATION_TEST_BASE_URL: http://127.0.0.1:8000/api/v1
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: ci
+          POSTGRES_PASSWORD: ci_only_password
+          POSTGRES_DB: learnmate_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U ci -d learnmate_ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+      - name: Install dependencies and test runner
+        run: python -m pip install -r requirements.txt pytest==9.2.0
+      - name: Prepare isolated test database
+        run: |
+          python -m alembic upgrade head
+          python -m scripts.seed_grades
+          python -m scripts.seed_science_curriculum
+      - name: Start API for registration tests
+        shell: bash
+        run: |
+          python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 > "$RUNNER_TEMP/learnmate-api.log" 2>&1 &
+          python - <<'PY'
+          import time
+          from urllib.request import urlopen
+          for attempt in range(30):
+              try:
+                  with urlopen('http://127.0.0.1:8000/api/v1/auth/grades', timeout=1) as response:
+                      assert response.status == 200
+                  break
+              except (OSError, AssertionError):
+                  time.sleep(1)
+          else:
+              raise SystemExit('Test API did not become ready within 30 attempts.')
+          PY
+      - name: Run existing pytest suite
+        run: |
+          python -c "import shutil; assert shutil.which('pwsh'), 'PowerShell is required by existing runner tests'"
+          python -m pytest tests -ra --strict-config --strict-markers --junitxml="$RUNNER_TEMP/backend-tests.xml"
+          python - <<'PY'
+          import os
+          import xml.etree.ElementTree as ET
+          report = ET.parse(os.path.join(os.environ['RUNNER_TEMP'], 'backend-tests.xml'))
+          if report.findall('.//skipped'):
+              raise SystemExit('CI requires the complete test suite: skipped tests are not allowed.')
+          PY
+      - name: Show API log on failure
+        if: failure()
+        run: |
+          if [ -f "$RUNNER_TEMP/learnmate-api.log" ]; then
+            cat "$RUNNER_TEMP/learnmate-api.log"
+          fi
+
+  frontend:
+    name: Frontend
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: frontend
+    env:
+      VITE_SKIP_LOGIN: 'false'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - name: Run frontend tests
+        run: npm test
+      # The existing build script runs tsc before the Vite production build.
+      - name: TypeScript check and production build
+        run: npm run build
+
+  docker:
+    name: Docker
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Validate Compose with CI-only configuration
+        shell: bash
+        run: |
+          cat > .env <<'ENV'
+          POSTGRES_USER=ci
+          POSTGRES_PASSWORD=ci_only_password
+          POSTGRES_DB=learnmate_ci
+          DATABASE_URL=postgresql+asyncpg://ci:ci_only_password@postgres:5432/learnmate_ci
+          SYNC_DATABASE_URL=postgresql+psycopg2://ci:ci_only_password@postgres:5432/learnmate_ci
+          REDIS_URL=redis://redis:6379/0
+          MINIO_ACCESS_KEY=ci_only_access
+          MINIO_SECRET_KEY=ci_only_secret
+          JWT_SECRET_KEY=ci-only-signing-key-never-use-in-production-2026
+          ENV
+          docker compose config -q

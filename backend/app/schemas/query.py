@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Literal, Optional
 from uuid import UUID
 from pydantic import BaseModel, Field
 
@@ -10,6 +10,7 @@ class Citation(BaseModel):
     chapter: Optional[str] = None
     page_number: Optional[int] = None
     chunk_index: Optional[int] = None
+    source_index: Optional[int] = None
     similarity_score: Optional[float] = None
     snippet: str
 
@@ -20,6 +21,11 @@ class QueryRequest(BaseModel):
     subject: Optional[str] = Field(None, description="Optional subject filter (e.g. Science, Mathematics)")
     grade: Optional[str] = Field(None, description="Optional grade filter (e.g. Grade 10)")
     chapter: Optional[str] = Field(None, description="Optional chapter title filter")
+    grade_id: Optional[UUID] = Field(None, description="Optional normalized grade filter")
+    subject_id: Optional[UUID] = Field(None, description="Optional normalized subject filter")
+    chapter_id: Optional[UUID] = Field(None, description="Optional normalized chapter filter")
+    study_topic_id: Optional[UUID] = Field(None, description="Optional student-selected topic for a focused tutoring session")
+    explanation_depth: Literal['brief', 'standard', 'detailed'] = Field('standard', description="Student-selected explanation depth; never inferred from mastery")
 
 
 class QueryResponse(BaseModel):
@@ -45,21 +51,11 @@ class SummarizeResponse(BaseModel):
 
 
 # Secondary Feature 2: Quiz Generation
-class QuizQuestion(BaseModel):
-    question: str
-    options: List[str]
-    correct_option_index: int
-    explanation: str
-    citation: Optional[Citation] = None
-
-
 class QuizRequest(BaseModel):
-    document_id: UUID = Field(..., description="Target textbook document ID")
+    document_id: Optional[UUID] = Field(None, description="Optional authorized textbook filter")
+    subject_id: Optional[UUID] = None
+    chapter_id: Optional[UUID] = None
     chapter: Optional[str] = Field(None, description="Target chapter title")
-    num_questions: int = Field(5, ge=1, le=20, description="Number of quiz questions to generate")
-
-
-class QuizResponse(BaseModel):
-    document_id: UUID
-    chapter: Optional[str] = None
-    questions: List[QuizQuestion] = Field(default_factory=list)
+    num_questions: int = Field(10, ge=1, le=10, description="Number of concept-based MCQs to generate")
+    difficulty: Literal['easy', 'medium', 'hard'] = 'medium'
+    topic_id: Optional[UUID] = Field(None, description="Optional authorized concept for focused practice")

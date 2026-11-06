@@ -1,0 +1,26 @@
+test_adjudication_export_requires_human_resolution (test_research_tools.GenerationAndReviewTests.test_adjudication_export_requires_human_resolution) ... ok
+test_duplicate_question_ids_rejected (test_research_tools.GenerationAndReviewTests.test_duplicate_question_ids_rejected) ... ok
+test_explicit_ieee_refresh_preserves_prior_output (test_research_tools.GenerationAndReviewTests.test_explicit_ieee_refresh_preserves_prior_output) ... ok
+test_generation_output_validation (test_research_tools.GenerationAndReviewTests.test_generation_output_validation) ... ok
+test_ieee_writer_refuses_overwrite (test_research_tools.GenerationAndReviewTests.test_ieee_writer_refuses_overwrite) ... ok
+test_rag_payload_is_document_scoped (test_research_tools.GenerationAndReviewTests.test_rag_payload_is_document_scoped) ... ok
+test_retrieval_free_prompt_contains_only_question (test_research_tools.GenerationAndReviewTests.test_retrieval_free_prompt_contains_only_question) ... ok
+test_review_rejects_score_out_of_range (test_research_tools.GenerationAndReviewTests.test_review_rejects_score_out_of_range) ... ok
+test_review_requires_all_scores (test_research_tools.GenerationAndReviewTests.test_review_requires_all_scores) ... ok
+test_review_valid_scores (test_research_tools.GenerationAndReviewTests.test_review_valid_scores) ... ok
+test_aggregation_percentile (test_research_tools.RetrievalMetricTests.test_aggregation_percentile) ... ok
+test_empty_ranking_scores_zero (test_research_tools.RetrievalMetricTests.test_empty_ranking_scores_zero) ... ok
+test_fixture_evaluation_aggregates_empty_and_unanswerable (test_research_tools.RetrievalMetricTests.test_fixture_evaluation_aggregates_empty_and_unanswerable) ... ok
+test_missing_gold_rejected (test_research_tools.RetrievalMetricTests.test_missing_gold_rejected) ... ok
+test_mrr_at_10 (test_research_tools.RetrievalMetricTests.test_mrr_at_10) ... ok
+test_ndcg_at_10 (test_research_tools.RetrievalMetricTests.test_ndcg_at_10) ... ok
+test_no_overwrite_guard (test_research_tools.RetrievalMetricTests.test_no_overwrite_guard) ... ok
+test_precision_at_5 (test_research_tools.RetrievalMetricTests.test_precision_at_5) ... ok
+test_recall_at_5 (test_research_tools.RetrievalMetricTests.test_recall_at_5) ... ok
+test_unanswerable_has_no_ranking_metric (test_research_tools.RetrievalMetricTests.test_unanswerable_has_no_ranking_metric) ... ok
+test_unjudged_top10_is_excluded_not_negative (test_research_tools.RetrievalMetricTests.test_unjudged_top10_is_excluded_not_negative) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.120s
+
+OK

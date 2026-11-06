@@ -9,6 +9,10 @@ class DocumentBase(BaseModel):
     subject: Optional[str] = None
     grade: Optional[str] = None
     chapter: Optional[str] = None
+    grade_id: Optional[UUID] = None
+    subject_id: Optional[UUID] = None
+    chapter_id: Optional[UUID] = None
+    curriculum_mapping_note: Optional[str] = None
 
 
 class DocumentCreate(DocumentBase):

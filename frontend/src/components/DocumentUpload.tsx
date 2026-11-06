@@ -20,6 +20,11 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({ onUploadSuccess 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!file || !title) return;
+    if (!file.name.toLowerCase().endsWith('.pdf') || file.size > 25 * 1024 * 1024) {
+      setIsError(true);
+      setStatusMsg('Choose a PDF no larger than 25 MB.');
+      return;
+    }
 
     setIsUploading(true);
     setStatusMsg('Uploading PDF to MinIO object storage...');

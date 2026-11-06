@@ -1,0 +1,330 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{url}
+\begin{document}
+
+\title{Curriculum-Grounded Retrieval-Augmented Generation for Science Education: System Design and a Reproducible Evaluation Protocol}
+
+\author{\IEEEauthorblockN{LearnMateAI Research Team}
+\IEEEauthorblockA{Institution and corresponding author details to be supplied by the authors before submission}}
+
+\maketitle
+
+\begin{abstract}
+Retrieval-augmented generation (RAG) can make language-model answers inspectable by tying them to a bounded educational corpus, but the presence of retrieval traces alone does not establish answer quality. This paper describes LearnMateAI, a local textbook-grounded question-answering system, and reports the state of its first reproducible evaluation. The frozen corpus contains 643 page-aware passages from nine NCERT Class 10 Science chapters and 1024-dimensional BGE-M3 embeddings. Four other chapters were excluded after unresolved ingestion failures; this is not a complete 13-chapter evaluation. Forty candidate questions were run against dense, PostgreSQL full-text search (FTS), and the implemented reciprocal-rank-fusion (RRF) condition, yielding 40 successful top-10 traces per condition. However, independent relevance worksheets remain unlabelled, so retrieval effectiveness metrics are not reported. A retrieval-free Llama 3 8B baseline generated responses for ten development questions; its measured mean, median, and 95th-percentile latency were 8.163, 7.946, and 13.724 s, respectively. These operational timings do not measure correctness or faithfulness. No RAG answer-quality comparison is claimed. We specify the system, frozen-corpus protocol, blinded annotation and adjudication plan, and the evidence needed to complete a scientifically interpretable comparison.
+\end{abstract}
+
+\begin{IEEEkeywords}
+retrieval-augmented generation, educational question answering, dense retrieval, full-text search, reproducibility
+\end{IEEEkeywords}
+
+\section{Introduction}
+Students often need explanations tied to a particular textbook rather than an unconstrained answer assembled from a model's parametric knowledge. A local RAG system offers a design in which the document collection can be restricted, retrieved evidence can be inspected, and citations can identify a chapter and PDF page. Those are design properties, not guarantees of accuracy: retrieval may miss relevant evidence, extraction may corrupt it, and generation may misstate it.
+
+This study documents LearnMateAI, a FastAPI-based educational application with a page-aware textbook ingestion pipeline and local inference using Ollama. Its research scope is deliberately bounded to a frozen snapshot of NCERT Class 10 Science. Four chapters (4, 5, 6, and 8) had unresolved ingestion failures and are excluded from all reported corpus counts and retrieval traces. The remaining chapters are 1, 2, 3, 7, 9, 10, 11, 12, and 13. The study therefore must not be interpreted as a complete curriculum evaluation.
+
+We address three research questions (RQs): RQ1: can the implementation reproducibly execute dense, PostgreSQL FTS, and hybrid retrieval on a frozen, allowlisted corpus? RQ2: what relative retrieval effectiveness do these conditions attain under independent human relevance judgments? RQ3: does textbook evidence change answer correctness, faithfulness, or citation support compared with the same local generator without retrieved passages? Only RQ1 has execution evidence at this stage. RQ2 and RQ3 remain open because their required human judgments and RAG outputs are absent.
+
+The contributions are: 1) a versioned, nine-chapter corpus snapshot and explicit corpus boundary; 2) an implementation-level account of LearnMateAI's actual dense, FTS, RRF, gating, and generation settings; 3) validated top-10 retrieval traces for 40 candidate questions across three modes; and 4) a human-review protocol and a transparent account of which scientific claims cannot yet be made. We distinguish software tests from empirical relevance evaluation throughout.
+
+\section{Retrieval-Augmented Generation}
+\subsection{Definition and design space}
+Let $q$ be a question, $C$ a document collection, and $R(q,C)$ the passages selected by retrieval. A retrieval-free model estimates $P(a\mid q)$, whereas RAG conditions on retrieved evidence, $P(a\mid q,R(q,C))$ \cite{r1}. Retrieval has been integrated into language-model pretraining and inference in systems including REALM, Atlas, and RETRO \cite{r13,r14,r15}. Surveys organize a wider design space and identify evidence grounding, retrieval quality, and task alignment as recurring concerns; educational surveys describe the emerging application context \cite{r16,r17,r18,r19}.
+
+LearnMateAI uses one retrieval step followed by an evidence gate, bounded context packing, and local generation. This intentionally separable pipeline suits a small closed corpus and permits retriever behavior to be measured independently. It does not implement Self-RAG, active retrieval, interleaved chain-of-thought retrieval, Adaptive-RAG, or corrective RAG \cite{r21,r22,r23,r24,r25}; nor does it implement REPLUG, RAPTOR, GraphRAG, or Fusion-in-Decoder \cite{r26,r27,r28,r29}. Long input windows do not guarantee uniform use of all context, motivating bounded context and explicit evidence ordering \cite{r20}.
+
+\subsection{System architecture}
+The knowledge-preparation path extracts text page by page, segments it into page-local chunks, embeds each chunk with BGE-M3, and stores text, metadata, and vectors in PostgreSQL/pgvector. The answering path encodes a question, retrieves candidates, applies configured gates and context limits, and calls a local Llama 3 8B model. The application uses React, FastAPI, Celery with Redis, MinIO, PostgreSQL, and Ollama. Model tags are identifiers, not evidence of fine-tuning; the recorded models are used without project-specific fine-tuning.
+
+\begin{figure}[t]
+\centering
+\fbox{\begin{minipage}{0.96\columnwidth}
+\centering
+\textbf{Knowledge preparation}\par
+Approved textbook PDF $\rightarrow$ page extraction $\rightarrow$ page-local chunks $\rightarrow$ BGE-M3 embeddings $\rightarrow$ PostgreSQL text, metadata, and vectors\par\vspace{2mm}
+\textbf{Question answering}\par
+Question $\rightarrow$ dense / FTS / hybrid retrieval $\rightarrow$ evidence gate $\rightarrow$ bounded context $\rightarrow$ Llama 3 8B $\rightarrow$ answer with source chapter and page
+\end{minipage}}
+\caption{Two-stage LearnMateAI architecture. The frozen evaluation constrains retrieval to the nine-chapter allowlist.}
+\label{fig:architecture}
+\end{figure}
+
+\section{Text Retrieval and AI}
+\subsection{Retrieval alternatives}
+Classical probabilistic retrieval includes BM25 and related term-frequency methods \cite{r5,r51}. LearnMateAI's lexical branch is PostgreSQL FTS and is not BM25: it constructs a query with \texttt{websearch\_to\_tsquery('simple', query)} and ranks with \texttt{ts\_rank\_cd} using normalization 32. The database's \texttt{simple} text-search configuration and GIN index are recorded in the frozen snapshot. Learned sparse methods such as SPLADE, late-interaction systems such as ColBERT and ColBERTv2, and sequence-to-sequence rerankers offer alternatives, but are not used in this implementation \cite{r38,r39,r40,r46}.
+
+MS MARCO, BEIR, and MTEB illustrate how conclusions depend on datasets and evaluation conditions; comparisons against weak baselines can mislead \cite{r8,r47,r52,r53}. In particular, a future study seeking a BM25 comparison must add an actual BM25 implementation rather than relabeling PostgreSQL FTS. The present three-way experiment compares dense, PostgreSQL FTS, and the implemented hybrid only.
+
+The generator is a Llama-family model built on transformer and bidirectional-pretraining foundations \cite{r54,r55,r56}. Textbook QA and science QA motivate domain-specific evaluation \cite{r2,r3}. Plain text extraction can lose structural cues in equations, chemical notation, diagrams, figure labels, and page layout, limitations addressed by document-understanding research but not by the current text-only retrieval branch \cite{r57,r58,r59}.
+
+\begin{table}[t]
+\caption{Retrieval-method comparison by implementation status}
+\label{tab:retrieval-methods}
+\centering\footnotesize
+\begin{tabular}{p{0.16\columnwidth}p{0.27\columnwidth}p{0.27\columnwidth}p{0.20\columnwidth}}
+\hline
+Method & Signal & Typical trade-off & LearnMateAI status\\ \hline
+Lexical & Tokenized terms & Exact terms; vocabulary mismatch & Used (PostgreSQL FTS)\\
+Learned sparse & Expanded token weights & Term matching with learned expansion & Not used\\
+Dense single-vector & One vector per query/passage & Semantic matching; rare-term sensitivity & Used (BGE-M3)\\
+Late interaction & Token-level vector matches & Fine-grained matching; higher cost & Not used\\
+Reranker & Query-passage joint scoring & Stronger pair scoring; extra inference & Not used\\
+Hybrid & Combined branch rankings & Complementarity depends on both branches & Used (RRF)\\ \hline
+\end{tabular}
+\end{table}
+
+\section{Semantic Search and System Algorithms}
+\subsection{Dense and hybrid retrieval}
+Dense retrieval maps a query and a passage into a shared vector space, following sentence-embedding and dense-passage-retrieval approaches \cite{r35,r4}. Let $E$ be the BGE-M3 encoder, $v_q=E(q)$, and $v_i=E(x_i)$ for passage $x_i$. The recorded embedding dimension is 1024; cosine similarity is
+\begin{equation}
+s(q,x_i)=\frac{v_q\cdot v_i}{\|v_q\|\,\|v_i\|}.
+\end{equation}
+The implementation obtains this as one minus pgvector cosine distance and restricts research retrieval to the frozen document allowlist. BGE-M3 also supports sparse and multi-vector modes, but this experiment uses its dense embedding output only \cite{r6}. Dense-retrieval research has explored hard negatives, weakly supervised and unsupervised training, and larger retrievers \cite{r37,r41,r42,r43,r44,r45}. Query rewriting with hypothetical documents is another option, not used here \cite{r36}. Dense representations may under-represent rare entities and exact scientific strings, while a single vector has finite representational capacity \cite{r48,r49}; this motivates a lexical branch but does not prove that fusion helps.
+
+For a concrete trace example, the development question ``Why must a chemical equation be balanced?'' (nine-01) ranked a passage from ``Chemical Reactions and Equations,'' PDF page 3, first in dense retrieval at cosine similarity 0.6761. The passage discusses conservation of mass and states that atom counts remain unchanged across a chemical reaction. The score is a similarity value, not a human relevance label. The chunk ID is a715f955-a569-480d-be79-760904999532; the passage is preserved in the frozen snapshot.
+
+\begin{figure}[t]
+\centering
+\setlength{\unitlength}{0.45mm}
+\begin{picture}(120,45)
+\put(15,15){\circle*{3}} \put(19,17){$v_q$ (question)}
+\put(35,23){\circle*{3}} \put(39,25){$v_1$ (nearby passage)}
+\put(94,8){\circle*{3}} \put(98,10){$v_2$ (other passage)}
+\put(17,16){\line(1,1){16}}
+\end{picture}
+\caption{Schematic dense-embedding space (not to scale); proximity ranks candidates but does not establish human relevance.}
+\label{fig:embedding}
+\end{figure}
+
+The hybrid implementation fuses ranks using reciprocal rank fusion (RRF) with $k=60$ \cite{r7,r50}:
+\begin{equation}
+H(x\mid q)=\sum_{b\in\{D,L\}:x\in b(q)}\frac{1}{60+\operatorname{rank}_b(x)},
+\end{equation}
+where $D(q)$ and $L(q)$ denote dense and lexical candidate lists. Ties use deterministic ordering. The recorded candidate depth for a top-10 request is 40 per branch (candidate multiplier 4); final trace depth is 10.
+
+\subsection{Ingestion and answering algorithm}
+Chunking is deterministic, page-aware character segmentation with natural line or sentence boundaries; a chunk does not cross a PDF page. Source defaults specify a 1000-character target and 150-character overlap, but deployment overrides were not captured and those values are therefore not asserted as deployed settings. The observed frozen passage lengths have minimum 243, maximum 999, mean 820.36, median 912, and 90th percentile 986 characters.
+
+\begin{algorithm}[t]
+\caption{LearnMateAI page-aware RAG and evaluation trace}
+\label{alg:pipeline}
+\begin{algorithmic}[1]
+\REQUIRE approved PDFs $P$, frozen allowlist $A$, question $q$
+\FOR{each page $p$ in each approved PDF}
+  \STATE Extract page text and preserve document, chapter, and page metadata
+  \STATE Segment page text at natural boundaries into bounded chunks
+  \STATE Embed each chunk and index text, metadata, and vector
+\ENDFOR
+\STATE Encode $q$; retrieve dense and PostgreSQL FTS candidate rankings within $A$
+\STATE For hybrid, fuse branch ranks using RRF with $k=60$
+\STATE Apply the configured mode-specific evidence gate and context budget
+\IF{no evidence passes}
+  \STATE Return the configured insufficient-evidence response
+\ELSE
+  \STATE Pack ordered passages with chunk IDs and page provenance
+  \STATE Generate an answer with local Llama 3 8B and citation instructions
+\ENDIF
+\STATE Log ranked candidates, scores, latency, status, model, and configuration
+\end{algorithmic}
+\end{algorithm}
+
+The code records dense and lexical thresholds of 0.55 and 0.08, respectively; context settings include a 0.5 minimum similarity, maximum similarity drop of 0.06, and a 6000-character budget. These are source/frozen-configuration values, not newly calibrated thresholds. No evidence establishes that they were selected only on development labels; consequently, the paper does not claim calibration. The generation request sends temperature 0.2 and non-streaming mode; other decoding options, including an explicit random seed and maximum output tokens, were not set in the recorded implementation. The model digest, quantization, and context length are reported in Table~\ref{tab:parameters}.
+
+\begin{table}[t]
+\caption{Verified and unverified system parameters}
+\label{tab:parameters}
+\centering\footnotesize
+\begin{tabular}{p{0.39\columnwidth}p{0.50\columnwidth}}
+\hline
+Parameter & Recorded value and evidence status\\ \hline
+Corpus & 643 passages; nine chapters; frozen snapshot\\
+Embedding & BGE-M3; 1024 dimensions; digest \texttt{790764...2146bab}\\
+Dense score & Cosine similarity; pgvector distance transformed as $1-d$\\
+FTS & \texttt{simple}; \texttt{websearch\_to\_tsquery}; \texttt{ts\_rank\_cd}, norm 32\\
+Hybrid & RRF; $k=60$\\
+Retrieval depth & 40 branch candidates; top 10 recorded results\\
+Chunking & 1000-char target / 150 overlap are source defaults; deployed override unknown\\
+Dense / lexical gates & 0.55 / 0.08, recorded source configuration; not calibrated here\\
+Context & 6000 characters; source configuration\\
+Generator & Llama 3 8B; digest \texttt{365c0bd3...b5d8ad1}; Q4\_0; 8192 context\\
+Decoding & Temperature 0.2; no explicit seed or other options in captured request\\
+Vector index & No HNSW/IVFFlat listed at snapshot; query plan not captured\\
+Database snapshot & \texttt{learnmate\_db}/\texttt{tutor}; Alembic 0010; pgvector 0.8.6\\
+\hline
+\end{tabular}
+\end{table}
+
+With $N=643$ passages and dimension $d=1024$, exact vector scoring would require $O(Nd)$ arithmetic per query, but the actual planner path is unverified; no index-performance claim is made. Latency at this corpus scale should not be extrapolated to a larger index. Similarity is not relevance: high cosine values require human relevance judgments and do not on their own warrant a generated answer.
+
+\subsection{Evaluation protocol}
+The frozen corpus is identified by run \texttt{nine\_science\_03} and SHA-256 \texttt{d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8}. It contains 643 embedded passages over chapters 1, 2, 3, 7, 9, 10, 11, 12, and 13. The selected collection contains 40 candidate questions (18 development and 22 selected held-out); the original 32-question test set remains authoritative. Per-chapter counts are 5, 5, 5, 5, 4, 4, 4, 4, and 4 in chapter order. Questions were machine-authored candidates and their source coverage, answerability, and relevance are unverified.
+
+For annotation, results from all three methods are pooled and deduplicated by frozen passage ID, then shuffled with a recorded seed. Reviewer worksheets hide retrieval source, original rank, and score. Two reviewers label evidence independently; disagreements require explicit human adjudication. A passage not judged in a pool is unjudged, not a negative. Reliability is to be summarized with raw agreement and Cohen's $\kappa$ \cite{r11,r69,r70}; disagreement and incomplete-pooling limitations are reported \cite{r65,r66}. The planned ranking measures are Precision@5, Recall@5, MRR@10, and binary nDCG@10 \cite{r63,r64}. Precision@5 is descriptive, particularly when a query has one known relevant passage. For a complete adjudicated set $G_q$ and ranking $R_q$, MRR@10 is the mean of $1/r_q$ for the first relevant rank $r_q\leq10$, or zero if none is retrieved. Recall@5 is $|R_{q,5}\cap G_q|/|G_q|$. nDCG uses binary gain and logarithmic discount.
+
+If adequate human labels become available, paired bootstrap intervals over questions and a predeclared family of comparisons with Holm correction will be used; no significance analysis is currently available \cite{r12,r67,r68}. Unanswerable questions must be evaluated separately, and train/test overlap must be checked before final inference \cite{r60,r61,r62}. No threshold or prompt tuning on selected test questions is permitted.
+
+\section{Experimental Results}
+\subsection{Software and trace validation}
+The frozen snapshot records migration revision \texttt{0010\_hybrid\_retrieval\_fts}, pgvector 0.8.6, and a GIN index on the text-search vector. These are freeze-time records, not a fresh database probe. Retrieval execution validated 40 of 40 queries for each of dense, FTS, and hybrid, with ten ranked passages per query: 120 successful query-condition traces in total. Query-condition order was randomized with seed 20261030; no explicit warm-up was used and cache state was uncontrolled. Trace validation verifies execution schema and corpus allowlisting, not the relevance or quality of rankings.
+
+The focused software suite ran 21 tests and passed all 21. These are implementation tests (including metric and validation behavior), not human relevance evaluation and not a measure of retrieval accuracy. The run logs and machine-readable execution record are retained in the experiment directory.
+
+\subsection{Retrieval effectiveness}
+No retrieval effectiveness scores are reported. At manuscript preparation, both independent reviewer worksheets contained 402 candidate rows but zero explicit relevance labels; no adjudicated \texttt{gold.json} existed. Therefore Precision@5, Recall@5, MRR@10, nDCG@10, confidence intervals, and system-comparison significance tests are unavailable. Although all three trace files exist, numeric ranking metrics would be fabricated without the human-judged reference set. Table~\ref{tab:retrieval-results} records this status rather than substituting a score.
+
+\begin{table}[t]
+\caption{Retrieval effectiveness status on the frozen question collection}
+\label{tab:retrieval-results}
+\centering\footnotesize
+\begin{tabular}{lccccc}
+\hline
+Method & P@5 & R@5 & MRR@10 & nDCG@10 & Judged $n$\\ \hline
+Dense & Not measured & Not measured & Not measured & Not measured & 0\\
+PostgreSQL FTS & Not measured & Not measured & Not measured & Not measured & 0\\
+Hybrid RRF & Not measured & Not measured & Not measured & Not measured & 0\\
+\hline
+\end{tabular}
+\end{table}
+
+One diagnostic deserves attention before interpreting future metrics: in the available pool-origin mapping, FTS contributed only six candidate entries across the 40 questions, and hybrid rankings were nearly identical to dense rankings. This indicates weak lexical branch contribution under the recorded query construction and corpus, not a result that establishes dense superiority. We have not changed the query construction or rerun the experiment; doing so would constitute a new, versioned experiment. A genuine BM25 baseline would also be needed to support any claim about BM25.
+
+\subsection{Retrieval-free generation baseline}
+Ten development questions were selected by taking the first ten development records in the immutable selected-dataset order: \texttt{nine-01}, \texttt{nine-02}, \texttt{nine-07}, \texttt{nine-08}, \texttt{nine-13}, \texttt{nine-14}, \texttt{nine-19}, \texttt{nine-20}, \texttt{nine-25}, and \texttt{nine-26}. No held-out questions informed selection. The retrieval-free condition generated 10/10 outputs using Llama 3 8B, digest \texttt{365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1}, at temperature 0.2. Mean latency was 8.163 s, median 7.946 s, and linearly interpolated p95 13.724 s. Hardware utilization and prompt-token counts were not captured.
+
+The LearnMateAI RAG generation condition did not run, and no answer-review annotations exist. As a result, correctness, faithfulness, explanation quality, citation support, hallucination frequency, abstention, and paired answer latency comparisons are not measured. We do not infer that RAG improves answers from the design alone. General language models can produce plausible but unsupported statements; RAG can still retrieve irrelevant content or distort valid evidence \cite{r34,r20,r30}. Citation presence is not proof of entailment \cite{r9,r30}. Measures such as FActScore, SelfCheckGPT, TruthfulQA, and RAGAs can inform evaluation but do not replace review of claim-to-passage support for this textbook task \cite{r31,r32,r33,r10}.
+
+\begin{table}[t]
+\caption{Generation evidence available at manuscript preparation}
+\label{tab:generation-results}
+\centering\footnotesize
+\begin{tabular}{p{0.27\columnwidth}p{0.22\columnwidth}p{0.18\columnwidth}p{0.20\columnwidth}}
+\hline
+Condition & Questions completed & Latency & Human quality scores\\ \hline
+Retrieval-free Llama 3 8B & 10/10 & Mean 8.163 s; median 7.946 s; p95 13.724 s & Not measured\\
+LearnMateAI RAG & Not run & Not available & Not measured\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{How Curriculum-Grounded RAG Can Differ from Retrieval-Free Generation}
+The defensible distinction is architectural. A retrieval-free local model receives only the question and response-format instruction. LearnMateAI RAG can restrict its evidence pool to designated curriculum passages, include chapter/page provenance, update the indexed corpus without fine-tuning, and expose a no-evidence state rather than silently treating parametric recall as textbook support. Each advantage depends on correct ingestion, allowlisting, retrieval, and citation behavior. The present experiments do not establish that it is more accurate, reduces hallucination, or improves learning.
+
+\begin{table}[t]
+\caption{Architectural contrast; not an empirical quality ranking}
+\label{tab:conditions}
+\centering\footnotesize
+\begin{tabular}{p{0.24\columnwidth}p{0.31\columnwidth}p{0.35\columnwidth}}
+\hline
+Property & Retrieval-free local model & Textbook-grounded RAG\\ \hline
+Knowledge access & Parametric model knowledge & Question plus retrieved corpus evidence\\
+Curriculum restriction & Not enforced by this condition & Enforceable via corpus allowlist\\
+Traceability & No textbook passage attribution & Chapter/page citation can be returned\\
+Content update & Model change/retraining may be required & Re-indexing can update external corpus\\
+Typical failure & Unsupported or outdated recall & Retrieval, extraction, or evidence-use failure\\
+Operational cost & Generation only & Ingestion, storage, retrieval, and generation\\
+Evidence in this study & 10 outputs; latency only & RAG condition and judged outputs unavailable\\
+\hline
+\end{tabular}
+\end{table}
+
+This is an architectural contrast, not a comparison against commercial assistants, some of which can browse or accept user-provided documents. Grounded answers can be useful when the task requires designated-source provenance; retrieval-free generation may be preferable for open-ended brainstorming or tasks that do not require textbook citation. Neither retrieval success nor answer plausibility is evidence of student mastery. Tutoring effectiveness and learner-state estimation are separate research questions \cite{r71,r72,r73}; educational LLM deployment also has opportunities and risks that require human oversight \cite{r74}.
+
+\section{Limitations, Ethics, and Reproducibility}
+The corpus is small (643 passages), limited to one NCERT Class 10 Science source set, and limited to nine of thirteen chapters. Four chapters were omitted because of ingestion failures; this failure-driven selection may bias the corpus toward documents that were easier to process. Text extraction can lose equations, diagrams, chemical notation, and layout. The selected question set is small, candidate authored, and currently lacks verified answerability and relevance labels. The 40-question experimental collection includes only 18 development and 22 selected held-out questions; the original 32-question test split remains authoritative. There is no human-scored answer comparison, so claims about correctness, faithfulness, hallucination, citation accuracy, and learning outcomes remain untested.
+
+Some settings are recorded from the frozen environment while chunk size/overlap and other values are source defaults; current runtime configuration and query plan were not captured. Hardware telemetry, cache state, and warm-up are incomplete. The index evidence contains a GIN FTS index but no listed HNSW or IVFFlat index; without a query plan, exact vector execution is unverified. The displayed p95 from ten generations is descriptive and imprecise. No thresholds were claimed calibrated. These factors limit inference and reproducibility at larger scale.
+
+No student-level data were used in the reported experiments. Any deployment involving minors must have appropriate legal, privacy, safeguarding, and institutional review; the Digital Personal Data Protection Act, 2023 is relevant to Indian deployments but this paper is not legal advice \cite{r77}. Textbook licensing and permissions must be checked before redistributing source PDFs or extracted passages. Dataset provenance, code revision, and limitations should accompany any eventual release, following dataset documentation and reproducibility practice \cite{r75,r76}. The frozen corpus itself should only be redistributed if licensing permits it.
+
+The experiment snapshot was captured on 2026-10-30 under code commit \texttt{2788f3ef56f5bc261d4081dbc859c831c6ff4646}. The selected dataset SHA-256 is \texttt{11fa3329a2c3fd8a0b366a0e16c74462333bbc6afa48c2a5a7d6f142ea4e8298}. Retrieval trace hashes, generation output hashes, run manifests, and test logs are retained under \texttt{research/experiments/rag\_comparison/}. The experiment artifacts are untracked in the captured working tree, so commit and archive them deliberately before claiming a public reproducibility package. The manuscript does not claim preregistration.
+
+\section{Conclusion and Next Experiment}
+We documented the actual retrieval and generation configuration of LearnMateAI and verified successful dense, PostgreSQL FTS, and RRF trace execution over a frozen nine-chapter corpus. The current evidence supports execution reproducibility and a small retrieval-free latency baseline, but not a ranking of retrieval methods or a claim that RAG improves answer quality. The next research step is to obtain two independent, blinded passage judgments, adjudicate disagreements, and freeze the resulting gold file. Then the unchanged trace files can be scored with paired uncertainty estimates. Separately, execute the same ten development questions through the authenticated RAG workflow, preserve prompts and settings, and obtain blinded human answer assessments before computing comparative quality measures.
+
+\begin{thebibliography}{77}
+\bibitem{r1} P. Lewis et al., ``Retrieval-augmented generation for knowledge-intensive NLP tasks,'' in \emph{Advances in Neural Information Processing Systems}, 2020.
+\bibitem{r2} A. Kembhavi et al., ``Are you smarter than a sixth grader? Textbook question answering for multimodal machine comprehension,'' in \emph{Proc. IEEE CVPR}, 2017.
+\bibitem{r3} P. Lu et al., ``Learn to explain: Multimodal reasoning via thought chains for science question answering,'' in \emph{Advances in Neural Information Processing Systems}, 2022.
+\bibitem{r4} V. Karpukhin et al., ``Dense passage retrieval for open-domain question answering,'' in \emph{Proc. EMNLP}, 2020.
+\bibitem{r5} S. Robertson and H. Zaragoza, ``The probabilistic relevance framework: BM25 and beyond,'' \emph{Foundations and Trends in Information Retrieval}, vol. 3, no. 4, pp. 333--389, 2009.
+\bibitem{r6} J. Chen et al., ``M3-Embedding: Multi-linguality, multi-functionality, multi-granularity text embeddings through self-knowledge distillation,'' in \emph{Findings of ACL}, 2024, pp. 6837--6852.
+\bibitem{r7} G. V. Cormack, C. L. A. Clarke, and S. B\"uttcher, ``Reciprocal rank fusion outperforms Condorcet and individual rank learning methods,'' in \emph{Proc. SIGIR}, 2009.
+\bibitem{r8} N. Thakur et al., ``BEIR: A heterogeneous benchmark for zero-shot evaluation of information retrieval models,'' in \emph{NeurIPS Datasets and Benchmarks}, 2021.
+\bibitem{r9} T. Gao et al., ``Enabling large language models to generate text with citations,'' in \emph{Proc. EMNLP}, 2023.
+\bibitem{r10} S. Es et al., ``RAGAs: Automated evaluation of retrieval augmented generation,'' in \emph{Proc. EACL: System Demonstrations}, 2024.
+\bibitem{r11} J. Cohen, ``A coefficient of agreement for nominal scales,'' \emph{Educational and Psychological Measurement}, vol. 20, no. 1, pp. 37--46, 1960.
+\bibitem{r12} S. Holm, ``A simple sequentially rejective multiple test procedure,'' \emph{Scandinavian Journal of Statistics}, vol. 6, no. 2, pp. 65--70, 1979.
+\bibitem{r13} K. Guu et al., ``REALM: Retrieval-augmented language model pre-training,'' in \emph{Proc. ICML}, 2020.
+\bibitem{r14} G. Izacard et al., ``Atlas: Few-shot learning with retrieval augmented language models,'' \emph{Journal of Machine Learning Research}, vol. 24, no. 251, pp. 1--43, 2023.
+\bibitem{r15} S. Borgeaud et al., ``Improving language models by retrieving from trillions of tokens,'' in \emph{Proc. ICML}, 2022.
+\bibitem{r16} Y. Gao et al., ``Retrieval-augmented generation for large language models: A survey,'' arXiv:2312.10997, 2023.
+\bibitem{r17} S. Zhao et al., ``Retrieval augmented generation (RAG) and beyond: A comprehensive survey on how to make your LLMs use external data more wisely,'' arXiv:2409.14924, 2024.
+\bibitem{r18} Z. Li et al., ``Retrieval-augmented generation for educational application: A systematic survey,'' \emph{Computers and Education: Artificial Intelligence}, vol. 8, Art. 100417, 2025.
+\bibitem{r19} J. Swacha and M. Gracel, ``Retrieval-augmented generation (RAG) chatbots for education: A survey of applications,'' \emph{Applied Sciences}, vol. 15, no. 8, Art. 4234, 2025.
+\bibitem{r20} N. F. Liu et al., ``Lost in the middle: How language models use long contexts,'' \emph{Transactions of the Association for Computational Linguistics}, vol. 12, pp. 157--173, 2024.
+\bibitem{r21} A. Asai et al., ``Self-RAG: Learning to retrieve, generate, and critique through self-reflection,'' in \emph{Proc. ICLR}, 2024.
+\bibitem{r22} Z. Jiang et al., ``Active retrieval augmented generation,'' in \emph{Proc. EMNLP}, 2023.
+\bibitem{r23} H. Trivedi et al., ``Interleaving retrieval with chain-of-thought reasoning for knowledge-intensive multi-step questions,'' in \emph{Proc. ACL}, 2023.
+\bibitem{r24} S. Jeong et al., ``Adaptive-RAG: Learning to adapt retrieval-augmented large language models through question complexity,'' in \emph{Proc. NAACL}, 2024.
+\bibitem{r25} S.-Q. Yan et al., ``Corrective retrieval augmented generation,'' arXiv:2401.15884, 2024.
+\bibitem{r26} W. Shi et al., ``REPLUG: Retrieval-augmented black-box language models,'' in \emph{Proc. NAACL}, 2024.
+\bibitem{r27} P. Sarthi et al., ``RAPTOR: Recursive abstractive processing for tree-organized retrieval,'' in \emph{Proc. ICLR}, 2024.
+\bibitem{r28} D. Edge et al., ``From local to global: A graph RAG approach to query-focused summarization,'' arXiv:2404.16130, 2024.
+\bibitem{r29} G. Izacard and E. Grave, ``Leveraging passage retrieval with generative models for open domain question answering,'' in \emph{Proc. EACL}, 2021, pp. 874--880.
+\bibitem{r30} L. Gao et al., ``RARR: Researching and revising what language models say, using language models,'' in \emph{Proc. ACL}, 2023.
+\bibitem{r31} S. Min et al., ``FActScore: Fine-grained atomic evaluation of factual precision in long form text generation,'' in \emph{Proc. EMNLP}, 2023.
+\bibitem{r32} P. Manakul, A. Liusie, and M. J. F. Gales, ``SelfCheckGPT: Zero-resource black-box hallucination detection for generative language models,'' in \emph{Proc. EMNLP}, 2023.
+\bibitem{r33} S. Lin, J. Hilton, and O. Evans, ``TruthfulQA: Measuring how models mimic human falsehoods,'' in \emph{Proc. ACL}, 2022.
+\bibitem{r34} Z. Ji et al., ``Survey of hallucination in natural language generation,'' \emph{ACM Computing Surveys}, vol. 55, no. 12, Art. 248, 2023.
+\bibitem{r35} N. Reimers and I. Gurevych, ``Sentence-BERT: Sentence embeddings using Siamese BERT-networks,'' in \emph{Proc. EMNLP-IJCNLP}, 2019.
+\bibitem{r36} L. Gao, X. Ma, J. Lin, and J. Callan, ``Precise zero-shot dense retrieval without relevance labels,'' in \emph{Proc. ACL}, 2023.
+\bibitem{r37} L. Xiong et al., ``Approximate nearest neighbor negative contrastive learning for dense text retrieval,'' in \emph{Proc. ICLR}, 2021.
+\bibitem{r38} O. Khattab and M. Zaharia, ``ColBERT: Efficient and effective passage search via contextualized late interaction over BERT,'' in \emph{Proc. SIGIR}, 2020.
+\bibitem{r39} K. Santhanam et al., ``ColBERTv2: Effective and efficient retrieval via lightweight late interaction,'' in \emph{Proc. NAACL}, 2022.
+\bibitem{r40} T. Formal, B. Piwowarski, and S. Clinchant, ``SPLADE: Sparse lexical and expansion model for first stage ranking,'' in \emph{Proc. SIGIR}, 2021.
+\bibitem{r41} G. Izacard et al., ``Unsupervised dense information retrieval with contrastive learning,'' \emph{Transactions on Machine Learning Research}, 2022.
+\bibitem{r42} L. Wang et al., ``Text embeddings by weakly-supervised contrastive pre-training,'' arXiv:2212.03533, 2022.
+\bibitem{r43} Y. Qu et al., ``RocketQA: An optimized training approach to dense passage retrieval for open-domain question answering,'' in \emph{Proc. NAACL}, 2021.
+\bibitem{r44} L. Gao and J. Callan, ``Unsupervised corpus aware language model pre-training for dense passage retrieval,'' in \emph{Proc. ACL}, 2022.
+\bibitem{r45} J. Ni et al., ``Large dual encoders are generalizable retrievers,'' in \emph{Proc. EMNLP}, 2022.
+\bibitem{r46} R. Nogueira, Z. Jiang, and J. Lin, ``Document ranking with a pretrained sequence-to-sequence model,'' in \emph{Findings of EMNLP}, 2020.
+\bibitem{r47} T. Nguyen et al., ``MS MARCO: A human generated machine reading comprehension dataset,'' arXiv:1611.09268, 2016.
+\bibitem{r48} Y. Luan, J. Eisenstein, K. Toutanova, and M. Collins, ``Sparse, dense, and attentional representations for text retrieval,'' \emph{Transactions of the Association for Computational Linguistics}, vol. 9, pp. 329--345, 2021.
+\bibitem{r49} C. Sciavolino, Z. Zhong, J. Lee, and D. Chen, ``Simple entity-centric questions challenge dense retrievers,'' in \emph{Proc. EMNLP}, 2021.
+\bibitem{r50} S. Bruch, S. Gai, and A. Ingber, ``An analysis of fusion functions for hybrid retrieval,'' \emph{ACM Transactions on Information Systems}, vol. 42, no. 1, 2024.
+\bibitem{r51} S. E. Robertson and S. Walker, ``Some simple effective approximations to the 2-Poisson model for probabilistic weighted retrieval,'' in \emph{Proc. SIGIR}, 1994.
+\bibitem{r52} J. Lin, ``The neural hype and comparisons against weak baselines,'' \emph{ACM SIGIR Forum}, vol. 52, no. 2, 2019.
+\bibitem{r53} N. Muennighoff, N. Tazi, L. Magne, and N. Reimers, ``MTEB: Massive text embedding benchmark,'' in \emph{Proc. EACL}, 2023.
+\bibitem{r54} A. Vaswani et al., ``Attention is all you need,'' in \emph{Advances in Neural Information Processing Systems}, 2017.
+\bibitem{r55} J. Devlin et al., ``BERT: Pre-training of deep bidirectional transformers for language understanding,'' in \emph{Proc. NAACL-HLT}, 2019.
+\bibitem{r56} A. Dubey et al., ``The Llama 3 herd of models,'' arXiv:2407.21783, 2024.
+\bibitem{r57} Y. Xu et al., ``LayoutLM: Pre-training of text and layout for document image understanding,'' in \emph{Proc. ACM SIGKDD}, 2020.
+\bibitem{r58} G. Kim et al., ``OCR-free document understanding transformer,'' in \emph{Proc. ECCV}, 2022.
+\bibitem{r59} M. Mathew, D. Karatzas, and C. V. Jawahar, ``DocVQA: A dataset for VQA on document images,'' in \emph{Proc. IEEE/CVF WACV}, 2021, pp. 2200--2209.
+\bibitem{r60} P. Rajpurkar, R. Jia, and P. Liang, ``Know what you don't know: Unanswerable questions for SQuAD,'' in \emph{Proc. ACL}, 2018.
+\bibitem{r61} T. Kwiatkowski et al., ``Natural Questions: A benchmark for question answering research,'' \emph{Transactions of the Association for Computational Linguistics}, vol. 7, pp. 452--466, 2019.
+\bibitem{r62} P. Lewis, S. Stenetorp, and S. Riedel, ``Question and answer test-train overlap in open-domain question answering datasets,'' in \emph{Proc. EACL}, 2021.
+\bibitem{r63} K. J\"arvelin and J. Kek\"al\"ainen, ``Cumulated gain-based evaluation of IR techniques,'' \emph{ACM Transactions on Information Systems}, vol. 20, no. 4, pp. 422--446, 2002.
+\bibitem{r64} C. D. Manning, P. Raghavan, and H. Sch\"utze, \emph{Introduction to Information Retrieval}. Cambridge University Press, 2008.
+\bibitem{r65} C. Buckley and E. M. Voorhees, ``Retrieval evaluation with incomplete information,'' in \emph{Proc. SIGIR}, 2004.
+\bibitem{r66} J. Zobel, ``How reliable are the results of large-scale information retrieval experiments?'' in \emph{Proc. SIGIR}, 1998.
+\bibitem{r67} M. D. Smucker, J. Allan, and B. Carterette, ``A comparison of statistical significance tests for information retrieval evaluation,'' in \emph{Proc. CIKM}, 2007.
+\bibitem{r68} B. Efron and R. J. Tibshirani, \emph{An Introduction to the Bootstrap}. Chapman \& Hall, 1993.
+\bibitem{r69} J. R. Landis and G. G. Koch, ``The measurement of observer agreement for categorical data,'' \emph{Biometrics}, vol. 33, no. 1, pp. 159--174, 1977.
+\bibitem{r70} J. Cohen, ``Weighted kappa: Nominal scale agreement with provision for scaled disagreement or partial credit,'' \emph{Psychological Bulletin}, vol. 70, no. 4, pp. 213--220, 1968.
+\bibitem{r71} K. VanLehn, ``The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems,'' \emph{Educational Psychologist}, vol. 46, no. 4, pp. 197--221, 2011.
+\bibitem{r72} A. T. Corbett and J. R. Anderson, ``Knowledge tracing: Modeling the acquisition of procedural knowledge,'' \emph{User Modeling and User-Adapted Interaction}, vol. 4, no. 4, pp. 253--278, 1994.
+\bibitem{r73} G. Abdelrahman, Q. Wang, and B. P. Nunes, ``Knowledge tracing: A survey,'' \emph{ACM Computing Surveys}, vol. 55, no. 11, Art. 224, 2023.
+\bibitem{r74} E. Kasneci et al., ``ChatGPT for good? On opportunities and challenges of large language models for education,'' \emph{Learning and Individual Differences}, vol. 103, Art. 102274, 2023.
+\bibitem{r75} T. Gebru et al., ``Datasheets for datasets,'' \emph{Communications of the ACM}, vol. 64, no. 12, pp. 86--92, 2021.
+\bibitem{r76} J. Pineau et al., ``Improving reproducibility in machine learning research: A report from the NeurIPS 2019 reproducibility program,'' \emph{Journal of Machine Learning Research}, vol. 22, no. 164, pp. 1--20, 2021.
+\bibitem{r77} Government of India, ``The Digital Personal Data Protection Act, 2023,'' Act No. 22 of 2023.
+\end{thebibliography}
+
+\end{document}

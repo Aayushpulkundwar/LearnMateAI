@@ -1,0 +1,128 @@
+{
+  "model": "llama3:8b",
+  "grade": "Class 10",
+  "subject_id": "00992e41-d4fd-40a8-9d74-1cd85e3c1b9a",
+  "results": [
+    {
+      "question": "What is a chemical reaction?",
+      "depth": "brief",
+      "status": 200,
+      "answer": "A chemical reaction is a process where the identity of the initial substance changes, resulting in the formation of new substances. This change occurs when the bonds between atoms are broken and new bonds are formed. For instance, when a magnesium ribbon is burnt in oxygen, it gets converted to magnesium oxide, as seen in [Source 1] Figure 1.1.",
+      "citations": [
+        {
+          "chunk_id": "360588d6-b74f-40ae-bf34-7c20ddcecb08",
+          "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+          "document_title": "NCERT Class 10th Science",
+          "chapter": "Chemical Reactions and Equations",
+          "page_number": 1,
+          "chunk_index": 0,
+          "source_index": 1,
+          "similarity_score": 0.6716973990762771,
+          "snippet": "Chemical Reactions\nand Equations\n1CHAPTER\nC\nonsider the following situations of daily life and think what happens\nwhen –\n/square6milk is left at room ..."
+        }
+      ],
+      "is_refused": false,
+      "refusal_reason": null,
+      "words": 59
+    },
+    {
+      "question": "What is a chemical reaction?",
+      "depth": "standard",
+      "status": 200,
+      "answer": "A chemical reaction is a process where one or more substances change into new substances with different properties. This change occurs when atoms or groups of atoms in the reactants break and form new bonds with other atoms or groups of atoms, resulting in the formation of new substances [Source 3].\n\nFor example, the burning of magnesium in air can be represented by the word-equation: Magnesium + Oxygen → Magnesium oxide [Source 5]. In this reaction, the magnesium and oxygen atoms combine to form magnesium oxide, a new substance with different properties.\n\nThe key characteristic of a chemical reaction is that the number of atoms of each element remains the same before and after the reaction [Source 4]. This is known as the law of conservation of mass. Chemical reactions involve the breaking and making of bonds between atoms to produce new substances, and they can be represented by chemical equations, which can be balanced to ensure that the number of atoms of each element is the same on both sides of the equation [Source 2].",
+      "citations": [
+        {
+          "chunk_id": "7d50e893-0b82-42a0-94c9-5bad959e18b1",
+          "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+          "document_title": "NCERT Class 10th Science",
+          "chapter": "Chemical Reactions and Equations",
+          "page_number": 3,
+          "chunk_index": 5,
+          "source_index": 2,
+          "similarity_score": 0.6450528175956542,
+          "snippet": "Chemical Reactions and Equations 3\n1.1.1 Writing a Chemical Equation\nIs there any other shorter way for representing chemical equations?\nChemical equa..."
+        },
+        {
+          "chunk_id": "c170d379-63f1-4954-b5d4-2705edbcbf6d",
+          "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+          "document_title": "NCERT Class 10th Science",
+          "chapter": "Chemical Reactions and Equations",
+          "page_number": 6,
+          "chunk_index": 13,
+          "source_index": 3,
+          "similarity_score": 0.6337346841772132,
+          "snippet": "Science6\n1.2 TYPES OF CHEMIC1.2 TYPES OF CHEMIC1.2 TYPES OF CHEMIC1.2 TYPES OF CHEMIC1.2 TYPES OF CHEMIC AL REA AL REAAL REA AL REAAL REA CTIONS CTION..."
+        },
+        {
+          "chunk_id": "a715f955-a569-480d-be79-760904999532",
+          "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+          "document_title": "NCERT Class 10th Science",
+          "chapter": "Chemical Reactions and Equations",
+          "page_number": 3,
+          "chunk_index": 6,
+          "source_index": 4,
+          "similarity_score": 0.5778960864172383,
+          "snippet": "equation for the burning of magnesium in air.\n1.1.2 Balanced Chemical Equations\nRecall the law of conservation of mass that you studied in Class IX; m..."
+        },
+        {
+          "chunk_id": "a31840e6-148d-40d8-ac92-c50fd19015b1",
+          "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+          "document_title": "NCERT Class 10th Science",
+          "chapter": "Chemical Reactions and Equations",
+          "page_number": 2,
+          "chunk_index": 3,
+          "source_index": 5,
+          "similarity_score": 0.5923792543298357,
+          "snippet": "hydrochloric acid or sulphuric acid to this\n(Fig. 1.2).\nCAUTION: Handle the acid with care.\n/square6Do you observe anything happening around the zinc\n..."
+        }
+      ],
+      "is_refused": false,
+      "refusal_reason": null,
+      "words": 176
+    },
+    {
+      "question": "What is a chemical reaction?",
+      "depth": "detailed",
+      "status": 200,
+      "answer": "What is a chemical reaction?\n\nA chemical reaction is a process where one or more substances undergo a change in their chemical composition, resulting in the formation of new substances. This change is characterized by the breaking and making of bonds between atoms, which ultimately leads to the transformation of the initial substances [Source 1]. For instance, when milk is left at room temperature during summers, it spoils due to the growth of microorganisms. Similarly, when grapes get fermented, the natural yeast and bacteria present in the environment cause a chemical reaction that converts the sugars into ethanol and carbon dioxide.\n\nIn the context of chemical reactions, a chemical equation is a concise representation of the reaction. It shows the reactants, the products, and the direction of the reaction. For example, the burning of magnesium in air can be represented by the chemical equation Mg + O2 → MgO [Source 2]. This equation indicates that magnesium (Mg) reacts with oxygen (O2) to form magnesium oxide (MgO).\n\nA balanced chemical equation is one where the number of atoms of each element is the same on both the reactant and product sides. This is crucial because it ensures that the law of conservation of mass is obeyed, which states that mass cannot be created or destroyed in a chemical reaction [Source 4]. For instance, the chemical equation Zn + H2SO4 → ZnSO4 + H2 is balanced, meaning that the number of atoms of each element is the same on both sides.\n\nIn conclusion, a chemical reaction is a process where substances undergo a change in their chemical composition, resulting in the formation of new substances. Chemical equations are a concise representation of these reactions, and balancing them is essential to ensure that the law of conservation of mass is obeyed.\n\n[Sources: 1, 2, 4]",
+      "citations": [
+        {
+          "chunk_id": "360588d6-b74f-40ae-bf34-7c20ddcecb08",
+          "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+          "document_title": "NCERT Class 10th Science",
+          "chapter": "Chemical Reactions and Equations",
+          "page_number": 1,
+          "chunk_index": 0,
+          "source_index": 1,
+          "similarity_score": 0.6716973990762771,
+          "snippet": "Chemical Reactions\nand Equations\n1CHAPTER\nC\nonsider the following situations of daily life and think what happens\nwhen –\n/square6milk is left at room ..."
+        },
+        {
+          "chunk_id": "7d50e893-0b82-42a0-94c9-5bad959e18b1",
+          "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+          "document_title": "NCERT Class 10th Science",
+          "chapter": "Chemical Reactions and Equations",
+          "page_number": 3,
+          "chunk_index": 5,
+          "source_index": 2,
+          "similarity_score": 0.6450528175956542,
+          "snippet": "Chemical Reactions and Equations 3\n1.1.1 Writing a Chemical Equation\nIs there any other shorter way for representing chemical equations?\nChemical equa..."
+        },
+        {
+          "chunk_id": "a715f955-a569-480d-be79-760904999532",
+          "document_id": "6b418b53-971c-4547-b4ac-e0eae9fdff92",
+          "document_title": "NCERT Class 10th Science",
+          "chapter": "Chemical Reactions and Equations",
+          "page_number": 3,
+          "chunk_index": 6,
+          "source_index": 4,
+          "similarity_score": 0.5778960864172383,
+          "snippet": "equation for the burning of magnesium in air.\n1.1.2 Balanced Chemical Equations\nRecall the law of conservation of mass that you studied in Class IX; m..."
+        }
+      ],
+      "is_refused": false,
+      "refusal_reason": null,
+      "words": 302
+    }
+  ]
+}

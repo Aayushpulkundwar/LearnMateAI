@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-30",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.4",
+  "base_code_revision": "2788f3ef56f5bc261d4081dbc859c831c6ff4646",
+  "worktree": "contains uncommitted changes",
+  "backend_tests_passed": 134,
+  "backend_test_seconds": 4.03,
+  "frontend_tests_passed": 2,
+  "frontend_production_build": "passed",
+  "frontend_build_seconds": 2.84,
+  "vite_version": "5.4.21",
+  "live_database_and_api_tests": "pending authorized host execution",
+  "research_metrics": "pending independently reviewed labels and live execution",
+  "approved_chapters": [1, 2, 3, 7, 9, 10, 11, 12, 13],
+  "excluded_chapters": [4, 5, 6, 8],
+  "owner_reported_chunks": 643,
+  "owner_reported_embedding_dimensions": 1024,
+  "corpus_fingerprint": null
+}

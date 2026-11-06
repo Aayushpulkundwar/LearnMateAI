@@ -1,0 +1,212 @@
+{
+  "frozen_run_id": "nine_science_03",
+  "corpus_sha256": "d9c6dd16c44bf402f26e922449c988a4e19d8bf4edd285addb1999d6f8f06bb8",
+  "settings": {
+    "dense_similarity": {
+      "value": "cosine similarity",
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "Chunk.embedding.cosine_distance(query_embedding); score=1-distance"
+    },
+    "embedding_model": {
+      "value": "bge-m3",
+      "source": "backend/app/core/config.py",
+      "evidence": "EMBEDDING_MODEL default; frozen run environment uses model tag"
+    },
+    "embedding_digest": {
+      "value": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+      "source": "research/results/nine_science_03/ollama_models.json",
+      "evidence": "Ollama /api/tags captured in frozen run"
+    },
+    "embedding_model_details": {
+      "value": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "bert",
+        "families": [
+          "bert"
+        ],
+        "parameter_size": "566.70M",
+        "quantization_level": "F16",
+        "context_length": 8192,
+        "embedding_length": 1024
+      },
+      "source": "research/results/nine_science_03/ollama_models.json",
+      "evidence": "Ollama tag details captured in frozen run"
+    },
+    "embedding_dimensions": {
+      "value": 1024,
+      "source": "research/results/nine_science_03/corpus.json",
+      "evidence": "frozen vectors verified at 1024 dimensions"
+    },
+    "fts_dictionary": {
+      "value": "simple",
+      "source": "backend/app/services/retrieval_service.py; backend/alembic/versions/0010_hybrid_retrieval_fts.py",
+      "evidence": "to_tsvector and websearch_to_tsquery use literal simple config"
+    },
+    "fts_query_construction": {
+      "value": "websearch_to_tsquery",
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "websearch_to_tsquery('simple', query_text)"
+    },
+    "fts_ranking": {
+      "value": "ts_rank_cd normalization=32",
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "ts_rank_cd(search_vector, search_query, 32), descending score then chunk ID"
+    },
+    "hybrid_fusion": {
+      "value": "RRF",
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "reciprocal_rank_fusion; sum 1/(rrf_k+rank); deterministic tie breaks"
+    },
+    "rrf_k": {
+      "value": 60,
+      "source": "backend/app/core/config.py",
+      "evidence": "RETRIEVAL_RRF_K"
+    },
+    "candidate_multiplier": {
+      "value": 4,
+      "source": "backend/app/core/config.py",
+      "evidence": "RETRIEVAL_CANDIDATE_MULTIPLIER; candidate_limit=max(top_k,top_k*multiplier)"
+    },
+    "candidate_depth_for_top10": {
+      "value": 40,
+      "source": "backend/app/services/retrieval_service.py",
+      "evidence": "top_k=10 and recorded multiplier=4"
+    },
+    "final_top_k": {
+      "value": 10,
+      "source": "research/experiments/rag_comparison protocol",
+      "evidence": "research run requests top_k=10"
+    },
+    "generation_top_k": {
+      "value": 5,
+      "source": "backend/app/core/config.py",
+      "evidence": "RETRIEVAL_TOP_K"
+    },
+    "dense_relevance_threshold": {
+      "value": 0.55,
+      "source": "backend/app/core/config.py",
+      "evidence": "RELEVANCE_THRESHOLD"
+    },
+    "lexical_relevance_threshold": {
+      "value": 0.08,
+      "source": "backend/app/core/config.py",
+      "evidence": "LEXICAL_RELEVANCE_THRESHOLD"
+    },
+    "context_min_similarity": {
+      "value": 0.5,
+      "source": "backend/app/core/config.py",
+      "evidence": "CONTEXT_MIN_SIMILARITY"
+    },
+    "context_max_similarity_drop": {
+      "value": 0.06,
+      "source": "backend/app/core/config.py",
+      "evidence": "CONTEXT_MAX_SIMILARITY_DROP"
+    },
+    "context_budget_chars": {
+      "value": 6000,
+      "source": "backend/app/core/config.py",
+      "evidence": "RAG_MAX_CONTEXT_CHARS"
+    },
+    "vector_index": {
+      "value": "No HNSW/IVFFlat vector index appears in the frozen pg_indexes evidence; runtime query plan not captured, so exact execution plan is unverified.",
+      "source": "research/results/nine_science_03/corpus.json:indexes"
+    },
+    "generation_model": {
+      "value": "llama3:8b",
+      "source": "backend/app/core/config.py",
+      "evidence": "LLM_MODEL; frozen run Ollama tags"
+    },
+    "generation_digest": {
+      "value": "365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1",
+      "source": "research/results/nine_science_03/ollama_models.json",
+      "evidence": "Ollama /api/tags captured in frozen run"
+    },
+    "generation_model_details": {
+      "value": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_0",
+        "context_length": 8192,
+        "embedding_length": 4096
+      },
+      "source": "research/results/nine_science_03/ollama_models.json",
+      "evidence": "Ollama tag details captured in frozen run"
+    },
+    "generation_request": {
+      "value": {
+        "stream": false,
+        "temperature": 0.2,
+        "other_generation_options": "not set in source"
+      },
+      "source": "backend/app/services/llm_service.py",
+      "evidence": "non-streaming Ollama /api/generate; only temperature is sent in options"
+    },
+    "generation_temperature": {
+      "value": 0.2,
+      "source": "backend/app/core/config.py",
+      "evidence": "LLM_TEMPERATURE"
+    },
+    "generation_timeout_seconds": {
+      "value": 300.0,
+      "source": "backend/app/core/config.py",
+      "evidence": "OLLAMA_GENERATION_TIMEOUT_SECONDS"
+    },
+    "database_migration_revision": {
+      "value": [
+        "0010_hybrid_retrieval_fts"
+      ],
+      "source": "research/results/nine_science_03/corpus.json",
+      "evidence": "Alembic revision observed at freeze"
+    },
+    "postgres_runtime_parameters": {
+      "value": null,
+      "source": "not captured by frozen run; query runtime configuration from authorized host if required"
+    },
+    "chunking": {
+      "chunk_size_chars": {
+        "value": 1000,
+        "source": "backend/app/core/config.py",
+        "evidence": "CHUNK_SIZE; source default, deployed override not captured"
+      },
+      "chunk_overlap_chars": {
+        "value": 150,
+        "source": "backend/app/core/config.py",
+        "evidence": "CHUNK_OVERLAP; source default, deployed override not captured"
+      },
+      "method": {
+        "value": "deterministic character-based page-aware chunking",
+        "source": "backend/app/services/text_chunking.py",
+        "evidence": "page-local natural boundary chunking; page number retained"
+      }
+    },
+    "frozen_passage_length_chars": {
+      "value": {
+        "min": 243,
+        "max": 999,
+        "mean": 820.3592534992224,
+        "median": 912,
+        "p90": 986.0
+      },
+      "source": "research/results/nine_science_03/corpus.json:chunks[].content"
+    },
+    "database": {
+      "identity": [
+        "learnmate_db",
+        "tutor"
+      ],
+      "pgvector_version": "0.8.6",
+      "indexes": [
+        "CREATE INDEX idx_chunks_document_id ON public.chunks USING btree (document_id)",
+        "CREATE INDEX ix_chunks_content_fts ON public.chunks USING gin (to_tsvector('simple'::regconfig, COALESCE(content, ''::text)))",
+        "CREATE UNIQUE INDEX chunks_pkey ON public.chunks USING btree (id)"
+      ]
+    },
+    "runtime_caveat": "Values from environment.json and Ollama tags are recorded in the frozen run. The current runtime and database have not been queried by this process."
+  }
+}

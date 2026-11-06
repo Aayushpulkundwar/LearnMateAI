@@ -5,12 +5,12 @@ from celery import shared_task
 from sqlalchemy.orm import Session
 
 from app.core.celery_app import celery_app
-from app.core.db import SyncSessionLocal
+from app.core.db import SyncSessionLocal, sync_engine
 from app.models.document import Document
 from app.models.chunk import Chunk
 from app.core.config import settings
 from app.services.minio_service import minio_service
-from app.services.pdf_extraction import extract_pdf_pages
+from app.services.pdf_extraction import extract_pdf_pages_isolated as extract_pdf_pages
 from app.services.text_chunking import chunk_extracted_pages
 from app.services.embedding_service import embedding_service
 
@@ -58,11 +58,22 @@ def ingest_document_task(self, document_id: str):
     doc_uuid = uuid.UUID(document_id)
     session: Session = SyncSessionLocal()
     stage = "initialization"
+    lock_connection = None
+    locked = False
 
     try:
+        # A dedicated session-level lock survives heartbeat commits, preventing
+        # concurrent retries from producing duplicate embedding work/chunks.
+        from sqlalchemy import text
+        lock_connection = sync_engine.connect()
+        locked = bool(lock_connection.execute(text("SELECT pg_try_advisory_lock(hashtextextended(:document_id, 0))"), {"document_id": str(doc_uuid)}).scalar())
+        if not locked:
+            return {"document_id": document_id, "status": "already_processing"}
         document = session.query(Document).filter(Document.id == doc_uuid).first()
         if not document:
             raise ValueError(f"Document with ID {document_id} not found in database.")
+        if document.processing_status == "completed":
+            return {"document_id": document_id, "status": "completed", "already_completed": True}
 
         # Checkpoint 1: Mark status processing and update heartbeat
         stage = "processing"
@@ -76,7 +87,10 @@ def ingest_document_task(self, document_id: str):
 
         # Checkpoint 3: Extract clean text per physical PDF page.
         stage = "extraction"
-        extracted_pages = extract_pdf_pages(pdf_bytes)
+        extracted_pages = extract_pdf_pages(
+            pdf_bytes,
+            enable_ocr=settings.OCR_ENABLED,
+        )
         _update_heartbeat(session, document)
 
         # Checkpoint 4: Chunk every page independently. Chunk indexes are
@@ -87,6 +101,8 @@ def ingest_document_task(self, document_id: str):
             chunk_size=settings.CHUNK_SIZE,
             chunk_overlap=settings.CHUNK_OVERLAP,
         )
+        if not text_chunks:
+            raise ValueError('No readable textbook text was extracted. Review the PDF or enable OCR before retrying.')
 
         # Checkpoint 5: Generate exactly one validated BGE-M3 vector for each
         # non-empty final chunk. No DB writes occur before all vectors validate.
@@ -118,3 +134,9 @@ def ingest_document_task(self, document_id: str):
         raise exc
     finally:
         session.close()
+        if lock_connection is not None:
+            try:
+                if locked:
+                    lock_connection.execute(text("SELECT pg_advisory_unlock(hashtextextended(:document_id, 0))"), {"document_id": str(doc_uuid)})
+            finally:
+                lock_connection.close()

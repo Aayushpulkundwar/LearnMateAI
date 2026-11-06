@@ -1,0 +1,25 @@
+{
+  "run_id": "core_experiment_audit_2026-10-29",
+  "code_revision": "2788f3ef56f5bc261d4081dbc859c831c6ff4646",
+  "execution_identity": "LAPTOP-OCU9CMRI\\codexsandboxoffline",
+  "status": "blocked_before_live_experiments",
+  "verified_dataset_files": 0,
+  "approved_pdf_files": 0,
+  "human_reviewed_labels": 0,
+  "configured_models": {
+    "generation": "llama3:8b",
+    "embedding": "bge-m3"
+  },
+  "experiments": {
+    "E1_retrieval": "blocked: no verified development/test labels and no Docker API access from this session",
+    "E2_ablation": "blocked: E1 corpus/labels unavailable; chunk-size comparisons additionally require separately ingested approved corpora",
+    "E3_faithfulness": "blocked: no independently reviewed claim labels or live generated answers",
+    "E4_citations": "blocked: no reviewed claim-to-evidence annotations or live source citations",
+    "E5_rag_vs_llm": "blocked: no approved evaluation questions/references and no live authenticated execution path"
+  },
+  "non_experimental_engineering_evidence": {
+    "command": "python -m pytest tests/test_retrieval_benchmark.py tests/test_hybrid_retrieval.py tests/test_faithfulness.py tests/test_citations.py tests/test_review_dataset.py",
+    "result": "22 passed in 1.14s",
+    "scope": "measurement and provenance implementation checks only; not paper-quality accuracy evidence"
+  }
+}

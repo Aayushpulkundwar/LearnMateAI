@@ -7,7 +7,7 @@ from app.graph.nodes import generate_node
 from app.services.context_selection import select_context_chunks
 
 
-def _chunk(chunk_id, score, content="Evidence"):
+def _chunk(chunk_id, score, content=None):
     return {
         "id": chunk_id,
         "document_id": "doc-1",
@@ -16,7 +16,7 @@ def _chunk(chunk_id, score, content="Evidence"):
         "page_number": 2,
         "chunk_index": int(chunk_id[-1]),
         "similarity_score": score,
-        "content": content,
+        "content": content or f"Evidence for {chunk_id}",
     }
 
 
@@ -45,7 +45,7 @@ class ContextSelectionTests(unittest.TestCase):
         support = _chunk("chunk-2", 0.66)
         weak = _chunk("chunk-3", 0.45)
         state = {"question": "Question", "retrieved_chunks": [top, support, weak], "mode": "query"}
-        with patch("app.graph.nodes.llm_service.generate", new=AsyncMock(return_value="Answer")) as generate:
+        with patch("app.graph.nodes.llm_service.generate", new=AsyncMock(return_value="A supported answer. [Source 1] [Source 2]")) as generate:
             result = asyncio.run(generate_node(state))
         generate.assert_awaited_once()
         self.assertEqual(result["selected_chunks"], [top, support])

@@ -11,7 +11,8 @@ def build_grounded_context(chunks: Iterable[Mapping], max_chars: int) -> tuple[s
     sections = []
     included_chunks = []
     used = 0
-    for rank, chunk in enumerate(chunks, start=1):
+    for chunk in chunks:
+        rank = len(included_chunks) + 1
         metadata = [f"Document: {chunk.get('document_title', 'Unknown document')}"]
         if chunk.get("chapter") is not None:
             metadata.append(f"Chapter: {chunk['chapter']}")
@@ -26,7 +27,7 @@ def build_grounded_context(chunks: Iterable[Mapping], max_chars: int) -> tuple[s
         if not content: continue
         section = header + content
         sections.append(section)
-        included_chunks.append(chunk)
+        included_chunks.append({**chunk, 'content': content})
         used += len(section) + 2
         if len(content) < len(str(chunk.get("content", ""))): break
     return "\n\n".join(sections), included_chunks

@@ -1,0 +1,25 @@
+{
+  "python": "3.11.18",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.41",
+  "cpu_count": 8,
+  "code_revision": "record host git revision",
+  "models": {
+    "generation": "llama3:8b",
+    "embedding": "bge-m3"
+  },
+  "temperature": 0.2,
+  "rrf_k": 60,
+  "candidate_multiplier": 4,
+  "thresholds": {
+    "dense": 0.55,
+    "lexical": 0.08
+  },
+  "generation_top_k": 5,
+  "context": {
+    "min_similarity": 0.5,
+    "max_similarity_drop": 0.06,
+    "max_chars": 6000
+  },
+  "generation_code_sha256": "f515a27e9c7595793cde4ce54975009d1980df9203bef2f9a86cd11ffeaed943",
+  "memory": "MemTotal:       12088956 kB"
+}

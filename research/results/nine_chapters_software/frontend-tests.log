@@ -1,0 +1,5 @@
+> learnmate-ai-frontend@0.1.0 test
+> node --test tests/developmentMode.test.mjs
+login bypass requires an explicit true value in a development build: passed
+login bypass is unavailable in production builds even when requested: passed
+tests 2; pass 2; fail 0; duration_ms 256.6172
